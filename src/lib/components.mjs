@@ -248,29 +248,32 @@ export function contactList({ hours = true } = {}) {
   </ul>`;
 }
 
-// Stylized Utah outline with the Wasatch Front service radius.
+// Stylized Utah outline with the service radius around the Price office.
+// Positions are projected from lat/long: x = 8 + (lon + 114.05) * 77.2, y = 8 + (42 - lat) * 100.
 export function utahMap() {
-  // [label, x, y, label side] — positions projected from lat/long onto the outline.
+  const hq = { name: 'Price', x: 258, y: 248 };
+  // [label, x, y, label side]
   const cities = [
-    ['', 179, 34],
-    ['Ogden', 168, 86, 'l'],
-    ['', 204, 143],
-    ['Provo', 192, 185, 'r'],
-    ['Moab', 354, 351, 'l'],
+    ['Salt Lake City', 174, 132, 'l'],
+    ['', 168, 86],
+    ['Provo', 192, 185, 'l'],
+    ['Vernal', 357, 162, 'l'],
+    ['Green River', 308, 308, 'l'],
+    ['Moab', 355, 351, 'l'],
     ['St. George', 44, 490, 'r'],
   ];
   const outline = '8,8 239,8 239,108 394,108 394,508 8,508';
   return html`<figure class="utah-map">
-    <svg viewBox="0 0 402 516" role="img" aria-label="Map of Utah highlighting our Wasatch Front service area">
+    <svg viewBox="0 0 402 516" role="img" aria-label="Map of Utah highlighting our service area around ${hq.name}">
       <defs>
         <pattern id="utah-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" fill="none" stroke="currentColor" stroke-opacity=".08"/></pattern>
         <clipPath id="utah-clip"><polygon points="${outline}"/></clipPath>
       </defs>
       <polygon points="${outline}" fill="url(#utah-grid)" stroke="currentColor" stroke-opacity=".5" stroke-width="2"/>
-      <circle class="utah-map__radius" cx="180" cy="132" r="96" clip-path="url(#utah-clip)"/>
-      <circle class="utah-map__pulse" cx="174" cy="132" r="10"/>
+      <circle class="utah-map__radius" cx="${hq.x}" cy="${hq.y}" r="108" clip-path="url(#utah-clip)"/>
+      <circle class="utah-map__pulse" cx="${hq.x}" cy="${hq.y}" r="10"/>
       ${cities.map(([name, x, y, side]) => html`<g class="utah-map__city"><circle cx="${x}" cy="${y}" r="5"/>${name ? html`<text x="${side === 'r' ? x + 13 : x - 13}" y="${y + 8}" text-anchor="${side === 'r' ? 'start' : 'end'}">${name}</text>` : ''}</g>`)}
-      <g class="utah-map__hq"><circle cx="174" cy="132" r="9"/><text x="192" y="126">Salt Lake City</text></g>
+      <g class="utah-map__hq"><circle cx="${hq.x}" cy="${hq.y}" r="9"/><text x="${hq.x + 18}" y="${hq.y + 10}">${hq.name}</text></g>
     </svg>
   </figure>`;
 }

@@ -91,7 +91,7 @@ export default function about() {
           <div data-reveal>
             ${eyebrow('Service Area')}
             <h2 class="h2">Proudly serving <span class="hl">${site.region}.</span></h2>
-            <p class="lead">Our crews work throughout the Wasatch Front and surrounding communities.</p>
+            <p class="lead">From our home base in ${site.address.city}, our crews work throughout Carbon and Emery counties and communities across Central &amp; Eastern Utah.</p>
             <ul class="area-list area-list--dark">${site.serviceAreas.map((a) => html`<li>${a}</li>`)}</ul>
             <p class="area__note">Not sure if we cover your area? <a href="${url('contact/')}">Ask us</a> — we travel for the right project.</p>
           </div>

@@ -11,7 +11,7 @@ export const testimonials = {
     {
       quote: 'They showed up when they said they would, communicated every step of the way, and the finished driveway looks incredible. You can tell they care about the details.',
       name: 'Homeowner',
-      role: 'Driveway & patio — Sandy, UT',
+      role: 'Driveway & patio — Price, UT',
     },
     {
       quote: 'Wall Concrete kept our foundation schedule tight across an entire phase of homes. Square forms, clean sites and no excuses. They make our job easier.',
@@ -135,7 +135,7 @@ export const positions = [
 export const generalFaqs = [
   { q: 'Do you offer free estimates?', a: 'Yes. Tell us about your project through the form or give us a call and we will set up a time to look at the site and provide a free, detailed estimate.' },
   { q: 'Do you handle residential and commercial work?', a: 'Both. We pour driveways, patios and walls for homeowners, foundations and flatwork for home builders, and foundations, slabs and site concrete for commercial contractors and owners.' },
-  { q: 'What areas do you serve?', a: 'We work throughout the Wasatch Front and surrounding areas. If you are not sure whether we cover your location, just ask.' },
+  { q: 'What areas do you serve?', a: 'We’re based in Price and work throughout Carbon and Emery counties and the surrounding region. If you are not sure whether we cover your location, just ask.' },
   { q: 'Can you pour concrete in the winter?', a: 'Yes. We use cold-weather practices — ground thaw, heated enclosures, insulated blankets and winter mix designs — so projects can keep moving through Utah winters.' },
   { q: 'How far out are you booking?', a: 'It depends on the season and project size. Reach out with your timeline and we will give you an honest answer on when we can start.' },
 ];

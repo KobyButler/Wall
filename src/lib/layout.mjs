@@ -202,7 +202,7 @@ const jsonLdTag = (data) => raw(`<script type="application/ld+json">${JSON.strin
 
 export function documentHtml(page) {
   const { site } = ctx;
-  const title = page.title ? `${page.title} | ${site.name}` : `${site.name} | Concrete Contractor in ${site.region}`;
+  const title = page.title ? `${page.title} | ${site.name}` : `${site.name} | Concrete Contractor in ${site.address.city}, ${site.region}`;
   const description = page.description || site.description;
   const canonical = absUrl(page.path);
   const ogImage = absUrl('assets/img/og-image.jpg');

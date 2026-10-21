@@ -12,23 +12,23 @@ export default {
   shortName: 'Wall Concrete',
   tagline: 'Built solid. Built to last.',
   description:
-    'Wall Concrete & Construction is a full-service concrete contractor serving Utah — foundations, concrete walls, flatwork, commercial concrete, excavation and decorative concrete for builders, businesses and homeowners.',
+    'Wall Concrete & Construction is a full-service concrete contractor based in Price, Utah — foundations, concrete walls, flatwork, commercial concrete, excavation and decorative concrete for builders, businesses and homeowners.',
 
   // Production URL, no trailing slash. Used for canonical links, sitemap and social cards.
   url: 'https://www.example.com', // PLACEHOLDER — the client's real domain
   // Set to '/sub-folder/' if the site is hosted somewhere other than the domain root.
   basePath: '/',
 
-  phone: '(801) 555-0123', // PLACEHOLDER
+  phone: '(435) 613-9255',
   email: 'info@example.com', // PLACEHOLDER
   address: {
-    street: '1234 S Industrial Way', // PLACEHOLDER
-    city: 'Salt Lake City', // PLACEHOLDER
+    street: '125 S 100 W',
+    city: 'Price',
     region: 'UT',
-    zip: '84000', // PLACEHOLDER
+    zip: '84501',
   },
   // Used for the map embed and the "Visit us" link. Usually the full street address.
-  mapQuery: 'Salt Lake City, UT', // PLACEHOLDER
+  mapQuery: '125 S 100 W, Price, UT 84501',
   hours: [
     { days: 'Mon – Fri', time: '7:00 AM – 5:00 PM' }, // PLACEHOLDER
     { days: 'Saturday', time: 'By appointment' },
@@ -38,14 +38,14 @@ export default {
   serviceAreaLabel: 'Utah & the Intermountain West',
   serviceAreas: [
     // PLACEHOLDER — confirm the counties/cities the client actually serves.
-    'Salt Lake County',
+    'Carbon County',
+    'Emery County',
     'Utah County',
-    'Davis County',
-    'Weber County',
-    'Summit County',
+    'Sanpete County',
+    'Duchesne County',
+    'Uintah County',
+    'Grand County',
     'Wasatch County',
-    'Tooele County',
-    'Box Elder County',
   ],
   license: 'Licensed & insured in the State of Utah', // PLACEHOLDER — add license # if desired
 
@@ -78,7 +78,7 @@ export default {
   // Hero slideshow on the home page. Each slide is a looping background video
   // (desktop + mobile versions) with a poster image shown while it loads.
   hero: {
-    eyebrow: 'Concrete & Construction — Utah',
+    eyebrow: 'Concrete & Construction — Price, Utah',
     title: ['Built solid.', 'Built to last.'],
     text: 'From footings and foundation walls to driveways, retaining walls and commercial slabs, our crews deliver durable concrete work — on schedule and done right the first time.',
     slides: [

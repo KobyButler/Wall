@@ -697,7 +697,7 @@ html.menu-open { overflow: hidden; }
 .utah-map { color: var(--on-dark); }
 .utah-map svg { width: 100%; height: auto; overflow: visible; }
 .utah-map__radius { fill: rgb(245 167 10 / 0.14); stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 6 6; }
-.utah-map__pulse { fill: var(--accent); transform-origin: 174px 132px; animation: pulse 2.4s var(--ease) infinite; }
+.utah-map__pulse { fill: var(--accent); transform-box: fill-box; transform-origin: center; animation: pulse 2.4s var(--ease) infinite; }
 .utah-map__city circle { fill: currentColor; opacity: 0.6; }
 .utah-map text { font: 600 24px var(--font-body); fill: currentColor; opacity: 0.8; }
 .utah-map__hq circle { fill: var(--accent); stroke: var(--ink); stroke-width: 3; }
