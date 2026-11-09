@@ -2,10 +2,10 @@ import { html } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
 import { img, btn, eyebrow, sectionHead, pageHero, checklist, applicationForm } from '../lib/components.mjs';
-import { benefits, positions } from '../data/content.mjs';
 
 export default function careers() {
   const { site } = ctx;
+  const { positions, benefits } = ctx.careers;
   const crumbs = [{ label: 'Careers', path: 'careers/' }];
   return {
     path: 'careers/',
@@ -66,7 +66,10 @@ export default function careers() {
             <p>Don’t see your role listed? Submit a general application — we’re always looking for great people.</p>
             ${btn('General Application', '#apply', { variant: 'outline' })}
           </div>
-          <div class="jobs">${positions.map((p) => html`<details class="job" data-reveal>
+          <div class="jobs">${positions.length ? '' : html`<div class="jobs__empty" data-reveal>
+            <h3>No openings posted right now</h3>
+            <p>We’re always glad to hear from hard-working people. Send a general application and we’ll reach out when a spot opens up.</p>
+          </div>`}${positions.map((p) => html`<details class="job" data-reveal>
             <summary>
               <span class="job__head"><span class="job__title">${p.title}</span><span class="job__meta">${icon('briefcase', { size: 16 })}${p.type}<span class="dot" aria-hidden="true"></span>${icon('pin', { size: 16 })}${site.address.city} area</span></span>
               <span class="job__toggle" aria-hidden="true">${icon('plus', { size: 20 })}</span>

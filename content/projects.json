@@ -1,0 +1,381 @@
+{
+  "projects": [
+    {
+      "title": "Circular Water Tank Walls",
+      "service": "water-tanks",
+      "image": "/media/tank-crew-forms.jpg",
+      "text": "Our crew working atop the circular wall forms of a cast-in-place concrete water tank.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Circular forming",
+        "Cast-in-place walls",
+        "Reinforcing"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Structural Walls on Red Rock",
+      "service": "structural-foundations",
+      "image": "/media/walls-redrock.jpg",
+      "text": "Tall cast-in-place structural walls rising from their footings on a rocky hillside site.",
+      "location": "",
+      "sector": "Structural",
+      "scope": [
+        "Tall walls",
+        "Multi-lift forming",
+        "Footings"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Laser Screed Slab Placement",
+      "service": "laser-screed",
+      "image": "/media/laser-screed-machine.jpg",
+      "text": "Our laser screed placing and leveling a large slab while the finishing crew follows behind.",
+      "location": "",
+      "sector": "Slabs",
+      "scope": [
+        "Laser screed",
+        "Pump placement",
+        "Finishing crew"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Highway Bridge",
+      "service": "bridge-decks",
+      "image": "/media/bridge-highway.jpg",
+      "text": "A highway bridge spanning a rocky drainage, built for decades of traffic and freeze-thaw.",
+      "location": "",
+      "sector": "Transportation",
+      "scope": [
+        "Bridge deck",
+        "Barriers"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Slip-Formed Curb & Gutter",
+      "service": "curb-machine",
+      "image": "/media/curb-machine.jpg",
+      "text": "Our curb machine extruding a continuous run of curb and gutter, fed straight from the mixer truck.",
+      "location": "",
+      "sector": "Site concrete",
+      "scope": [
+        "Curb machine",
+        "Stringline",
+        "Curb & gutter"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Winter Foundation Work",
+      "service": "structural-foundations",
+      "image": "/media/foundation-snow.jpg",
+      "text": "Foundation walls formed and placed through winter, with snow-capped peaks behind the site.",
+      "location": "",
+      "sector": "Structural",
+      "scope": [
+        "Cold weather",
+        "Wall forms",
+        "Crane"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Hard-Troweled Warehouse Floor",
+      "service": "smooth-trowel",
+      "image": "/media/trowel-warehouse-gloss.jpg",
+      "text": "A dense, smooth trowel finish across the floor of a new warehouse.",
+      "location": "",
+      "sector": "Interior floors",
+      "scope": [
+        "Smooth trowel",
+        "Large interior slab"
+      ],
+      "featured": true
+    },
+    {
+      "title": "ADA Curb Ramp",
+      "service": "ada-installation",
+      "image": "/media/ada-ramp-domes.jpg",
+      "text": "An accessible curb ramp with a truncated-dome detectable warning surface set flush with the concrete.",
+      "location": "",
+      "sector": "Accessibility",
+      "scope": [
+        "Curb ramp",
+        "Detectable warnings"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Night Industrial Pour",
+      "service": "structural-foundations",
+      "image": "/media/night-pour-pumps.jpg",
+      "text": "A large-volume night placement with pump trucks and light towers keeping the pour moving.",
+      "location": "",
+      "sector": "Industrial",
+      "scope": [
+        "Night pour",
+        "Pump trucks",
+        "Heavy reinforcing"
+      ],
+      "featured": true
+    },
+    {
+      "title": "Water Tank Wall Pour",
+      "service": "water-tanks",
+      "image": "/media/tank-forms-pump.jpg",
+      "text": "A pump truck placing concrete into the radius wall forms of a water tank.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Pump placement",
+        "Radius forms",
+        "Wall pour"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Water Tank Interior",
+      "service": "water-tanks",
+      "image": "/media/tank-interior-crew.jpg",
+      "text": "Inside a newly stripped tank: smooth circular walls, a center column and the floor slab.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Circular walls",
+        "Center column",
+        "Floor slab"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Finished Water Tank",
+      "service": "water-tanks",
+      "image": "/media/tank-finished.jpg",
+      "text": "A completed cast-in-place concrete water tank ready for backfill.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Cast-in-place",
+        "Circular walls"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Tank Base in Canyon Country",
+      "service": "water-tanks",
+      "image": "/media/tank-ring-redrock.jpg",
+      "text": "A circular tank footing and ring wall set into red-rock canyon country.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Footing",
+        "Ring wall"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Tank Wall Formwork",
+      "service": "water-tanks",
+      "image": "/media/tank-formwork.jpg",
+      "text": "Circular wall forms braced and ready, seen from inside the tank.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Radius forms",
+        "Bracing",
+        "Wall reinforcing"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Tank Floor Reinforcing",
+      "service": "water-tanks",
+      "image": "/media/tank-base-rebar.jpg",
+      "text": "The reinforcing mat for a circular tank floor, placed and ready for concrete.",
+      "location": "",
+      "sector": "Water infrastructure",
+      "scope": [
+        "Floor slab",
+        "Reinforcing mat"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Reinforced Slab on Red Rock",
+      "service": "structural-foundations",
+      "image": "/media/slab-rebar-redrock.jpg",
+      "text": "A long structural slab with its edge reinforcing set, built on a rocky hillside.",
+      "location": "",
+      "sector": "Structural",
+      "scope": [
+        "Structural slab",
+        "Edge reinforcing"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Tall Wall Forms",
+      "service": "structural-foundations",
+      "image": "/media/tall-wall-forms.jpg",
+      "text": "Tall wall forms lining a corridor between structures, ready for placement.",
+      "location": "",
+      "sector": "Structural",
+      "scope": [
+        "Tall walls",
+        "Gang forms",
+        "Pump placement"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Hillside Foundation",
+      "service": "structural-foundations",
+      "image": "/media/foundation-forms-redrock.jpg",
+      "text": "An extensive network of foundation forms on a challenging red-rock hillside.",
+      "location": "",
+      "sector": "Structural",
+      "scope": [
+        "Footings",
+        "Wall forms",
+        "Reinforcing"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Completed Foundation Walls",
+      "service": "structural-foundations",
+      "image": "/media/foundation-walls-complete.jpg",
+      "text": "Foundation walls stripped and ready for the next phase of construction.",
+      "location": "",
+      "sector": "Structural",
+      "scope": [
+        "Stripped walls",
+        "Footings"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Concrete Channel Walls",
+      "service": "structural-foundations",
+      "image": "/media/channel-walls-bridge.jpg",
+      "text": "Cast concrete walls and floor slab running beneath a pedestrian bridge.",
+      "location": "",
+      "sector": "Infrastructure",
+      "scope": [
+        "Walls",
+        "Floor slab"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Bridge Deck Reinforcing",
+      "service": "bridge-decks",
+      "image": "/media/bridge-deck-rebar.jpg",
+      "text": "Epoxy-coated reinforcing in place and ready for the bridge deck pour.",
+      "location": "",
+      "sector": "Transportation",
+      "scope": [
+        "Deck prep",
+        "Epoxy rebar"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Bridge Deck Finishing",
+      "service": "bridge-decks",
+      "image": "/media/bridge-deck-finish.jpg",
+      "text": "Finishing a section of bridge deck during placement.",
+      "location": "",
+      "sector": "Transportation",
+      "scope": [
+        "Deck pour",
+        "Finishing"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Roundabout Curb & Islands",
+      "service": "curb-machine",
+      "image": "/media/curb-roundabout.jpg",
+      "text": "Our crew finishing curb and gutter around a roundabout.",
+      "location": "",
+      "sector": "Site concrete",
+      "scope": [
+        "Radius curb",
+        "Hand finishing"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Warehouse Floor Slab",
+      "service": "laser-screed",
+      "image": "/media/warehouse-slab.jpg",
+      "text": "Finishing a large warehouse floor slab under the new building’s lights.",
+      "location": "",
+      "sector": "Slabs",
+      "scope": [
+        "Large slab",
+        "Power trowel"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Ride-On Trowel Finishing",
+      "service": "smooth-trowel",
+      "image": "/media/ride-on-trowels.jpg",
+      "text": "Ride-on power trowels working an interior slab to a smooth, dense finish.",
+      "location": "",
+      "sector": "Interior floors",
+      "scope": [
+        "Ride-on trowels",
+        "Finishing crew"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Parking Area Replacement",
+      "service": "demo-replace",
+      "image": "/media/parking-lot-replace.jpg",
+      "text": "Replacement concrete paving at an industrial building.",
+      "location": "",
+      "sector": "Site concrete",
+      "scope": [
+        "Removal",
+        "Base repair",
+        "New paving"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Commercial Building Walls",
+      "service": "general-contracting",
+      "image": "/media/building-walls.jpg",
+      "text": "Cast-in-place walls for a commercial building taking shape.",
+      "location": "",
+      "sector": "Buildings",
+      "scope": [
+        "Cast-in-place walls",
+        "Formwork"
+      ],
+      "featured": false
+    },
+    {
+      "title": "Metal Building Slab Prep",
+      "service": "general-contracting",
+      "image": "/media/metal-building-interior.jpg",
+      "text": "Subgrade and reinforcing ready for the floor slab inside a new metal building.",
+      "location": "",
+      "sector": "Buildings",
+      "scope": [
+        "Subgrade",
+        "Reinforcing",
+        "Slab prep"
+      ],
+      "featured": false
+    }
+  ]
+}

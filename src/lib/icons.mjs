@@ -67,8 +67,8 @@ const PATHS = {
 };
 
 export function icon(name, { size = 24, cls = '' } = {}) {
-  const body = PATHS[name];
-  if (!body) throw new Error(`Unknown icon "${name}"`);
+  // Unknown names (e.g. a typo entered in the CMS) fall back to a check mark.
+  const body = PATHS[name] || PATHS.check;
   return raw(
     `<svg class="icon${cls ? ' ' + cls : ''}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${body}</svg>`
   );

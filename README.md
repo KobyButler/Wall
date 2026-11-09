@@ -15,14 +15,14 @@ Its design follows the four reference sites the client picked: Wollam Constructi
 
 ## Quick start
 
-Requires **Node.js 20+**. Nothing to install.
+Requires **Node.js 20+** and **Python 3 with Pillow** (`pip install Pillow`, plus `pillow-heif` for iPhone HEIC photos). Python resizes the photo library; there are no npm packages to install.
 
 ```bash
 npm run dev     # build + local server at http://localhost:4321 with live reload
 npm run build   # production build into ./dist
 ```
 
-`dist/` is the finished website. Upload its contents to any static host.
+`dist/` is the finished website. Upload its contents to any static host. Resized photos are cached in `.cache/images/` (not committed), so only new photos are processed on each build.
 
 ## Pages
 
@@ -31,7 +31,7 @@ npm run build   # production build into ./dist
 | `/` | `src/pages/index.mjs`: hero slideshow, intro, stats, services, why us, project carousel, process, testimonials, safety/careers, estimate form |
 | `/about/` | `src/pages/about.mjs`: story, mission, values, safety, who we serve, service area |
 | `/services/` | `src/pages/services.mjs`: all services overview |
-| `/services/<slug>/` | `src/pages/service-detail.mjs`: one page per service, generated from `src/data/services.mjs` |
+| `/services/<slug>/` | `src/pages/service-detail.mjs`: one page per service, generated from `content/services.json` |
 | `/projects/` | `src/pages/projects.mjs`: filterable portfolio with a project lightbox |
 | `/careers/` | `src/pages/careers.mjs`: benefits, open positions, online application |
 | `/contact/` | `src/pages/contact.mjs`: estimate request form, contact cards, map, FAQ |
@@ -42,31 +42,55 @@ npm run build   # production build into ./dist
 
 ## Editing content
 
-All content lives in `src/data/`. You don't need to touch any HTML.
+### For the client: Pages CMS
 
-| File | What's in it |
+The client edits the site at **[app.pagescms.org](https://app.pagescms.org)**, a free, open-source content editor. They don't need a GitHub account. Each section is a simple form:
+
+| Section | What they can change |
 | --- | --- |
-| `site.mjs` | Company name, phone, email, address, hours, service areas, social links, stats, form endpoints, hero slides, navigation |
-| `services.mjs` | Each service: name, descriptions, capabilities, FAQs, images. Add an entry and a new page is created. |
-| `projects.mjs` | Portfolio entries: title, service, location, photo, scope |
-| `content.mjs` | Testimonials, "why us" points, process steps, values, benefits, job openings, general FAQs |
+| **Careers & Job Openings** | Add, edit, reorder or hide job postings; benefits |
+| **Reviews** | Add real customer reviews and star ratings |
+| **Projects** | Add projects with photos, choose the service, feature them on the home page |
+| **Company Info** | Phone, email, address, hours, service areas, headline numbers, social links, Google reviews link, payments link |
+| **Home Page** | Slideshow headline, text and photos |
+| **About Page** | Company story and mission |
+| **Services** | All service text, photos, capabilities and FAQs, and add new services |
 
-In headings, wrap words in `*asterisks*` to highlight them in the brand accent color, e.g. `'Covering *all* your concrete needs.'`
+Uploaded photos go into the shared photo library (`content/media`), and any photo there can be picked for any page. Each **Save** commits to `main`, and the GitHub Actions workflow republishes the site in about two minutes.
+
+**One-time setup (repo owner):**
+
+1. Go to [app.pagescms.org](https://app.pagescms.org) and sign in with GitHub.
+2. Install the Pages CMS GitHub App on the `Wall` repository when prompted.
+3. Open the repository. The editing sections come from `.pages.yml`.
+4. Under **Collaborators**, invite the client by email. They get a link and can start editing without a GitHub account.
+
+### For developers: where content lives
+
+| Location | What's in it |
+| --- | --- |
+| `content/*.json` | Everything editable in Pages CMS (see table above). The build reads these, and blank or invalid entries are skipped with a warning rather than breaking the site. |
+| `content/media/` | The photo library: original photos, referenced as `/media/<file>`. |
+| `.pages.yml` | The Pages CMS form definitions. Keep it in sync if you add fields; if you add a service, also add it to the Projects "Service" dropdown. |
+| `src/data/site.mjs` | Developer settings: domain, base path, navigation, slideshow timing, fallbacks. |
+| `src/data/content.mjs` | Fixed copy blocks: "why us" points, process steps, values, markets, safety list, general FAQs. |
+
+In headings and the mission statement, wrap words in `*asterisks*` to highlight them in the brand accent color.
 
 ## ⚠️ Before launch: replace the placeholders
 
-The client hasn't provided every business detail yet, so placeholders fill the gaps. `npm run build` lists the ones still present, and you can search `src/` for **`PLACEHOLDER`** to find every one.
+The client hasn't provided every business detail yet, so placeholders fill the gaps. `npm run build` lists the ones still present. Most items below can be fixed by the client in Pages CMS.
 
 - [x] **Phone and street address** are the client's real details.
 - [ ] **Email.** `wallcontractors@etv.net` was taken from the client's letterhead. Confirm it's current.
-- [ ] **Hours and service counties.** Set in `src/data/site.mjs`.
+- [ ] **Hours and service counties** (Company Info).
 - [ ] **Domain.** Set `url` in `src/data/site.mjs`; it's used for SEO tags and the sitemap.
-- [ ] **Stats.** "20+ years", "1,500+ projects" and the rest are examples. Use real numbers.
-- [x] **Testimonials** are real Google reviews, quoted word for word (`src/data/content.mjs`). Stars show only if a `rating` is added. Set `reviewsUrl` in `site.mjs` to link to their Google reviews.
-- [ ] **Project names and locations.** The portfolio uses the client's own photos, with titles written from what each photo shows. Add real project names, owners and locations in `src/data/projects.mjs` (`location` is optional).
-- [ ] **Company story** on the About page (`src/pages/about.mjs`): founding year, history, owners.
-- [ ] **Job openings and benefits** (`src/data/content.mjs`).
-- [ ] **Social links** (`src/data/site.mjs`). Set a value to `''` to hide that icon.
+- [ ] **Headline numbers** (Company Info). "20+ years", "1,500+ projects" and the rest are examples. Use real numbers.
+- [x] **Reviews** are real 5-star Google reviews, quoted word for word. Add the Google reviews link under Company Info.
+- [ ] **Project names and locations** (Projects). The portfolio uses the client's own photos, with titles written from what each photo shows.
+- [ ] **Company story** (About Page): founding year, history, owners.
+- [ ] **Job openings and benefits** (Careers & Job Openings).
+- [ ] **Social links** (Company Info). Leave one blank to hide that icon.
 - [ ] **Form endpoints.** See below.
 - [ ] **Logo.** A placeholder "W" mark was designed for this build. If the client has a logo, swap it in `src/lib/icons.mjs` (`logoMark`), `public/favicon.svg` and the PNG icons.
 - [ ] **Privacy policy.** A general template. Have the client review it.
@@ -76,13 +100,7 @@ The client hasn't provided every business detail yet, so placeholders fill the g
 The forms post to any form-handling service; no server code is needed. The recommended option is **[Formspree](https://formspree.io)** (free tier available):
 
 1. Create two forms in Formspree, one for "Estimate requests" and one for "Job applications".
-2. Paste their endpoints into `src/data/site.mjs`:
-   ```js
-   forms: {
-     estimate: 'https://formspree.io/f/xxxxxxx',
-     careers: 'https://formspree.io/f/yyyyyyy',
-   },
-   ```
+2. Paste their endpoints into Pages CMS under **Company Info → Form delivery**, or directly into `content/settings.json` (`forms.estimate` and `forms.careers`).
 3. For file uploads (plans, photos, resumes), make sure the form plan supports attachments.
 
 Forms include client-side validation, a spam honeypot (`_gotcha`), drag-and-drop file upload, and an on-page success message. Until endpoints are set, submitting a form asks the visitor to call or email instead, so no leads are silently lost.
@@ -91,26 +109,18 @@ Web3Forms, Basin, Getform and Netlify Forms also work. Any endpoint that accepts
 
 ## Photos & video
 
-### Replacing photos
+### Photo library
 
-1. Put the new photos (JPG/PNG, ideally 2400px+ wide) in a folder.
-2. Run:
-   ```bash
-   python scripts/optimize-images.py path/to/folder --large name1,name2
-   ```
-   This writes responsive WebP sizes to `public/assets/img/photos/` and records them in `src/data/images.json`. Use `--large` for images shown full-width (page heroes). Requires `pip install Pillow`.
-3. Reference images by file name, without the extension, in the data files (e.g. `image: 'tank-crew-forms'`).
+All photos live in `content/media/`. The client adds them through Pages CMS uploads; developers can also drop files in directly. On every build, `scripts/optimize-images.py` turns new or changed photos into responsive WebP sizes (640–2048 px), skipping photos it has already processed. JPG, PNG, WebP and iPhone HEIC photos all work, and phone rotation is corrected automatically.
 
-**Tip:** Name a new photo the same as an existing one (e.g. `tank-finished.jpg`) and every place that uses it updates automatically.
-
-iPhone HEIC photos need converting to JPG first. `ffmpeg -i photo.HEIC photo.jpg` works.
+Content refers to photos by library path, e.g. `"image": "/media/tank-crew-forms.jpg"`. If a referenced photo is missing, the build uses a stand-in photo and prints a warning instead of failing.
 
 ### Hero slideshow
 
-The home page hero cycles through slides (`hero.slides` in `site.mjs`). Each slide is either a photo, shown with a slow zoom:
+The home page hero cycles through slides (Home Page → Top slideshow, i.e. `content/home.json`). Each slide is either a photo, shown with a slow zoom:
 
-```js
-{ label: 'Water Tanks', image: 'tank-crew-forms' }
+```json
+{ "label": "Water Tanks", "image": "/media/tank-crew-forms.jpg" }
 ```
 
 or a looping background video, which is ideal for drone footage of their jobs:
@@ -119,8 +129,8 @@ or a looping background video, which is ideal for drone footage of their jobs:
 bash scripts/encode-hero-video.sh raw-footage.mov hero-tanks 12 8   # start at 0:12, 8 seconds long
 ```
 
-```js
-{ label: 'Water Tanks', video: 'hero-tanks' }
+```json
+{ "label": "Water Tanks", "video": "hero-tanks" }
 ```
 
 Video slides need ffmpeg to encode. Photo and video slides can be mixed.
@@ -134,7 +144,7 @@ How the hero behaves:
 
 ### Service page video
 
-A service can show a short vertical clip in place of its photo (e.g. `video: 'laser-screed'` in `services.mjs`). It loads only when scrolled into view. The file goes in `public/assets/video/<name>.mp4`, with a poster at `public/assets/img/posters/<name>.webp`.
+A service can show a short vertical clip in place of its photo (e.g. `"video": "laser-screed"` in `content/services.json`). It loads only when scrolled into view. The file goes in `public/assets/video/<name>.mp4`, with a poster at `public/assets/img/posters/<name>.webp`.
 
 ## Deploying
 
@@ -151,19 +161,24 @@ Or run `npm run build` and upload the contents of `dist/` to any web host (cPane
 ## Project structure
 
 ```
-build.mjs                 Build script + dev server (no dependencies)
+build.mjs                 Build script + dev server (no npm dependencies)
+.pages.yml                Pages CMS editing forms
+content/
+  *.json                  ← editable content (jobs, reviews, projects, services, company info…)
+  media/                  ← photo library (originals)
 src/
-  data/                   ← all editable content
-  lib/                    templating, layout (header/footer/SEO), components, icons
+  data/                   developer settings + fixed copy blocks
+  lib/                    templating, layout (header/footer/SEO), components, icons, content loader
   pages/                  one module per page
 public/                   copied as-is into dist/
   assets/css/main.css     all styles (design tokens at the top)
   assets/js/main.js       all interactions
-  assets/img/             optimized photos, video posters, logo, social share image
+  assets/img/             video posters, logo, social share image
   assets/video/           video clips (laser screed)
 scripts/
-  optimize-images.py      photo optimizer
+  optimize-images.py      photo library → responsive WebP (run automatically by the build)
   encode-hero-video.sh    video encoder
+.cache/images/            generated photo sizes (not committed)
 ```
 
 **Design tokens** (colors, fonts, spacing) are CSS variables at the top of `public/assets/css/main.css`. Change `--accent` to rebrand the whole site.

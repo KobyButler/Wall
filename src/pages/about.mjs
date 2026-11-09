@@ -1,7 +1,7 @@
 import { html } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx, url } from '../lib/ctx.mjs';
-import { img, btn, eyebrow, sectionHead, pageHero, statsBand, checklist, utahMap, testimonialsSection } from '../lib/components.mjs';
+import { img, btn, eyebrow, sectionHead, pageHero, statsBand, checklist, utahMap, testimonialsSection, fmt } from '../lib/components.mjs';
 import { values, markets, safety } from '../data/content.mjs';
 
 export default function about() {
@@ -26,10 +26,8 @@ export default function about() {
           <div class="story__copy" data-reveal>
             ${eyebrow('Our Story')}
             <h2 class="h2">Local roots. <span class="hl">Solid</span> reputation.</h2>
-            <!-- PLACEHOLDER: replace with the client's real history (founding year, founders, milestones). -->
-            <p class="lead">${site.name} was built on a simple idea: do the work right, treat people well and stand behind every pour.</p>
-            <p>Today our crews serve municipalities, general contractors, industry and energy across ${site.serviceAreaLabel}, building everything from water tanks and structural foundations to bridge decks, laser-screeded floors and slip-formed curb. Keeping the work in-house means we control the quality, the schedule and the safety of every job we take on.</p>
-            <p>We know concrete is a long-term investment. That’s why we plan carefully, choose the right mix and methods for Utah’s climate, and never cut corners on the details nobody sees once the job is done.</p>
+            ${ctx.about.storyLead ? html`<p class="lead">${ctx.about.storyLead}</p>` : ''}
+            ${ctx.about.story.map((p) => html`<p>${p}</p>`)}
             <div class="actions">${btn('Explore Our Services', url('services/'))}${btn('See Our Work', url('projects/'), { variant: 'outline', iconName: 'arrowUpRight' })}</div>
           </div>
           <div class="story__media" data-reveal style="--d:1">
@@ -42,7 +40,7 @@ export default function about() {
       <section class="mission">
         <div class="container mission__inner" data-reveal>
           <span class="mission__label">Our Mission</span>
-          <p class="mission__text">To deliver concrete and construction work that’s <span class="hl">built to last</span> — safely, on schedule and with honest communication from the first call to the final walkthrough.</p>
+          <p class="mission__text">${fmt(ctx.about.mission)}</p>
         </div>
       </section>
 

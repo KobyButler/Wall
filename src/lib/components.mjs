@@ -1,8 +1,8 @@
 // Reusable page sections and UI pieces.
 import { html, raw, esc, cx } from './html.mjs';
 import { icon } from './icons.mjs';
-import { ctx, url, asset, telHref, serviceBySlug } from './ctx.mjs';
-import { testimonials, process, why } from '../data/content.mjs';
+import { ctx, url, asset, telHref, serviceBySlug, imageMeta } from './ctx.mjs';
+import { process, why } from '../data/content.mjs';
 
 // Marks *words* for accent highlighting: fmt('Built *to last*')
 export const fmt = (text) => raw(esc(text).replace(/\*(.+?)\*/g, '<span class="hl">$1</span>'));
@@ -11,9 +11,8 @@ const pad = (n) => String(n).padStart(2, '0');
 
 // Responsive <img> from the optimized photo manifest.
 export function img(name, { alt = '', sizes = '100vw', cls = '', eager = false, priority = false } = {}) {
-  const meta = ctx.images[name];
-  if (!meta) throw new Error(`Image "${name}" is missing from src/data/images.json`);
-  const src = (w) => url(`assets/img/photos/${name}-${w}.webp`);
+  const meta = imageMeta(name);
+  const src = (w) => url(`assets/img/photos/${meta.key}-${w}.webp`);
   const fallback = meta.widths.find((w) => w >= 1024) ?? meta.widths.at(-1);
   return html`<img${raw(cls ? ` class="${esc(cls)}"` : '')} src="${src(fallback)}" srcset="${meta.widths.map((w) => `${src(w)} ${w}w`).join(', ')}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="${alt}"${raw(eager ? '' : ' loading="lazy"')} decoding="async"${raw(priority ? ' fetchpriority="high"' : '')} style="background-color:${meta.color}">`;
 }
@@ -87,7 +86,7 @@ export function projectCard(p, { sizes = '(min-width: 1024px) 31vw, (min-width: 
 // Project details for the lightbox, embedded as JSON (escaped for <script>).
 export function projectData(projects) {
   const data = projects.map((p) => {
-    const m = ctx.images[p.image];
+    const m = imageMeta(p.image);
     return {
       slug: p.slug,
       title: p.title,
@@ -97,8 +96,8 @@ export function projectData(projects) {
       serviceUrl: url(`services/${p.service}/`),
       scope: p.scope,
       text: p.text,
-      src: url(`assets/img/photos/${p.image}-${m.widths.at(-1) >= 1600 ? 1600 : m.widths.at(-1)}.webp`),
-      srcset: m.widths.map((w) => `${url(`assets/img/photos/${p.image}-${w}.webp`)} ${w}w`).join(', '),
+      src: url(`assets/img/photos/${m.key}-${m.widths.find((w) => w >= 1600) ?? m.widths.at(-1)}.webp`),
+      srcset: m.widths.map((w) => `${url(`assets/img/photos/${m.key}-${w}.webp`)} ${w}w`).join(', '),
       w: m.w,
       h: m.h,
     };
@@ -172,7 +171,8 @@ export function processSection({ tone = 'steel' } = {}) {
 }
 
 export function testimonialsSection() {
-  const items = testimonials.items;
+  const items = ctx.reviews;
+  if (!items.length) return '';
   return html`<section class="section section--paper testimonials" aria-labelledby="testimonials-title">
     <div class="container testimonials__grid">
       <div class="testimonials__intro" data-reveal>
@@ -407,9 +407,8 @@ export const posterSrc = (name) => ({
 
 // src/srcset for a photo from the manifest (used for preloads and hero slides).
 export const photoSrc = (name) => {
-  const meta = ctx.images[name];
-  if (!meta) throw new Error(`Image "${name}" is missing from src/data/images.json`);
-  const file = (w) => url(`assets/img/photos/${name}-${w}.webp`);
+  const meta = imageMeta(name);
+  const file = (w) => url(`assets/img/photos/${meta.key}-${w}.webp`);
   return {
     src: file(meta.widths.find((w) => w >= 1024) ?? meta.widths.at(-1)),
     srcset: meta.widths.map((w) => `${file(w)} ${w}w`).join(', '),

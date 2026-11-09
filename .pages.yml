@@ -1,0 +1,451 @@
+# Pages CMS configuration — https://pagescms.org/docs/configuration/
+# Defines the editing forms at app.pagescms.org. Every save commits to the
+# repository and the GitHub Actions workflow republishes the site (~2 minutes).
+#
+# If you add a service, also add it to the "Service" dropdown under Projects below.
+
+media:
+  input: content/media
+  output: /media
+  categories: [image]
+  rename: safe
+
+settings:
+  content:
+    merge: true
+
+content:
+  # ---------------------------------------------------------------------------
+  - name: careers
+    label: Careers & Job Openings
+    type: file
+    path: content/careers.json
+    format: json
+    fields:
+      - name: positions
+        label: Job openings
+        description: Add, edit or reorder open positions. To take a posting down for now without deleting it, turn on "Hide this posting".
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Job title
+            type: string
+            required: true
+          - name: type
+            label: Employment type
+            type: select
+            options:
+              values: [Full-time, Part-time, Seasonal, Temporary]
+          - name: text
+            label: Short description
+            type: text
+            required: true
+          - name: duties
+            label: What you'll do
+            description: One responsibility per line.
+            type: string
+            list: true
+          - name: reqs
+            label: What we're looking for
+            description: One requirement per line.
+            type: string
+            list: true
+          - name: closed
+            label: Hide this posting
+            description: Turn on when the position is filled. It disappears from the site but stays saved here.
+            type: boolean
+      - name: benefits
+        label: Benefits
+        description: Shown on the Careers page.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Benefit
+            type: string
+            required: true
+          - name: text
+            label: Description
+            type: text
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values:
+                - { name: dollar, label: Dollar sign }
+                - { name: heart, label: Heart (health) }
+                - { name: calendar, label: Calendar }
+                - { name: trending, label: Growth chart }
+                - { name: graduation, label: Graduation cap }
+                - { name: snowflake, label: Snowflake }
+                - { name: shield, label: Shield }
+                - { name: hardhat, label: Hard hat }
+                - { name: truck, label: Truck }
+                - { name: users, label: People }
+                - { name: award, label: Award }
+
+  # ---------------------------------------------------------------------------
+  - name: reviews
+    label: Reviews
+    type: file
+    path: content/reviews.json
+    format: json
+    fields:
+      - name: reviews
+        label: Customer reviews
+        description: Only post real reviews, copied word for word (for example from Google). They appear in the order listed.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: quote
+            label: Review text
+            type: text
+            required: true
+          - name: name
+            label: Reviewer's name
+            type: string
+            required: true
+          - name: role
+            label: Detail line
+            description: "Optional, e.g. \"Concrete driveway · Google review\""
+            type: string
+          - name: rating
+            label: Star rating
+            description: Leave blank if the review has no star rating.
+            type: select
+            options:
+              values: ["5", "4", "3", "2", "1"]
+
+  # ---------------------------------------------------------------------------
+  - name: projects
+    label: Projects
+    type: file
+    path: content/projects.json
+    format: json
+    fields:
+      - name: projects
+        label: Projects
+        description: Your portfolio. Projects appear in this order; turn on "Show on home page" to feature one in the home page carousel.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Project title
+            type: string
+            required: true
+          - name: service
+            label: Service
+            description: Decides which filter and service page the project appears under.
+            type: select
+            required: true
+            options:
+              values:
+                - { name: curb-machine, label: Curb Machine }
+                - { name: laser-screed, label: Laser Screed }
+                - { name: water-tanks, label: Water Tanks }
+                - { name: structural-foundations, label: Structural Foundations }
+                - { name: bridge-decks, label: Bridge Deck Services }
+                - { name: demo-replace, label: Demo & Replace }
+                - { name: precast, label: Precast Capabilities }
+                - { name: valve-can-manhole, label: Valve Can & Manhole Raise & Lower }
+                - { name: ada-installation, label: Certified ADA Installer }
+                - { name: smooth-trowel, label: Smooth Trowel Finishes }
+                - { name: energy-infrastructure, label: Energy Infrastructure }
+                - { name: general-contracting, label: General Contracting }
+          - name: image
+            label: Photo
+            type: image
+            required: true
+          - name: text
+            label: Description
+            type: text
+          - name: location
+            label: Location
+            description: Optional, e.g. "Price, UT"
+            type: string
+          - name: sector
+            label: Category label
+            description: Small line under the title, e.g. "Water infrastructure"
+            type: string
+          - name: scope
+            label: Scope tags
+            description: Short tags, e.g. "Cast-in-place walls"
+            type: string
+            list: true
+          - name: featured
+            label: Show on home page
+            type: boolean
+
+  # ---------------------------------------------------------------------------
+  - name: settings
+    label: Company Info
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: name
+        label: Company name
+        type: string
+        required: true
+      - name: legalName
+        label: Legal name
+        description: Used in the footer copyright line.
+        type: string
+      - name: description
+        label: Short description
+        description: Shown in the footer and in Google search results.
+        type: text
+      - name: phone
+        label: Phone
+        type: string
+        required: true
+      - name: email
+        label: Email
+        type: string
+        required: true
+      - name: address
+        label: Office address
+        type: object
+        fields:
+          - { name: street, label: Street, type: string }
+          - { name: city, label: City, type: string }
+          - { name: region, label: State, type: string }
+          - { name: zip, label: ZIP, type: string }
+      - name: hours
+        label: Office hours
+        type: object
+        list: true
+        fields:
+          - { name: days, label: Days, type: string }
+          - { name: time, label: Hours, type: string }
+      - name: serviceAreaLabel
+        label: Service area (short)
+        description: "Shown in the top bar, e.g. \"Utah & the Intermountain West\""
+        type: string
+      - name: serviceAreas
+        label: Service areas
+        description: Counties or cities you serve.
+        type: string
+        list: true
+      - name: license
+        label: License line
+        description: Shown in the footer.
+        type: string
+      - name: stats
+        label: Headline numbers
+        description: The big numbers on the home and About pages.
+        type: object
+        list: true
+        fields:
+          - { name: value, label: Number, type: number }
+          - { name: suffix, label: "Suffix (e.g. + or %)", type: string }
+          - { name: label, label: Label, type: string }
+      - name: social
+        label: Social media links
+        description: Full web addresses. Leave blank to hide an icon.
+        type: object
+        fields:
+          - { name: facebook, label: Facebook, type: string }
+          - { name: instagram, label: Instagram, type: string }
+          - { name: linkedin, label: LinkedIn, type: string }
+          - { name: youtube, label: YouTube, type: string }
+      - name: reviewsUrl
+        label: Google reviews link
+        description: When set, a "Read more reviews on Google" link appears next to the reviews.
+        type: string
+      - name: paymentsUrl
+        label: Online payments link
+        description: When set, a "Make a Payment" link appears in the top bar and footer.
+        type: string
+      - name: forms
+        label: Form delivery
+        description: Form service addresses (e.g. Formspree) that email you each submission. Ask your web developer before changing these.
+        type: object
+        fields:
+          - { name: estimate, label: Estimate request form, type: string }
+          - { name: careers, label: Job application form, type: string }
+
+  # ---------------------------------------------------------------------------
+  - name: home
+    label: Home Page
+    type: file
+    path: content/home.json
+    format: json
+    fields:
+      - name: hero
+        label: Top slideshow
+        type: object
+        fields:
+          - name: eyebrow
+            label: Small line above the headline
+            type: string
+          - name: title
+            label: Headline
+            description: Each line is shown on its own line; the last one is highlighted.
+            type: string
+            list:
+              min: 1
+              max: 3
+          - name: text
+            label: Intro text
+            type: text
+          - name: slides
+            label: Slides
+            description: Photos that rotate behind the headline. Wide (landscape) photos work best.
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: image, label: Photo, type: image }
+              - { name: video, label: Video (set up by your developer), type: string, hidden: true }
+
+  # ---------------------------------------------------------------------------
+  - name: about
+    label: About Page
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - name: storyLead
+        label: Our story — opening line
+        type: text
+      - name: story
+        label: Our story — paragraphs
+        type: text
+        list: true
+      - name: mission
+        label: Mission statement
+        description: Wrap words in *asterisks* to highlight them.
+        type: text
+
+  # ---------------------------------------------------------------------------
+  - name: services
+    label: Services
+    type: file
+    path: content/services.json
+    format: json
+    fields:
+      - name: services
+        label: Services
+        description: Each service gets its own page. Services appear in this order across the site.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Service name
+            type: string
+            required: true
+          - name: menuName
+            label: Short name
+            description: Used in menus and filters.
+            type: string
+          - name: slug
+            label: Page address
+            description: "Used in the link: /services/this-part/. Lowercase letters, numbers and dashes. Changing it breaks old links."
+            type: string
+            required: true
+            pattern:
+              regex: "^[a-z0-9-]+$"
+              message: Use lowercase letters, numbers and dashes only.
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values:
+                - { name: curb, label: Curb }
+                - { name: laser, label: Laser screed }
+                - { name: tank, label: Tank }
+                - { name: foundation, label: Foundation }
+                - { name: bridge, label: Bridge }
+                - { name: replace, label: Replace arrows }
+                - { name: precast, label: Precast panel }
+                - { name: manhole, label: Manhole cover }
+                - { name: ada, label: ADA domes }
+                - { name: trowel, label: Power trowel }
+                - { name: energy, label: Lightning bolt }
+                - { name: hardhat, label: Hard hat }
+                - { name: building, label: Building }
+                - { name: wall, label: Block wall }
+                - { name: slab, label: Slab }
+                - { name: excavator, label: Excavator }
+          - name: short
+            label: Card summary
+            description: One sentence shown on service cards.
+            type: text
+            required: true
+          - name: tagline
+            label: Tagline
+            type: string
+          - name: image
+            label: Main photo
+            description: Used on service cards and as the page banner. Wide (landscape) photos work best.
+            type: image
+            required: true
+          - name: label
+            label: Intro — small label
+            type: string
+          - name: heading
+            label: Intro — headline
+            type: string
+          - name: intro
+            label: Intro — paragraphs
+            type: text
+            list: true
+          - name: highlights
+            label: Highlights
+            description: Three short points shown beside the intro.
+            type: string
+            list: true
+          - name: detailImage
+            label: Intro photo
+            type: image
+          - name: capabilities
+            label: Capabilities
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Description, type: text }
+          - name: gallery
+            label: Gallery photos
+            description: Up to five photos for the page gallery.
+            type: image
+            list:
+              max: 5
+          - name: faqs
+            label: Questions & answers
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{q}"
+            fields:
+              - { name: q, label: Question, type: string }
+              - { name: a, label: Answer, type: text }
+          - name: video
+            label: Video (set up by your developer)
+            type: string
+            hidden: true

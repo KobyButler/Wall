@@ -1,23 +1,27 @@
 #!/usr/bin/env node
-// Static site build — no dependencies.
+// Static site build — no npm dependencies.
 //
 //   node build.mjs           build the site into ./dist
 //   node build.mjs --serve   build, serve on http://localhost:4321, rebuild + live-reload on change
 //
 // Pages live in src/pages/*.mjs. Each default-exports a function returning a
 // page object ({ path, title, description, body, ... }) or an array of them.
+// Editable content lives in content/*.json and photos in content/media; photos
+// are resized by scripts/optimize-images.py (Python + Pillow) into .cache/images.
 
 import fs from 'node:fs/promises';
 import { existsSync, watch, createReadStream, statSync } from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
 import crypto from 'node:crypto';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, 'src');
 const PUBLIC = path.join(ROOT, 'public');
+const CONTENT = path.join(ROOT, 'content');
+const IMAGE_CACHE = path.join(ROOT, '.cache', 'images');
 const DIST = path.join(ROOT, 'dist');
 const PORT = Number(process.env.PORT) || 4321;
 const args = process.argv.slice(2);
@@ -26,19 +30,35 @@ const load = async (rel) => (await import(pathToFileURL(path.join(SRC, rel)).hre
 
 const hashFile = async (file) => crypto.createHash('md5').update(await fs.readFile(file)).digest('hex').slice(0, 8);
 
+// Resize new or changed photos in content/media (incremental — usually instant).
+function optimizeImages() {
+  if (process.env.SKIP_IMAGES === '1') return;
+  const script = path.join(ROOT, 'scripts', 'optimize-images.py');
+  for (const python of process.env.PYTHON ? [process.env.PYTHON] : ['python3', 'python', 'py']) {
+    const result = spawnSync(python, [script], { stdio: 'inherit' });
+    if (result.error?.code === 'ENOENT') continue;
+    if (result.status !== 0) throw new Error('Photo optimization failed (scripts/optimize-images.py).');
+    return;
+  }
+  if (!existsSync(path.join(IMAGE_CACHE, 'images.json'))) {
+    throw new Error('Python 3 with Pillow is needed to prepare photos: install Python, then run `pip install Pillow`.');
+  }
+  console.warn('  ⚠ Python not found — using previously optimized photos from .cache/images.');
+}
+
 // '/', 'wall', '/wall' and '/wall/' all become a path with leading and trailing slashes.
 const normalizeBase = (base) => `/${String(base ?? '').replace(/^\/+|\/+$/g, '')}/`.replace(/\/+/g, '/');
 
 async function build({ dev = false } = {}) {
   const started = Date.now();
+  optimizeImages();
   const { ctx } = await import(pathToFileURL(path.join(SRC, 'lib/ctx.mjs')).href);
   const { documentHtml } = await import(pathToFileURL(path.join(SRC, 'lib/layout.mjs')).href);
-  const projectsModule = await import(pathToFileURL(path.join(SRC, 'data/projects.mjs')).href);
+  const { loadContent } = await import(pathToFileURL(path.join(SRC, 'lib/load-content.mjs')).href);
 
-  ctx.site = await load('data/site.mjs');
-  ctx.services = await load('data/services.mjs');
-  ctx.projects = projectsModule.default;
-  ctx.images = JSON.parse(await fs.readFile(path.join(SRC, 'data/images.json'), 'utf8'));
+  const content = await loadContent(ROOT, await load('data/site.mjs'), ctx.warn);
+  Object.assign(ctx, content);
+  ctx.images = JSON.parse(await fs.readFile(path.join(IMAGE_CACHE, 'images.json'), 'utf8'));
   // Deploy-time overrides, set by the GitHub Pages workflow (.github/workflows/deploy.yml).
   if (process.env.SITE_URL) ctx.site.url = process.env.SITE_URL;
   ctx.base = normalizeBase(process.env.BASE_PATH ?? ctx.site.basePath);
@@ -47,6 +67,7 @@ async function build({ dev = false } = {}) {
 
   await fs.rm(DIST, { recursive: true, force: true });
   await fs.cp(PUBLIC, DIST, { recursive: true });
+  await fs.cp(path.join(IMAGE_CACHE, 'photos'), path.join(DIST, 'assets', 'img', 'photos'), { recursive: true });
 
   for (const file of ['css/main.css', 'js/main.js']) {
     ctx.versions[file] = await hashFile(path.join(PUBLIC, 'assets', file));
@@ -81,23 +102,20 @@ async function build({ dev = false } = {}) {
   );
 
   console.log(`✔ Built ${pages.length} pages into dist/ in ${Date.now() - started}ms (base ${ctx.base}${ctx.noindex ? ', noindex' : ''})`);
-  if (!dev) warnPlaceholders(ctx, projectsModule);
+  if (!dev) warnPlaceholders(ctx);
 }
 
-async function warnPlaceholders(ctx, projectsModule) {
-  const { testimonials } = await import(pathToFileURL(path.join(SRC, 'data/content.mjs')).href);
+function warnPlaceholders(ctx) {
   const { site } = ctx;
   const warnings = [];
   if (/555-01\d\d/.test(site.phone)) warnings.push(`phone is a placeholder (${site.phone})`);
   if (/example\.(com|org)/.test(site.email)) warnings.push(`email is a placeholder (${site.email})`);
   if (/example\.com/.test(site.url)) warnings.push(`site url is a placeholder (${site.url})`);
   if (!site.forms.estimate || !site.forms.careers) warnings.push('form endpoints are not set (site.forms) — forms will ask visitors to call or email');
-  if (testimonials.placeholder) warnings.push('testimonials are placeholders (src/data/content.mjs)');
-  if (projectsModule.placeholder) warnings.push('projects are sample entries (src/data/projects.mjs)');
   if (warnings.length) {
     console.warn(`\n⚠ ${warnings.length} placeholder item(s) to replace before launch:`);
     for (const w of warnings) console.warn(`  • ${w}`);
-    console.warn('  (search the src/ folder for "PLACEHOLDER" for the full list)\n');
+    console.warn('  (search src/ and content/ for "PLACEHOLDER" for the full list)\n');
   }
 }
 
@@ -162,7 +180,7 @@ function serve() {
       }
     });
   };
-  for (const dir of [SRC, PUBLIC]) {
+  for (const dir of [SRC, PUBLIC, CONTENT]) {
     watch(dir, { recursive: true }, () => {
       clearTimeout(timer);
       timer = setTimeout(rebuild, 120);

@@ -1,0 +1,32 @@
+{
+  "hero": {
+    "eyebrow": "Concrete Specialists — Price, Utah",
+    "title": [
+      "Built solid.",
+      "Built to last."
+    ],
+    "text": "From water tanks and bridge decks to laser-screeded floors and slip-formed curb, our crews deliver concrete work that’s on schedule and done right the first time.",
+    "slides": [
+      {
+        "label": "Water Tanks",
+        "image": "/media/tank-crew-forms.jpg"
+      },
+      {
+        "label": "Structural Foundations",
+        "image": "/media/walls-redrock.jpg"
+      },
+      {
+        "label": "Laser Screed & Floors",
+        "image": "/media/warehouse-slab.jpg"
+      },
+      {
+        "label": "Bridge Decks",
+        "image": "/media/bridge-highway.jpg"
+      },
+      {
+        "label": "Commercial & Industrial",
+        "image": "/media/foundation-snow.jpg"
+      }
+    ]
+  }
+}

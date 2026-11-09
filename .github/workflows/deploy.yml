@@ -24,6 +24,21 @@ jobs:
       - id: pages
         uses: actions/configure-pages@v5
 
+      # Photos in content/media are resized to WebP by scripts/optimize-images.py.
+      # The cache keeps already-processed photos, so only new uploads are resized.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install photo tools
+        run: pip install --quiet Pillow pillow-heif
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/images
+          key: images-${{ hashFiles('content/media/**', 'scripts/optimize-images.py') }}
+          restore-keys: images-
+
       - name: Build site
         run: node build.mjs
         env:
