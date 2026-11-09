@@ -7,6 +7,8 @@ import { values, markets, safety } from '../data/content.mjs';
 export default function about() {
   const { site } = ctx;
   const crumbs = [{ label: 'About', path: 'about/' }];
+  const areaArticle = /^the /i.test(site.serviceAreaLabel) ? 'the ' : '';
+  const areaName = site.serviceAreaLabel.replace(/^the /i, '');
   return {
     path: 'about/',
     title: 'About Us',
@@ -88,9 +90,9 @@ export default function about() {
         <div class="container area__grid">
           <div data-reveal>
             ${eyebrow('Service Area')}
-            <h2 class="h2">Proudly serving <span class="hl">${site.region}.</span></h2>
-            <p class="lead">From our home base in ${site.address.city}, our crews work throughout Carbon and Emery counties and communities across Central &amp; Eastern Utah.</p>
-            <ul class="area-list area-list--dark">${site.serviceAreas.map((a) => html`<li>${a}</li>`)}</ul>
+            <h2 class="h2">Proudly serving ${areaArticle}<span class="hl">${areaName}.</span></h2>
+            <p class="lead">From our home base in ${site.address.city}, ${site.address.region}, our crews take on projects across ${site.serviceAreaLabel}.</p>
+            ${site.serviceAreas.length > 1 ? html`<ul class="area-list area-list--dark">${site.serviceAreas.map((a) => html`<li>${a}</li>`)}</ul>` : ''}
             <p class="area__note">Not sure if we cover your area? <a href="${url('contact/')}">Ask us</a> — we travel for the right project.</p>
           </div>
           <div class="area__map" data-reveal style="--d:1">${utahMap()}</div>

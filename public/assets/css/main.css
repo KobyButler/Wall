@@ -696,10 +696,11 @@ html.menu-open { overflow: hidden; }
 .area-list li { display: flex; align-items: center; gap: 0.6rem; }
 .area-list li::before { content: ''; width: 7px; height: 7px; background: var(--accent); transform: rotate(45deg); flex: none; }
 .area-list--dark { color: var(--text); margin-top: 1.5rem; font-weight: 500; }
+.area-single { margin: 0; }
+.area-single.area-list--dark { margin-top: 1.25rem; }
 
 .utah-map { color: var(--on-dark); }
 .utah-map svg { width: 100%; height: auto; overflow: visible; }
-.utah-map__radius { fill: rgb(245 167 10 / 0.14); stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 6 6; }
 .utah-map__pulse { fill: var(--accent); transform-box: fill-box; transform-origin: center; animation: pulse 2.4s var(--ease) infinite; }
 .utah-map__city circle { fill: currentColor; opacity: 0.6; }
 .utah-map text { font: 600 24px var(--font-body); fill: currentColor; opacity: 0.8; }

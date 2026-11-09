@@ -56,7 +56,7 @@ export const safety = [
 export const generalFaqs = [
   { q: 'Do you offer free estimates?', a: 'Yes. Tell us about your project through the form or give us a call and we will set up a time to look at the site and provide a free, detailed estimate.' },
   { q: 'What kinds of projects do you take on?', a: 'We focus on commercial, industrial, municipal, transportation and energy work: water tanks, structural foundations, bridge decks, large slabs, curb and more. Not sure if your project fits? Give us a call.' },
-  { q: 'What areas do you serve?', a: 'We’re based in Price and work throughout Carbon and Emery counties and the surrounding region. If you are not sure whether we cover your location, just ask.' },
+  { q: 'What areas do you serve?', a: 'We’re based in {city}, Utah, and take on projects across {area}. If you are not sure whether we cover your location, just ask.' },
   { q: 'Can you pour concrete in the winter?', a: 'Yes. We use cold-weather practices — ground thaw, heated enclosures, insulated blankets and winter mix designs — so projects can keep moving through Utah winters.' },
   { q: 'How far out are you booking?', a: 'It depends on the season and project size. Reach out with your timeline and we will give you an honest answer on when we can start.' },
 ];

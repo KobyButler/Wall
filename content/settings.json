@@ -14,26 +14,11 @@
     {
       "days": "Mon – Fri",
       "time": "7:00 AM – 5:00 PM"
-    },
-    {
-      "days": "Saturday",
-      "time": "By appointment"
-    },
-    {
-      "days": "Sunday",
-      "time": "Closed"
     }
   ],
-  "serviceAreaLabel": "Utah & the Intermountain West",
+  "serviceAreaLabel": "the Inter Mountain West",
   "serviceAreas": [
-    "Carbon County",
-    "Emery County",
-    "Utah County",
-    "Sanpete County",
-    "Duchesne County",
-    "Uintah County",
-    "Grand County",
-    "Wasatch County"
+    "Inter Mountain West"
   ],
   "license": "Licensed & insured in the State of Utah",
   "stats": [
@@ -48,9 +33,9 @@
       "label": "Projects completed"
     },
     {
-      "value": 45000,
+      "value": 40000,
       "suffix": "+",
-      "label": "Cubic yards placed"
+      "label": "Yards of concrete placed"
     },
     {
       "value": 100,

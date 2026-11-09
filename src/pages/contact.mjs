@@ -1,12 +1,14 @@
 import { html } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
-import { eyebrow, pageHero, estimateForm, faqList, faqJsonLd, addressLine, mapsHref, utahMap } from '../lib/components.mjs';
+import { eyebrow, pageHero, estimateForm, faqList, faqJsonLd, addressLine, mapsHref, utahMap, serviceAreaInfo } from '../lib/components.mjs';
 import { generalFaqs } from '../data/content.mjs';
 
 export default function contact() {
   const { site } = ctx;
   const crumbs = [{ label: 'Contact', path: 'contact/' }];
+  // FAQ answers can use {city} and {area} to pull in Company Info.
+  const faqs = generalFaqs.map((f) => ({ ...f, a: f.a.replace('{city}', site.address.city).replace('{area}', site.serviceAreaLabel) }));
   const cards = [
     { icon: 'phone', label: 'Call us', value: site.phone, href: telHref(site.phone), note: 'Talk to our office directly' },
     { icon: 'mail', label: 'Email us', value: site.email, href: `mailto:${site.email}`, note: 'Send plans, photos or questions' },
@@ -18,7 +20,7 @@ export default function contact() {
     title: 'Contact & Free Estimates',
     description: `Request a free concrete estimate from ${site.name}. Call ${site.phone} or send us your project details online.`,
     crumbs,
-    jsonLd: [faqJsonLd(generalFaqs)],
+    jsonLd: [faqJsonLd(faqs)],
     bodyClass: 'page--contact',
     cta: false,
     body: html`
@@ -63,7 +65,7 @@ export default function contact() {
             <div class="aside-card">
               <h3 class="aside-card__title">Service area</h3>
               ${utahMap()}
-              <ul class="area-list area-list--dark">${site.serviceAreas.map((a) => html`<li>${a}</li>`)}</ul>
+              ${serviceAreaInfo('area-list--dark')}
             </div>
             <a class="aside-card aside-card--link" href="${url('careers/')}">
               <span class="aside-card__icon">${icon('hardhat', { size: 26 })}</span>
@@ -85,7 +87,7 @@ export default function contact() {
             <h2 class="h2">Frequently asked <span class="hl">questions.</span></h2>
             <p>Can’t find what you’re looking for? Call us at <a href="${telHref(site.phone)}">${site.phone}</a>.</p>
           </div>
-          ${faqList(generalFaqs)}
+          ${faqList(faqs)}
         </div>
       </section>
     `,

@@ -2,7 +2,7 @@ import { html, raw, cx } from '../lib/html.mjs';
 import { icon, logoMark } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
 import {
-  img, btn, eyebrow, sectionHead, serviceCard, projectCard, projectData, lightbox, statsBand, whySection,
+  serviceAreaInfo, img, btn, eyebrow, sectionHead, serviceCard, projectCard, projectData, lightbox, statsBand, whySection,
   processSection, testimonialsSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc, photoSrc,
 } from '../lib/components.mjs';
 
@@ -78,7 +78,7 @@ function intro() {
       <div class="intro__copy" data-reveal style="--d:1">
         ${eyebrow('Who We Are')}
         <h2 class="h2">Concrete &amp; construction, <span class="hl">done right</span> the first time.</h2>
-        <p class="lead">${site.name} is a concrete specialist based in ${site.address.city}, serving municipalities, contractors, industry and energy across ${site.region}.</p>
+        <p class="lead">${site.name} is a concrete specialist based in ${site.address.city}, serving municipalities, contractors, industry and energy across ${site.serviceAreaLabel}.</p>
         <p>We self-perform every phase of the job — excavation, forming, rebar, placement and finishing — so quality never gets handed off. Whether it’s a water tank, a bridge deck or a warehouse floor, you get the same careful planning, clean jobsite and craftsmanship on every pour.</p>
         ${checklist(['Commercial, industrial & municipal', 'Licensed & insured', 'Self-performing crews', 'Free, detailed estimates'], 'checklist--2col')}
         <div class="actions">
@@ -110,7 +110,7 @@ function featuredProjects(featured) {
       ${sectionHead({
         eyebrow: 'Recent Work',
         title: 'Concrete for *any* application.',
-        text: 'Water tanks, foundations, bridge decks, slabs and curb across Carbon County, Emery County and beyond. Select any project to see the details.',
+        text: `Water tanks, foundations, bridge decks, slabs and curb across ${ctx.site.serviceAreaLabel}. Select any project to see the details.`,
         actions: html`<div class="carousel-nav">
           <button type="button" class="icon-btn icon-btn--outline" data-carousel-prev aria-label="Scroll projects left">${icon('chevronLeft')}</button>
           <button type="button" class="icon-btn icon-btn--outline" data-carousel-next aria-label="Scroll projects right">${icon('chevronRight')}</button>
@@ -166,7 +166,7 @@ function contact() {
           ${utahMap()}
           <div>
             <h3 class="contact-block__map-title">Our service area</h3>
-            <ul class="area-list">${site.serviceAreas.map((a) => html`<li>${a}</li>`)}</ul>
+            ${serviceAreaInfo()}
           </div>
         </div>
       </div>
