@@ -12,7 +12,7 @@ export default function contact() {
   const cards = [
     { icon: 'phone', label: 'Call us', value: site.phone, href: telHref(site.phone), note: 'Talk to our office directly' },
     { icon: 'mail', label: 'Email us', value: site.email, href: `mailto:${site.email}`, note: 'Send plans, photos or questions' },
-    { icon: 'pin', label: 'Visit our office', value: addressLine(), href: mapsHref(), note: 'Get directions', external: true },
+    { icon: 'pin', label: 'Visit our office', value: addressLine(), href: mapsHref(), note: site.mailingAddress ? `Mailing: ${site.mailingAddress}` : 'Get directions', external: true },
     { icon: 'clock', label: 'Office hours', value: `${site.hours[0].days}: ${site.hours[0].time}`, note: site.hours.slice(1).map((h) => `${h.days}: ${h.time}`).join(' · ') },
   ];
   return {

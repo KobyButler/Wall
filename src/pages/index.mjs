@@ -78,9 +78,9 @@ function intro() {
       <div class="intro__copy" data-reveal style="--d:1">
         ${eyebrow('Who We Are')}
         <h2 class="h2">Concrete &amp; construction, <span class="hl">done right</span> the first time.</h2>
-        <p class="lead">${site.name} is a concrete specialist based in ${site.address.city}, serving municipalities, contractors, industry and energy across ${site.serviceAreaLabel}.</p>
-        <p>We self-perform every phase of the job — excavation, forming, rebar, placement and finishing — so quality never gets handed off. Whether it’s a water tank, a bridge deck or a warehouse floor, you get the same careful planning, clean jobsite and craftsmanship on every pour.</p>
-        ${checklist(['Commercial, industrial & municipal', 'Licensed & insured', 'Self-performing crews', 'Free, detailed estimates'], 'checklist--2col')}
+        <p class="lead">${site.name} is a family-owned concrete contractor based in ${site.address.city}. Our family has been in concrete construction for more than 50 years, and today our crews work across ${site.serviceAreaLabel}.</p>
+        <p>Our 50+ full-time employees take on heavy formwork, large industrial slabs and complex industrial plants, along with highways, bridge decks, water tanks and power plants. Our crew leads have 10+ years of experience and have worked together that whole time, so you get the same careful planning and craftsmanship on every pour.</p>
+        ${checklist(['Family owned & operated', 'Utah licensed B100 & E100', 'Federal, state & private work', 'Ready for 24/7 schedules'], 'checklist--2col')}
         <div class="actions">
           ${btn('More About Us', url('about/'))}
           <a class="phone-link phone-link--dark" href="${telHref(site.phone)}"><span class="phone-link__icon">${icon('phone', { size: 20 })}</span><span><small>Talk to our team</small><strong>${site.phone}</strong></span></a>

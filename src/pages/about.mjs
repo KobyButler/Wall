@@ -1,8 +1,32 @@
 import { html } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
-import { ctx, url } from '../lib/ctx.mjs';
+import { ctx, url, telHref } from '../lib/ctx.mjs';
 import { img, btn, eyebrow, sectionHead, pageHero, statsBand, checklist, utahMap, testimonialsSection, fmt } from '../lib/components.mjs';
 import { values, markets, safety } from '../data/content.mjs';
+
+// "K. Geoffrey Madsen" -> "KM"
+const initials = (name) => {
+  const words = name.split(/\s+/).filter((w) => /[a-z]/i.test(w));
+  return (words[0][0] + (words.length > 1 ? words.at(-1)[0] : '')).toUpperCase();
+};
+
+function team() {
+  const members = ctx.about.team;
+  if (!members.length) return '';
+  return html`<section class="section section--paper team" id="team">
+    <div class="container">
+      ${sectionHead({ eyebrow: 'Our Team', title: 'The people *behind the work.*', text: 'A family-run company led by people who have spent their careers in concrete construction.' })}
+      <ul class="team-grid">${members.map((m, i) => html`<li class="team-card" data-reveal style="--d:${i}">
+        ${m.photo
+          ? html`<figure class="team-card__photo">${img(m.photo, { sizes: '112px', alt: `Portrait of ${m.name}` })}</figure>`
+          : html`<span class="team-card__initials" aria-hidden="true">${initials(m.name)}</span>`}
+        <h3 class="team-card__name">${m.name}</h3>
+        ${m.title ? html`<span class="team-card__title">${m.title}</span>` : ''}
+        ${m.phone ? html`<a class="team-card__phone" href="${telHref(m.phone)}">${icon('phone', { size: 16 })}${m.phone}</a>` : ''}
+      </li>`)}</ul>
+    </div>
+  </section>`;
+}
 
 export default function about() {
   const { site } = ctx;
@@ -12,14 +36,14 @@ export default function about() {
   return {
     path: 'about/',
     title: 'About Us',
-    description: `Learn about ${site.name} — a local, full-service concrete contractor built on safety, quality and integrity, serving ${site.serviceAreaLabel}.`,
+    description: `Learn about ${site.name}, a family-owned concrete contractor with more than 50 years in the industry, serving ${site.serviceAreaLabel}.`,
     crumbs,
     body: html`
       ${pageHero({
         image: 'foundation-forms-redrock',
         eyebrow: 'About Us',
         title: 'Building on a *solid foundation.*',
-        text: 'A local concrete and construction company built on hard work, honest communication and craftsmanship that lasts.',
+        text: 'A family-owned concrete and construction company with more than 50 years in the industry.',
         crumbs,
       })}
 
@@ -27,7 +51,7 @@ export default function about() {
         <div class="container story__grid">
           <div class="story__copy" data-reveal>
             ${eyebrow('Our Story')}
-            <h2 class="h2">Local roots. <span class="hl">Solid</span> reputation.</h2>
+            <h2 class="h2">Family owned. <span class="hl">Family run.</span></h2>
             ${ctx.about.storyLead ? html`<p class="lead">${ctx.about.storyLead}</p>` : ''}
             ${ctx.about.story.map((p) => html`<p>${p}</p>`)}
             <div class="actions">${btn('Explore Our Services', url('services/'))}${btn('See Our Work', url('projects/'), { variant: 'outline', iconName: 'arrowUpRight' })}</div>
@@ -45,6 +69,8 @@ export default function about() {
           <p class="mission__text">${fmt(ctx.about.mission)}</p>
         </div>
       </section>
+
+      ${team()}
 
       <section class="section section--light values-section">
         <div class="container">
@@ -70,6 +96,7 @@ export default function about() {
             <h2 class="h2">Safety isn’t a slogan. <span class="hl">It’s the plan.</span></h2>
             <p class="lead">Concrete work is heavy, fast-moving and unforgiving. We take that seriously.</p>
             <p>Every pour starts with a plan for doing it safely — the right people, the right equipment and a crew that knows the hazards before the first truck arrives. It protects our people, our clients and the quality of the work.</p>
+            <p>We’ve worked under every kind of safety program, from owners and general contractors to coal mines, power plants and active industrial sites.</p>
             ${checklist(safety, 'checklist--2col')}
           </div>
         </div>
@@ -77,7 +104,7 @@ export default function about() {
 
       <section class="section section--ink markets">
         <div class="container">
-          ${sectionHead({ eyebrow: 'Who We Serve', title: 'Trusted by cities, contractors *and* industry.', light: true, text: 'Big or small, public or private — every project gets the same level of care.' })}
+          ${sectionHead({ eyebrow: 'Who We Serve', title: 'From parks and highways *to heavy industry.*', light: true, text: 'We’ve worked in virtually every type of concrete construction, for owners, engineers, general contractors and public agencies.' })}
           <ul class="market-grid">${markets.map((m, i) => html`<li class="market-card" data-reveal style="--d:${i}">
             <span class="market-card__icon">${icon(m.icon, { size: 28 })}</span>
             <h3 class="market-card__title">${m.title}</h3>

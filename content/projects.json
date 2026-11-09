@@ -377,5 +377,121 @@
       ],
       "featured": false
     }
+  ],
+  "experience": [
+    {
+      "name": "SR-276 & SR-95",
+      "detail": "North Wash to Park & MP 34–41",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "I-70",
+      "detail": "Crescent Junction to SR-128 West of Cisco & SR-94",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "Kane Creek Boulevard Reconstruction",
+      "detail": "",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "US-40",
+      "detail": "Antelope Creek to Pole Line Rd",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "US-6",
+      "detail": "Grassy Trail Creek to Icelander",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "SR-162 & SR-262",
+      "detail": "Safety and Energy Corridor Project",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "Canyonlands Regional Airport",
+      "detail": "Airport improvements",
+      "category": "Highways & Transportation",
+      "current": false
+    },
+    {
+      "name": "Mesa Verde National Park",
+      "detail": "Cliff Palace & Mesa Top Loop Roads",
+      "category": "National Parks",
+      "current": false
+    },
+    {
+      "name": "Mesa Verde National Park",
+      "detail": "Cedar Tree Tower Road",
+      "category": "National Parks",
+      "current": false
+    },
+    {
+      "name": "Arches National Park",
+      "detail": "",
+      "category": "National Parks",
+      "current": false
+    },
+    {
+      "name": "Zion National Park",
+      "detail": "",
+      "category": "National Parks",
+      "current": false
+    },
+    {
+      "name": "Dinosaur National Monument",
+      "detail": "",
+      "category": "National Parks",
+      "current": false
+    },
+    {
+      "name": "Amazon Distribution Buildings",
+      "detail": "Price, UT & Butte, MT",
+      "category": "Industrial & Commercial",
+      "current": false
+    },
+    {
+      "name": "Bath House at Fossil Rock Mine",
+      "detail": "",
+      "category": "Industrial & Commercial",
+      "current": false
+    },
+    {
+      "name": "Water Tanks",
+      "detail": "Multiple projects",
+      "category": "Industrial & Commercial",
+      "current": false
+    },
+    {
+      "name": "Intermountain Electronics Warehouse",
+      "detail": "Lowdermilk Buildings 2025",
+      "category": "Industrial & Commercial",
+      "current": true
+    },
+    {
+      "name": "Intermountain Electronics Price Expansion",
+      "detail": "",
+      "category": "Industrial & Commercial",
+      "current": true
+    },
+    {
+      "name": "US-40",
+      "detail": "Current Creek to SR-208",
+      "category": "Highways & Transportation",
+      "current": true
+    },
+    {
+      "name": "US-6",
+      "detail": "Woodside to Sub-Station",
+      "category": "Highways & Transportation",
+      "current": true
+    }
   ]
 }

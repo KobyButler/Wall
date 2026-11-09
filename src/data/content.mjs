@@ -5,20 +5,20 @@
 
 export const why = [
   {
-    title: 'Self-performing crews',
-    text: 'Our own trained crews handle excavation, forming, pouring and finishing. No hand-offs, no finger-pointing — one team accountable for the result.',
+    title: 'Family owned for 50+ years',
+    text: 'Our family has been in concrete construction for more than half a century. We treat our crews, and the businesses we work with, like family.',
   },
   {
-    title: 'Built for Utah conditions',
-    text: 'Mix designs, base prep and curing methods chosen for freeze-thaw cycles, clay soils and hot, dry summers.',
+    title: 'Crews that work together',
+    text: 'Our crew leads and about half of our team have 10+ years in concrete, and they’ve worked side by side that whole time.',
   },
   {
-    title: 'On schedule, on budget',
-    text: 'Detailed estimates, realistic schedules and proactive communication from the first bid to the final walkthrough.',
+    title: 'Built for hard deadlines',
+    text: 'Shutdowns and overhauls that run 24 hours a day, 7 days a week. We plan for adverse conditions and keep the job moving.',
   },
   {
-    title: 'Safety & quality first',
-    text: 'Daily safety briefings, clean and organized jobsites, and work we are proud to put our name on.',
+    title: 'Safe, smart and hard',
+    text: 'We work alongside owners, engineers, general contractors and every kind of safety program, and our name is on every pour.',
   },
 ];
 
@@ -37,11 +37,12 @@ export const values = [
 ];
 
 export const markets = [
-  { icon: 'landmark', title: 'Municipalities & water districts', text: 'Water tanks, curb & gutter, ADA ramps and utility adjustments.' },
-  { icon: 'building', title: 'Commercial & industrial', text: 'Structural foundations, laser-screeded floors and site concrete.' },
-  { icon: 'energy', title: 'Energy & utilities', text: 'Equipment foundations and industrial concrete for active facilities.' },
-  { icon: 'bridge', title: 'Transportation', text: 'Bridge decks, approach slabs, barriers and roadway concrete.' },
-  { icon: 'layers', title: 'General contractors & developers', text: 'A dependable concrete partner that hits its dates.' },
+  { icon: 'road', title: 'Federal & state highways', text: 'Bridge deck and barrier repair, approach slabs and roadway concrete on interstate, US and state routes.' },
+  { icon: 'mountain', title: 'National parks', text: 'Road and site concrete in Mesa Verde, Arches, Zion and Dinosaur National Monument.' },
+  { icon: 'building', title: 'Industrial & commercial', text: 'Industrial plants, distribution buildings, heavy formwork and large industrial slabs.' },
+  { icon: 'excavator', title: 'Mining & material handling', text: 'Coal mines, material handling facilities and waste disposal sites.' },
+  { icon: 'energy', title: 'Energy & utilities', text: 'Power plants, large compressor sites and equipment foundations on active facilities.' },
+  { icon: 'landmark', title: 'Municipalities & water', text: 'Water tanks, water and sewer treatment plants, curb & gutter and ADA ramps.' },
 ];
 
 export const safety = [
@@ -55,8 +56,11 @@ export const safety = [
 
 export const generalFaqs = [
   { q: 'Do you offer free estimates?', a: 'Yes. Tell us about your project through the form or give us a call and we will set up a time to look at the site and provide a free, detailed estimate.' },
-  { q: 'What kinds of projects do you take on?', a: 'We focus on commercial, industrial, municipal, transportation and energy work: water tanks, structural foundations, bridge decks, large slabs, curb and more. Not sure if your project fits? Give us a call.' },
+  { q: 'What kinds of projects do you take on?', a: 'Virtually every type of concrete construction: industrial plants, coal mines and material handling facilities, federal and state highways, national parks, bridge deck and barrier repair, water tanks, water and sewer treatment plants, power plants and compressor sites. Not sure if your project fits? Give us a call.' },
+  { q: 'Are you licensed?', a: 'Yes. We’re licensed in the State of Utah as a B100 General Building and E100 General Engineering contractor.' },
   { q: 'What areas do you serve?', a: 'We’re based in {city}, Utah, and take on projects across {area}. If you are not sure whether we cover your location, just ask.' },
+  { q: 'Can you work around-the-clock schedules?', a: 'Yes. We regularly take on projects with hard deadlines, including overhauls that run 24 hours a day, 7 days a week.' },
+  { q: 'Can you provide references?', a: 'Yes. We can provide referrals on request, and we’re glad to walk you through similar projects we’ve completed.' },
   { q: 'Can you pour concrete in the winter?', a: 'Yes. We use cold-weather practices — ground thaw, heated enclosures, insulated blankets and winter mix designs — so projects can keep moving through Utah winters.' },
   { q: 'How far out are you booking?', a: 'It depends on the season and project size. Reach out with your timeline and we will give you an honest answer on when we can start.' },
 ];

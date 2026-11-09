@@ -188,6 +188,32 @@ content:
           - name: featured
             label: Show on home page
             type: boolean
+      - name: experience
+        label: Track record (named projects)
+        description: A text list of notable jobs, shown below the photos on the Projects page and grouped by category. No photo needed. Turn on "Currently under construction" for active jobs.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name} {detail}"
+        fields:
+          - name: name
+            label: Project name
+            description: "e.g. \"US-40\" or \"Arches National Park\""
+            type: string
+            required: true
+          - name: detail
+            label: Detail
+            description: "Optional second line, e.g. \"Antelope Creek to Pole Line Rd\""
+            type: string
+          - name: category
+            label: Category
+            type: select
+            options:
+              values: [Highways & Transportation, National Parks, Industrial & Commercial, Water & Utilities, Energy]
+          - name: current
+            label: Currently under construction
+            type: boolean
 
   # ---------------------------------------------------------------------------
   - name: settings
@@ -224,6 +250,10 @@ content:
           - { name: city, label: City, type: string }
           - { name: region, label: State, type: string }
           - { name: zip, label: ZIP, type: string }
+      - name: mailingAddress
+        label: Mailing address
+        description: "Optional, e.g. a PO Box. Shown in the footer and on the Contact page."
+        type: string
       - name: hours
         label: Office hours
         type: object
@@ -334,6 +364,30 @@ content:
         label: Mission statement
         description: Wrap words in *asterisks* to highlight them.
         type: text
+      - name: team
+        label: Our team
+        description: Shown on the About page in this order. Without a photo, the person's initials are shown instead.
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: title
+            label: Job title
+            type: string
+          - name: phone
+            label: Direct phone
+            description: Optional. Leave blank to keep this number off the website.
+            type: string
+          - name: photo
+            label: Photo
+            description: Optional. A square headshot works best.
+            type: image
 
   # ---------------------------------------------------------------------------
   - name: services

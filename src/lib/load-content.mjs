@@ -104,6 +104,11 @@ export async function loadContent(root, defaults, warn) {
     }];
   });
 
+  // Named jobs for the "Track Record" list (text only, no photos).
+  const experienceList = list(projects.experience)
+    .filter((e) => str(e.name))
+    .map((e) => ({ name: str(e.name), detail: str(e.detail), category: str(e.category) || 'Other Projects', current: e.current === true || e.current === 'true' }));
+
   // --- Reviews ------------------------------------------------------------------
   const reviewList = list(reviews.reviews)
     .filter((r) => str(r.quote) && str(r.name))
@@ -121,7 +126,14 @@ export async function loadContent(root, defaults, warn) {
   };
 
   // --- About --------------------------------------------------------------------
-  const aboutData = { storyLead: str(about.storyLead), story: strings(about.story), mission: str(about.mission) };
+  const aboutData = {
+    storyLead: str(about.storyLead),
+    story: strings(about.story),
+    mission: str(about.mission),
+    team: list(about.team)
+      .filter((m) => str(m.name))
+      .map((m) => ({ name: str(m.name), title: str(m.title), phone: str(m.phone), photo: str(m.photo) })),
+  };
 
-  return { site, services: serviceList, projects: projectList, reviews: reviewList, careers: careerData, about: aboutData };
+  return { site, services: serviceList, projects: projectList, experience: experienceList, reviews: reviewList, careers: careerData, about: aboutData };
 }

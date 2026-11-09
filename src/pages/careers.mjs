@@ -40,8 +40,8 @@ export default function careers() {
           <div class="careers-intro__copy" data-reveal style="--d:1">
             ${eyebrow('Life at Wall Concrete')}
             <h2 class="h2">Investing in our people, <span class="hl">always.</span></h2>
-            <p class="lead">Our crews are the reason our work stands out — so we treat them that way.</p>
-            <p>We offer competitive pay, real benefits, consistent hours and a clear path to grow. Whether you’re a seasoned finisher or looking for your first job in construction, you’ll learn from experienced foremen and work on projects you can point to for years.</p>
+            <p class="lead">Our employees are our greatest asset, and we treat them like family.</p>
+            <p>Join a family-owned company with more than 50 full-time employees. We offer competitive pay, real benefits, consistent hours and a clear path to grow. Whether you’re a seasoned finisher or looking for your first job in construction, you’ll learn from crew leads with 10+ years of experience and work on highways, national parks and industrial projects you can point to for years.</p>
             ${checklist(['Promote-from-within culture', 'Safety-first job sites', 'Modern, well-kept equipment', 'Paid training & certifications'], 'checklist--2col')}
           </div>
         </div>

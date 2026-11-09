@@ -55,6 +55,8 @@ const PATHS = {
   ada: '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><circle cx="12" cy="8" r="1.2" fill="currentColor"/><circle cx="16" cy="8" r="1.2" fill="currentColor"/><circle cx="8" cy="12" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/><circle cx="16" cy="12" r="1.2" fill="currentColor"/><circle cx="8" cy="16" r="1.2" fill="currentColor"/><circle cx="12" cy="16" r="1.2" fill="currentColor"/><circle cx="16" cy="16" r="1.2" fill="currentColor"/>',
   trowel: '<ellipse cx="10" cy="17.5" rx="7.5" ry="3"/><path d="M10 14.5V9l8-5.5"/><path d="M16 2.5l3.5 3"/>',
   energy: '<path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12z"/>',
+  road: '<path d="M4 21 9 3M20 21 15 3M12 4v3M12 10.5v3M12 17v3"/>',
+  mountain: '<path d="M2 20 9 9l2.5 4L15 7l7 13z"/><path d="m13.5 9.6 1.5 1.3 1.4-1.3"/>',
   wall: '<rect x="3" y="4.5" width="18" height="15" rx="1"/><path d="M3 9.5h18M3 14.5h18M9 4.5v5M15 4.5v5M6 9.5v5M12 9.5v5M18 9.5v5M9 14.5v5M15 14.5v5"/>',
   slab: '<path d="M7.5 4h9L21 20H3z"/><path d="M12 4v16M5.3 12h13.4"/>',
   excavator: '<rect x="2.5" y="16" width="11" height="4" rx="2"/><path d="M4 16v-4h3.2L8.5 9H11v7M11 11.5 15.5 5l4.5 4"/><path d="M20 9v3.8l-3.2 1.6"/>',

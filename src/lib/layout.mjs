@@ -132,7 +132,7 @@ function footer(page) {
         <ul class="footer__contact">
           <li>${icon('phone', { size: 18 })}<a href="${telHref(site.phone)}">${site.phone}</a></li>
           <li>${icon('mail', { size: 18 })}<a href="mailto:${site.email}">${site.email}</a></li>
-          <li>${icon('pin', { size: 18 })}<a href="${mapsHref()}" target="_blank" rel="noopener">${addressLine()}</a></li>
+          <li>${icon('pin', { size: 18 })}<span><a href="${mapsHref()}" target="_blank" rel="noopener">${addressLine()}</a>${site.mailingAddress ? html`<small class="footer__mailing">Mailing: ${site.mailingAddress}</small>` : ''}</span></li>
           <li>${icon('clock', { size: 18 })}<span>${site.hours[0].days}: ${site.hours[0].time}</span></li>
         </ul>
         ${btn('Request an Estimate', url('contact/'), { variant: 'primary', size: 'sm' })}

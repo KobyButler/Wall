@@ -1,7 +1,7 @@
 {
   "name": "Wall Concrete & Construction",
   "legalName": "Wall Concrete & Construction, LLC",
-  "description": "Wall Concrete & Construction is a concrete specialist based in Price, Utah — water tanks, structural foundations, bridge decks, laser-screeded slabs, curb machine work, energy infrastructure and general contracting.",
+  "description": "Wall Concrete & Construction is a family-owned concrete contractor based in Price, Utah, with more than 50 years in the industry: highways and bridge decks, water tanks, structural foundations, industrial slabs, energy infrastructure and general contracting.",
   "phone": "(435) 613-9255",
   "email": "wallcontractors@etv.net",
   "address": {
@@ -10,6 +10,7 @@
     "region": "UT",
     "zip": "84501"
   },
+  "mailingAddress": "PO Box 876, Price, UT 84501",
   "hours": [
     {
       "days": "Mon – Fri",
@@ -20,17 +21,17 @@
   "serviceAreas": [
     "Intermountain West"
   ],
-  "license": "Licensed & insured in the State of Utah",
+  "license": "Licensed in the State of Utah · B100 General Building & E100 General Engineering",
   "stats": [
     {
-      "value": 20,
+      "value": 50,
       "suffix": "+",
-      "label": "Years of experience"
+      "label": "Years of family experience in concrete"
     },
     {
-      "value": 1500,
+      "value": 50,
       "suffix": "+",
-      "label": "Projects completed"
+      "label": "Full-time employees"
     },
     {
       "value": 40000,
@@ -38,9 +39,9 @@
       "label": "Yards of concrete placed"
     },
     {
-      "value": 100,
-      "suffix": "%",
-      "label": "Licensed & insured"
+      "value": 10,
+      "suffix": "+",
+      "label": "Years’ experience for our crew leads"
     }
   ],
   "social": {

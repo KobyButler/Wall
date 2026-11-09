@@ -1,8 +1,35 @@
 {
-  "storyLead": "Wall Concrete & Construction was built on a simple idea: do the work right, treat people well and stand behind every pour.",
+  "storyLead": "Our family has been part of the concrete construction industry for more than 50 years. Wall Concrete and Construction is family owned and family run, and we consider our employees, and the businesses we work with and for, part of that family.",
   "story": [
-    "Today our crews serve municipalities, general contractors, industry and energy across the Intermountain West, building everything from water tanks and structural foundations to bridge decks, laser-screeded floors and slip-formed curb. Keeping the work in-house means we control the quality, the schedule and the safety of every job we take on.",
-    "We know concrete is a long-term investment. That’s why we plan carefully, choose the right mix and methods for Utah’s climate, and never cut corners on the details nobody sees once the job is done."
+    "Today we have more than 50 full-time employees. Our crew leads and about half of our team have more than 10 years of concrete experience, and they’ve worked together that whole time. Our employees are our greatest asset. We take pride in every project and adapt our services to each customer’s needs.",
+    "Over the years we’ve taken on virtually every type of concrete construction: industrial plants, coal mines, material handling facilities, waste disposal sites, national parks, and federal and state highways. We perform bridge deck and barrier repair, and we build water tanks, water and sewer treatment plants, large compressor sites and power plants. When a project calls for it, we act as the general contractor, backed by a team of contractors we’ve worked with successfully for years.",
+    "Our skills range from heavy formwork to large industrial slabs and complex industrial plants. We’ve met hard deadlines on overhauls that ran 24 hours a day, 7 days a week, working alongside owners, engineers, general contractors and every kind of safety program. We’re licensed in the State of Utah (B100 & E100), and references are available on request."
   ],
-  "mission": "To deliver concrete and construction work that’s *built to last* — safely, on schedule and with honest communication from the first call to the final walkthrough."
+  "mission": "We work *safe, smart and hard* to help our customers succeed.",
+  "team": [
+    {
+      "name": "K. Geoffrey Madsen",
+      "title": "Owner",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "name": "Andrew Madsen",
+      "title": "Senior Project Manager",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "name": "Mike Prichard",
+      "title": "Senior Project Manager",
+      "phone": "",
+      "photo": ""
+    },
+    {
+      "name": "Rachelle Collins",
+      "title": "Office Manager",
+      "phone": "",
+      "photo": ""
+    }
+  ]
 }

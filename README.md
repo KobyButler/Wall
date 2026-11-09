@@ -50,10 +50,10 @@ The client edits the site at **[app.pagescms.org](https://app.pagescms.org)**, a
 | --- | --- |
 | **Careers & Job Openings** | Add, edit, reorder or hide job postings; benefits |
 | **Reviews** | Add real customer reviews and star ratings |
-| **Projects** | Add projects with photos, choose the service, feature them on the home page |
-| **Company Info** | Phone, email, address, hours, service areas, headline numbers, social links, Google reviews link, payments link |
+| **Projects** | Add projects with photos, choose the service, feature them on the home page; the named "Track Record" list, including jobs under construction |
+| **Company Info** | Phone, email, address, mailing address, hours, service areas, license line, headline numbers, social links, Google reviews link, payments link |
 | **Home Page** | Slideshow headline, text and photos |
-| **About Page** | Company story and mission |
+| **About Page** | Company story, mission and team (names, titles, optional photos and direct phones) |
 | **Services** | All service text, photos, capabilities and FAQs, and add new services |
 
 Uploaded photos go into the shared photo library (`content/media`), and any photo there can be picked for any page. Each **Save** commits to `main`, and the GitHub Actions workflow republishes the site in about two minutes.
@@ -85,10 +85,10 @@ The client hasn't provided every business detail yet, so placeholders fill the g
 - [ ] **Email.** `wallcontractors@etv.net` was taken from the client's letterhead. Confirm it's current.
 - [ ] **Hours and service counties** (Company Info).
 - [ ] **Domain.** Set `url` in `src/data/site.mjs`; it's used for SEO tags and the sitemap.
-- [ ] **Headline numbers** (Company Info). "20+ years", "1,500+ projects" and the rest are examples. Use real numbers.
+- [x] **Headline numbers** (Company Info) come from the client's company resume (Oct 2026). The 40,000+ yards figure was given separately; the resume lists 36,666 CY for the last 12 months alone, so confirm which number they want.
 - [x] **Reviews** are real 5-star Google reviews, quoted word for word. Add the Google reviews link under Company Info.
-- [ ] **Project names and locations** (Projects). The portfolio uses the client's own photos, with titles written from what each photo shows.
-- [ ] **Company story** (About Page): founding year, history, owners.
+- [ ] **Project names and locations** (Projects). The photo portfolio uses the client's own photos, with titles written from what each photo shows. The Track Record list of named jobs comes from the company resume.
+- [x] **Company story and team** (About Page) come from the client's company resume. Direct phone numbers are left off; add them per person in Pages CMS if the client wants them public.
 - [ ] **Job openings and benefits** (Careers & Job Openings).
 - [ ] **Social links** (Company Info). Leave one blank to hide that icon.
 - [ ] **Form endpoints.** See below.
