@@ -12,7 +12,7 @@ export default {
   shortName: 'Wall Concrete',
   tagline: 'Built solid. Built to last.',
   description:
-    'Wall Concrete & Construction is a full-service concrete contractor based in Price, Utah — foundations, concrete walls, flatwork, commercial concrete, excavation and decorative concrete for builders, businesses and homeowners.',
+    'Wall Concrete & Construction is a concrete specialist based in Price, Utah — water tanks, structural foundations, bridge decks, laser-screeded slabs, curb machine work, energy infrastructure and general contracting.',
 
   // Production URL, no trailing slash. Used for canonical links, sitemap and social cards.
   url: 'https://www.example.com', // PLACEHOLDER — the client's real domain
@@ -20,7 +20,7 @@ export default {
   basePath: '/',
 
   phone: '(435) 613-9255',
-  email: 'info@example.com', // PLACEHOLDER
+  email: 'wallcontractors@etv.net', // from the client's letterhead — confirm it's still current
   address: {
     street: '125 S 100 W',
     city: 'Price',
@@ -75,17 +75,19 @@ export default {
     { value: 100, suffix: '%', label: 'Licensed & insured' },
   ],
 
-  // Hero slideshow on the home page. Each slide is a looping background video
-  // (desktop + mobile versions) with a poster image shown while it loads.
+  // Hero slideshow on the home page. A slide is either a client photo
+  // (`image`: a name from src/data/images.json, shown with a slow zoom) or a
+  // looping background video (`video`: files from scripts/encode-hero-video.sh).
   hero: {
-    eyebrow: 'Concrete & Construction — Price, Utah',
+    eyebrow: 'Concrete Specialists — Price, Utah',
     title: ['Built solid.', 'Built to last.'],
-    text: 'From footings and foundation walls to driveways, retaining walls and commercial slabs, our crews deliver durable concrete work — on schedule and done right the first time.',
+    text: 'From water tanks and bridge decks to laser-screeded floors and slip-formed curb, our crews deliver concrete work that’s on schedule and done right the first time.',
     slides: [
-      { label: 'Flatwork & Slabs', video: 'hero-flatwork', href: 'services/flatwork/' },
-      { label: 'Concrete Walls', video: 'hero-walls', href: 'services/concrete-walls/' },
-      { label: 'Foundations', video: 'hero-foundations', href: 'services/foundations/' },
-      { label: 'Excavation & Site Work', video: 'hero-sitework', href: 'services/excavation-site-work/' },
+      { label: 'Water Tanks', image: 'tank-crew-forms' },
+      { label: 'Structural Foundations', image: 'walls-redrock' },
+      { label: 'Laser Screed & Floors', image: 'warehouse-slab' },
+      { label: 'Bridge Decks', image: 'bridge-highway' },
+      { label: 'Commercial & Industrial', image: 'foundation-snow' },
     ],
     // Seconds each slide stays on screen.
     interval: 7,

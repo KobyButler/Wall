@@ -10,7 +10,7 @@ export default function notFound() {
     cta: false,
     bodyClass: 'page--404',
     body: html`<section class="not-found">
-      <div class="not-found__media">${img('foundation-forms', { eager: true })}</div>
+      <div class="not-found__media">${img('form-tower-rock', { eager: true })}</div>
       <div class="not-found__shade"></div>
       <div class="container not-found__inner">
         <p class="not-found__code" aria-hidden="true">404</p>

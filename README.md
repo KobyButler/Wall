@@ -28,7 +28,7 @@ npm run build   # production build into ./dist
 
 | URL | Source |
 | --- | --- |
-| `/` | `src/pages/index.mjs`: video hero slideshow, intro, stats, services, why us, project carousel, process, testimonials, safety/careers, estimate form |
+| `/` | `src/pages/index.mjs`: hero slideshow, intro, stats, services, why us, project carousel, process, testimonials, safety/careers, estimate form |
 | `/about/` | `src/pages/about.mjs`: story, mission, values, safety, who we serve, service area |
 | `/services/` | `src/pages/services.mjs`: all services overview |
 | `/services/<slug>/` | `src/pages/service-detail.mjs`: one page per service, generated from `src/data/services.mjs` |
@@ -55,13 +55,15 @@ In headings, wrap words in `*asterisks*` to highlight them in the brand accent c
 
 ## ⚠️ Before launch: replace the placeholders
 
-The client didn't provide business details, so placeholders were used. `npm run build` lists the ones still present, and you can search `src/` for **`PLACEHOLDER`** to find every one.
+The client hasn't provided every business detail yet, so placeholders fill the gaps. `npm run build` lists the ones still present, and you can search `src/` for **`PLACEHOLDER`** to find every one.
 
-- [ ] **Phone, email, street address, hours, service counties.** Set in `src/data/site.mjs`.
+- [x] **Phone and street address** are the client's real details.
+- [ ] **Email.** `wallcontractors@etv.net` was taken from the client's letterhead. Confirm it's current.
+- [ ] **Hours and service counties.** Set in `src/data/site.mjs`.
 - [ ] **Domain.** Set `url` in `src/data/site.mjs`; it's used for SEO tags and the sitemap.
 - [ ] **Stats.** "20+ years", "1,500+ projects" and the rest are examples. Use real numbers.
 - [ ] **Testimonials.** These are written examples. Replace them with real client reviews (e.g. from Google). Do not publish invented reviews.
-- [ ] **Projects.** These are sample entries illustrated with stock photography. Replace them with the client's real projects and photos.
+- [ ] **Project names and locations.** The portfolio uses the client's own photos, with titles written from what each photo shows. Add real project names, owners and locations in `src/data/projects.mjs` (`location` is optional).
 - [ ] **Company story** on the About page (`src/pages/about.mjs`): founding year, history, owners.
 - [ ] **Job openings and benefits** (`src/data/content.mjs`).
 - [ ] **Social links** (`src/data/site.mjs`). Set a value to `''` to hide that icon.
@@ -97,27 +99,42 @@ Web3Forms, Basin, Getform and Netlify Forms also work. Any endpoint that accepts
    python scripts/optimize-images.py path/to/folder --large name1,name2
    ```
    This writes responsive WebP sizes to `public/assets/img/photos/` and records them in `src/data/images.json`. Use `--large` for images shown full-width (page heroes). Requires `pip install Pillow`.
-3. Reference images by file name, without the extension, in the data files (e.g. `image: 'my-driveway'`).
+3. Reference images by file name, without the extension, in the data files (e.g. `image: 'tank-crew-forms'`).
 
-**Tip:** Name a new photo the same as an existing one (e.g. `flatwork.jpg`) and every place that uses it updates automatically.
+**Tip:** Name a new photo the same as an existing one (e.g. `tank-finished.jpg`) and every place that uses it updates automatically.
 
-### Hero slideshow videos
+iPhone HEIC photos need converting to JPG first. `ffmpeg -i photo.HEIC photo.jpg` works.
 
-The home page hero cycles through looping background videos (`hero.slides` in `site.mjs`). Each slide has a desktop file, a lightweight mobile file and a poster image. To use the client's own footage (drone shots of their jobs are ideal):
+### Hero slideshow
 
-```bash
-bash scripts/encode-hero-video.sh raw-footage.mov hero-driveway 12 8   # start at 0:12, 8 seconds long
+The home page hero cycles through slides (`hero.slides` in `site.mjs`). Each slide is either a photo, shown with a slow zoom:
+
+```js
+{ label: 'Water Tanks', image: 'tank-crew-forms' }
 ```
 
-Then add `{ label: 'Driveways', video: 'hero-driveway', href: 'services/flatwork/' }` to `hero.slides`. Requires ffmpeg.
+or a looping background video, which is ideal for drone footage of their jobs:
+
+```bash
+bash scripts/encode-hero-video.sh raw-footage.mov hero-tanks 12 8   # start at 0:12, 8 seconds long
+```
+
+```js
+{ label: 'Water Tanks', video: 'hero-tanks' }
+```
+
+Video slides need ffmpeg to encode. Photo and video slides can be mixed.
 
 How the hero behaves:
 
-- Only the visible slide's video is downloaded, and the next one preloads shortly before it's needed.
-- Phones get the 540p version.
-- Videos pause when scrolled off screen or when the tab is hidden.
+- Only the visible slide's video is downloaded, and the next one preloads shortly before it's needed. Phones get the 540p version.
+- The slideshow pauses when scrolled off screen or when the tab is hidden.
 - Visitors can pause, skip or swipe through slides.
-- Visitors with "reduced motion" turned on, or with data saver enabled, see still poster images instead.
+- Visitors with "reduced motion" turned on, or with data saver enabled, see still images.
+
+### Service page video
+
+A service can show a short vertical clip in place of its photo (e.g. `video: 'laser-screed'` in `services.mjs`). It loads only when scrolled into view. The file goes in `public/assets/video/<name>.mp4`, with a poster at `public/assets/img/posters/<name>.webp`.
 
 ## Deploying
 
@@ -143,7 +160,7 @@ public/                   copied as-is into dist/
   assets/css/main.css     all styles (design tokens at the top)
   assets/js/main.js       all interactions
   assets/img/             optimized photos, video posters, logo, social share image
-  assets/video/           hero + background videos
+  assets/video/           video clips (laser screed)
 scripts/
   optimize-images.py      photo optimizer
   encode-hero-video.sh    video encoder
@@ -155,7 +172,7 @@ scripts/
 
 - **Hero:** full-screen video slideshow with Ken Burns motion, progress tabs, pause/play, swipe, and an auto-pause when off screen.
 - **Navigation:** sticky header that turns solid on scroll and hides on scroll down; services mega menu; full-screen mobile menu; "Call / Free Estimate" bar on phones.
-- **Animation and media:** scroll-reveal animations, animated stat counters, a looping video stats band.
+- **Animation and media:** scroll-reveal animations, animated stat counters, a job-site video on the Laser Screed page.
 - **Projects:** draggable project carousel, filterable portfolio (shareable `?service=` URLs), and a project lightbox with keyboard, swipe and deep links (`#project-slug`).
 - **Content:** testimonial slider, animated FAQ accordions, service-area map, Google Map embed.
 - **SEO:** `GeneralContractor`, `Service`, `FAQPage`, `JobPosting` and `BreadcrumbList` structured data; Open Graph / Twitter cards; canonical URLs; sitemap.
@@ -164,10 +181,4 @@ scripts/
 
 ## Media credits
 
-All stock photos and videos are from [Pexels](https://www.pexels.com) under the [Pexels License](https://www.pexels.com/license/), which allows free commercial use with no attribution required. They are placeholders. **Real photos of the client's crews and completed jobs will make the site far more convincing** and should replace them, especially the project portfolio, which should only show the client's own work.
-
-**Videos:** [32268399](https://www.pexels.com/video/32268399/) (hero-flatwork) · [39924253](https://www.pexels.com/video/39924253/) (hero-walls) · [30026860](https://www.pexels.com/video/30026860/) (hero-foundations) · [35649896](https://www.pexels.com/video/35649896/) (hero-sitework) · [20109885](https://www.pexels.com/video/20109885/) (band-crew)
-
-**Photos** (file name → Pexels ID): architectural-wall 18448817 · backhoe 5325460 · commercial 7509167 · commercial-pour 18283441 · crew 10349589 · crew-tools 29083058 · curb-stringline 29288255 · decorative 15156178 · driveway-home 3935333 · driveway-new-home 10827223 · edge-finishing 2219024 · excavation 37393680 · excavator-site 38519999 · flatwork 33405139 · footings-forming 14546924 · foundation-forms 36606410 · foundation-site 2383650 · foundations 37733176 · foundations-pour 37733179 · foundations-rebar-mat 37733181 · graded-site 8961260 · hardhat 8488037 · night-crew 7976911 · planning 8961146 · polished-floor 36230779 · power-screed 37121405 · power-trowel 31672890 · rebar-columns 40242407 · rebar-deck 32141080 · retaining-wall 25398606 · retaining-wall-aerial 13774993 · retaining-wall-block 37350096 · sunset-scaffold 39970082 · sunset-worker 10410009 · wall-forming 4956909 · wall-forms 9964624 · walls 36162728 · winter-pour 14822653
-
-Each photo's page is `https://www.pexels.com/photo/<ID>/`. Fonts: Barlow & Barlow Condensed (Google Fonts, SIL Open Font License). Some icons are adapted from Tabler Icons (MIT).
+All photos and the laser screed video are the client's own job-site media, supplied via Google Drive. Fonts: Barlow & Barlow Condensed (Google Fonts, SIL Open Font License). Some icons are adapted from Tabler Icons (MIT).

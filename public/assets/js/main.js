@@ -156,7 +156,7 @@ function initHero() {
     hero.classList.toggle('is-paused', !running());
     if (pauseBtn) {
       pauseBtn.setAttribute('aria-pressed', String(userPaused));
-      pauseBtn.setAttribute('aria-label', userPaused ? 'Play background video' : 'Pause background video');
+      pauseBtn.setAttribute('aria-label', userPaused ? 'Play slideshow' : 'Pause slideshow');
     }
   };
 
@@ -226,7 +226,15 @@ function initHero() {
 /* Background videos that load when scrolled into view ---------------------- */
 function initLazyVideos() {
   const videos = $$('video[data-lazy-video]');
-  if (!videos.length || saveData || reduceMotion) return;
+  if (!videos.length) return;
+  if (saveData || reduceMotion) {
+    // No autoplay: show the poster and let people press play themselves.
+    videos.forEach((v) => {
+      v.controls = true;
+      v.src = v.dataset.src;
+    });
+    return;
+  }
   const io = new IntersectionObserver((entries) => {
     for (const { target: video, isIntersecting } of entries) {
       if (isIntersecting) {
@@ -402,6 +410,7 @@ function initLightbox() {
     field('service').textContent = p.service;
     field('service').href = p.serviceUrl;
     field('location').textContent = p.location;
+    field('loc').hidden = !p.location;
     field('sector').textContent = p.sector;
     field('text').textContent = p.text;
     field('scope').replaceChildren(...p.scope.map((s) => Object.assign(document.createElement('li'), { textContent: s })));

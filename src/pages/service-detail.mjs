@@ -50,8 +50,12 @@ function servicePage(s, index) {
             ${s.intro.map((p, i) => html`<p class="${cx(i === 0 && 'lead')}">${p}</p>`)}
             <ul class="highlights">${s.highlights.map((h, i) => html`<li><span class="highlights__num">${pad(i + 1)}</span>${h}</li>`)}</ul>
           </div>
-          <div class="detail-intro__media" data-reveal style="--d:1">
-            <figure class="frame frame--brackets">${img(s.detailImage, { sizes: '(min-width: 1024px) 44vw, 92vw' })}</figure>
+          <div class="${cx('detail-intro__media', s.video && 'detail-intro__media--video')}" data-reveal style="--d:1">
+            ${s.video
+              ? html`<figure class="frame frame--brackets detail-intro__video">
+                  <video muted loop playsinline preload="none" poster="${url(`assets/img/posters/${s.video}.webp`)}" data-lazy-video data-src="${url(`assets/video/${s.video}.mp4`)}" data-src-sm="${url(`assets/video/${s.video}.mp4`)}" aria-label="Video of our ${s.name.toLowerCase()} crew at work"></video>
+                </figure>`
+              : html`<figure class="frame frame--brackets">${img(s.detailImage, { sizes: '(min-width: 1024px) 44vw, 92vw' })}</figure>`}
             <div class="detail-intro__tag"><span class="detail-intro__tag-icon">${icon(s.icon, { size: 28 })}</span><span><strong>${s.tagline}</strong><small>${site.license}</small></span></div>
           </div>
         </div>

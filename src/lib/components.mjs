@@ -77,7 +77,7 @@ export function projectCard(p, { sizes = '(min-width: 1024px) 31vw, (min-width: 
       <span class="project-card__body">
         <span class="tag">${s?.menuName}</span>
         <span class="project-card__title">${p.title}</span>
-        <span class="project-card__loc">${icon('pin', { size: 16 })}${p.location}</span>
+        ${p.location ? html`<span class="project-card__loc">${icon('pin', { size: 16 })}${p.location}</span>` : html`<span class="project-card__loc">${p.sector}</span>`}
       </span>
       <span class="project-card__plus">${icon('plus', { size: 22 })}</span>
     </button>
@@ -91,7 +91,7 @@ export function projectData(projects) {
     return {
       slug: p.slug,
       title: p.title,
-      location: p.location,
+      location: p.location || '',
       sector: p.sector,
       service: serviceBySlug(p.service)?.name,
       serviceUrl: url(`services/${p.service}/`),
@@ -113,7 +113,7 @@ export function lightbox() {
       <div class="lightbox__info">
         <a class="tag tag--link" data-lb="service" href="#"></a>
         <h2 class="lightbox__title" id="lightbox-title" data-lb="title"></h2>
-        <p class="lightbox__meta">${icon('pin', { size: 16 })}<span data-lb="location"></span><span class="dot" aria-hidden="true"></span><span data-lb="sector"></span></p>
+        <p class="lightbox__meta"><span class="lightbox__loc" data-lb="loc">${icon('pin', { size: 16 })}<span data-lb="location"></span><span class="dot" aria-hidden="true"></span></span><span data-lb="sector"></span></p>
         <p class="lightbox__text" data-lb="text"></p>
         <ul class="lightbox__scope" data-lb="scope"></ul>
         ${btn('Start a Similar Project', url('contact/'))}
@@ -128,12 +128,9 @@ export function lightbox() {
   </dialog>`;
 }
 
-export function statsBand() {
+export function statsBand({ image = 'night-pour-pumps' } = {}) {
   return html`<section class="stats-band" aria-label="Company highlights">
-    <div class="stats-band__media" aria-hidden="true">
-      <img src="${url('assets/img/posters/band-crew.webp')}" alt="" loading="lazy" decoding="async" width="1920" height="1080">
-      <video muted loop playsinline preload="none" data-lazy-video data-src="${url('assets/video/band-crew.mp4')}" data-src-sm="${url('assets/video/band-crew-sm.mp4')}"></video>
-    </div>
+    <div class="stats-band__media" aria-hidden="true">${img(image)}</div>
     <div class="container">
       <dl class="stats">${ctx.site.stats.map((s, i) => html`<div class="stat" data-reveal style="--d:${i}">
         <dt class="stat__label">${s.label}</dt>
@@ -151,7 +148,7 @@ export function whySection() {
         <h2 class="h2">Built on experience. <span class="hl">Backed by our name.</span></h2>
         <p class="why__lead">Our name is on every slab, wall and foundation we pour. That’s why we plan carefully, communicate clearly and never cut corners on the details that make concrete last.</p>
         ${btn('About Our Company', url('about/'), { variant: 'outline-light' })}
-        <figure class="why__figure frame frame--brackets">${img('crew-tools', { sizes: '(min-width: 1024px) 40vw, 100vw' })}</figure>
+        <figure class="why__figure frame frame--brackets">${img('walls-forms-crew', { sizes: '(min-width: 1024px) 40vw, 100vw' })}</figure>
       </div>
       <ol class="why__list">${why.map((w, i) => html`<li class="why-card" data-reveal style="--d:${i}">
         <span class="why-card__num">${pad(i + 1)}</span>
@@ -181,7 +178,7 @@ export function testimonialsSection() {
       <div class="testimonials__intro" data-reveal>
         ${eyebrow('Client Feedback')}
         <h2 class="h2" id="testimonials-title">What our <span class="hl">clients</span> say.</h2>
-        <p>Builders, contractors and homeowners keep calling us back for one reason: we do what we say we’ll do, and the work holds up.</p>
+        <p>Cities, contractors and facility owners keep calling us back for one reason: we do what we say we’ll do, and the work holds up.</p>
       </div>
       <div class="t-slider" data-slider aria-roledescription="carousel" aria-label="Client testimonials" data-reveal>
         <span class="t-slider__mark" aria-hidden="true">${icon('quote', { size: 96 })}</span>
@@ -205,7 +202,7 @@ export function testimonialsSection() {
 export function ctaBand({
   title = 'Ready to *break ground?*',
   text = 'Tell us about your project and we’ll get back to you with a free, detailed estimate. No pressure, no vague numbers.',
-  image = 'sunset-worker',
+  image = 'deck-rebar-walls',
 } = {}) {
   const { phone } = ctx.site;
   return html`<section class="cta-band">
@@ -342,7 +339,7 @@ export function estimateForm({ compact = false, prefix = 'est' } = {}) {
       ${field({ id: id('phone'), name: 'phone', label: 'Phone', type: 'tel', required: true, autocomplete: 'tel' })}
       ${field({ id: id('email'), name: 'email', label: 'Email', type: 'email', required: true, autocomplete: 'email' })}
       ${field({ id: id('location'), name: 'project_location', label: 'Project city', autocomplete: 'address-level2' })}
-      ${chipsField({ id: id('type'), name: 'project_type', legend: 'Project type', options: ['Residential', 'Commercial', 'Builder / GC', 'Municipal'], required: true })}
+      ${chipsField({ id: id('type'), name: 'project_type', legend: 'Project type', options: ['Commercial', 'Industrial', 'Municipal', 'General Contractor', 'Energy', 'Other'], required: true })}
       ${compact
         ? selectField({ id: id('service'), name: 'service', label: 'Service needed', options: serviceNames, full: true })
         : chipsField({ id: id('services'), name: 'services', legend: 'Services needed', options: serviceNames, type: 'checkbox' })}
@@ -406,5 +403,19 @@ export const posterSrc = (name) => ({
   src: url(`assets/img/posters/${name}.webp`),
   srcset: `${url(`assets/img/posters/${name}-sm.webp`)} 960w, ${url(`assets/img/posters/${name}.webp`)} 1920w`,
 });
+
+// src/srcset for a photo from the manifest (used for preloads and hero slides).
+export const photoSrc = (name) => {
+  const meta = ctx.images[name];
+  if (!meta) throw new Error(`Image "${name}" is missing from src/data/images.json`);
+  const file = (w) => url(`assets/img/photos/${name}-${w}.webp`);
+  return {
+    src: file(meta.widths.find((w) => w >= 1024) ?? meta.widths.at(-1)),
+    srcset: meta.widths.map((w) => `${file(w)} ${w}w`).join(', '),
+    w: meta.w,
+    h: meta.h,
+    color: meta.color,
+  };
+};
 
 export { asset };

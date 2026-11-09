@@ -37,7 +37,7 @@ function megaMenu() {
         <span><strong>${s.name}</strong><small>${s.short}</small></span>
       </a></li>`)}</ul>
       <a class="mega__feature" href="${url('contact/')}">
-        ${img('power-screed', { sizes: '320px' })}
+        ${img('laser-screed-machine', { sizes: '320px' })}
         <span class="mega__feature-body"><small>Free estimates</small><strong>Tell us about your project</strong><span class="link-arrow">Get started ${icon('arrowRight', { size: 18 })}</span></span>
       </a>
     </div>

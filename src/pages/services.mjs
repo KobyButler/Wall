@@ -12,14 +12,14 @@ export default function services() {
   return {
     path: 'services/',
     title: 'Concrete Services',
-    description: `Foundations, concrete & retaining walls, flatwork, commercial concrete, excavation and decorative concrete in ${site.serviceAreaLabel}.`,
+    description: `Curb machine, laser screed, water tanks, structural foundations, bridge decks, ADA installation, energy infrastructure and general contracting in ${site.serviceAreaLabel}.`,
     crumbs,
     body: html`
       ${pageHero({
-        image: 'commercial',
+        image: 'foundation-mountains',
         eyebrow: 'Our Services',
         title: 'Full-service concrete, *dirt to finish.*',
-        text: 'Six core services, one accountable team. We self-perform every phase — so you get one schedule, one point of contact and consistent quality.',
+        text: 'Twelve specialties, one accountable team. We self-perform the work, so you get one schedule, one point of contact and consistent quality.',
         crumbs,
         actions: html`${btn('Get a Free Estimate', url('contact/'))}`,
       })}
@@ -29,7 +29,7 @@ export default function services() {
           ${sectionHead({
             eyebrow: 'What We Do',
             title: 'Concrete work for *every stage* of construction.',
-            text: 'Whether you need a single driveway or the foundations, walls and site concrete for an entire development, our crews have the experience and equipment to deliver.',
+            text: 'Whether you need a water tank, a bridge deck, a warehouse floor or the foundations for an entire facility, our crews have the experience and equipment to deliver.',
           })}
           <nav class="service-index" aria-label="Jump to a service" data-reveal>
             ${ctx.services.map((s, i) => html`<a href="#${s.slug}"><span>${pad(i + 1)}</span>${s.menuName}</a>`)}
@@ -55,7 +55,7 @@ export default function services() {
 
       <section class="section section--light markets">
         <div class="container">
-          ${sectionHead({ eyebrow: 'Who We Serve', title: 'Built for builders, businesses *and* homeowners.', text: 'We tailor our approach to the way you work — from repeatable builder schedules to one-time residential projects.' })}
+          ${sectionHead({ eyebrow: 'Who We Serve', title: 'Built for cities, contractors *and* industry.', text: 'We tailor our approach to the way you work, from public agency specifications to fast-track industrial schedules.' })}
           <ul class="market-grid">${markets.map((m, i) => html`<li class="market-card" data-reveal style="--d:${i}">
             <span class="market-card__icon">${icon(m.icon, { size: 28 })}</span>
             <h3 class="market-card__title">${m.title}</h3>

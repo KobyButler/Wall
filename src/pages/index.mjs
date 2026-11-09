@@ -3,7 +3,7 @@ import { icon, logoMark } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
 import {
   img, btn, eyebrow, sectionHead, serviceCard, projectCard, projectData, lightbox, statsBand, whySection,
-  processSection, testimonialsSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc,
+  processSection, testimonialsSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc, photoSrc,
 } from '../lib/components.mjs';
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -13,9 +13,16 @@ function hero() {
   return html`<section class="hero" data-hero data-interval="${hero.interval}" aria-label="Welcome">
     <div class="hero__media" aria-hidden="true">
       ${hero.slides.map((s, i) => {
+        const loading = raw(i === 0 ? ' fetchpriority="high"' : ' loading="lazy"');
+        if (s.image) {
+          const p = photoSrc(s.image);
+          return html`<div class="${cx('hero__slide', i === 0 && 'is-active')}" data-slide>
+            <img class="hero__poster" src="${p.src}" srcset="${p.srcset}" sizes="100vw" alt="" width="${p.w}" height="${p.h}"${loading} decoding="async" style="background-color:${p.color}">
+          </div>`;
+        }
         const poster = posterSrc(s.video);
         return html`<div class="${cx('hero__slide', i === 0 && 'is-active')}" data-slide>
-          <img class="hero__poster" src="${poster.src}" srcset="${poster.srcset}" sizes="100vw" alt="" width="1920" height="1080"${raw(i === 0 ? ' fetchpriority="high"' : ' loading="lazy"')} decoding="async">
+          <img class="hero__poster" src="${poster.src}" srcset="${poster.srcset}" sizes="100vw" alt="" width="1920" height="1080"${loading} decoding="async">
           <video class="hero__video" muted playsinline loop preload="none" data-src="${url(`assets/video/${s.video}.mp4`)}" data-src-sm="${url(`assets/video/${s.video}-sm.mp4`)}"></video>
         </div>`;
       })}
@@ -32,16 +39,16 @@ function hero() {
     </div>
     <div class="container hero__bar">
       <ol class="hero__tabs">${hero.slides.map((s, i) => html`<li>
-        <button type="button" class="${cx('hero__tab', i === 0 && 'is-active')}" data-goto="${i}" aria-label="Background ${i + 1}: ${s.label}"${raw(i === 0 ? ' aria-current="true"' : '')}>
+        <button type="button" class="${cx('hero__tab', i === 0 && 'is-active')}" data-goto="${i}" aria-label="Slide ${i + 1}: ${s.label}"${raw(i === 0 ? ' aria-current="true"' : '')}>
           <span class="hero__tab-num">${pad(i + 1)}</span>
           <span class="hero__tab-label">${s.label}</span>
           <span class="hero__tab-bar" aria-hidden="true"><span></span></span>
         </button>
       </li>`)}</ol>
       <div class="hero__controls">
-        <button type="button" class="hero__ctrl" data-hero-prev aria-label="Previous background">${icon('chevronLeft', { size: 20 })}</button>
-        <button type="button" class="hero__ctrl" data-hero-pause aria-pressed="false" aria-label="Pause background video">${icon('pause', { size: 18, cls: 'i-pause' })}${icon('play', { size: 18, cls: 'i-play' })}</button>
-        <button type="button" class="hero__ctrl" data-hero-next aria-label="Next background">${icon('chevronRight', { size: 20 })}</button>
+        <button type="button" class="hero__ctrl" data-hero-prev aria-label="Previous slide">${icon('chevronLeft', { size: 20 })}</button>
+        <button type="button" class="hero__ctrl" data-hero-pause aria-pressed="false" aria-label="Pause slideshow">${icon('pause', { size: 18, cls: 'i-pause' })}${icon('play', { size: 18, cls: 'i-play' })}</button>
+        <button type="button" class="hero__ctrl" data-hero-next aria-label="Next slide">${icon('chevronRight', { size: 20 })}</button>
       </div>
     </div>
     <a class="hero__scroll" href="#intro" aria-label="Scroll to content"><span>Scroll</span><i aria-hidden="true"></i></a>
@@ -63,17 +70,17 @@ function intro() {
   return html`<section class="section section--paper intro" id="intro">
     <div class="container intro__grid">
       <div class="intro__media" data-reveal>
-        <figure class="intro__main frame frame--brackets">${img('walls', { sizes: '(min-width: 1024px) 40vw, 92vw', alt: 'Freshly stripped cast-in-place concrete wall with rebar extending above it' })}</figure>
-        <figure class="intro__inset">${img('power-screed', { sizes: '(min-width: 1024px) 20vw, 45vw', alt: 'Crew leveling fresh concrete with a power screed' })}</figure>
+        <figure class="intro__main frame frame--brackets">${img('foundation-walls-redrock', { sizes: '(min-width: 1024px) 40vw, 92vw', alt: 'Finished cast-in-place foundation walls on a red-rock hillside' })}</figure>
+        <figure class="intro__inset">${img('laser-screed-machine', { sizes: '(min-width: 1024px) 20vw, 45vw', alt: 'Laser screed leveling a fresh concrete slab' })}</figure>
         <div class="intro__badge"><strong>${first.value.toLocaleString('en-US')}${first.suffix}</strong><span>${first.label}</span></div>
         ${seal()}
       </div>
       <div class="intro__copy" data-reveal style="--d:1">
         ${eyebrow('Who We Are')}
         <h2 class="h2">Concrete &amp; construction, <span class="hl">done right</span> the first time.</h2>
-        <p class="lead">${site.name} is a local, full-service concrete contractor based in ${site.address.city}, serving builders, businesses and homeowners across ${site.region}.</p>
-        <p>We self-perform every phase of the job — excavation, forming, rebar, placement and finishing — so quality never gets handed off. Whether it’s a single driveway or a multi-building commercial site, you get the same careful planning, clean jobsite and craftsmanship on every pour.</p>
-        ${checklist(['Residential & commercial', 'Licensed & insured', 'Self-performing crews', 'Free, detailed estimates'], 'checklist--2col')}
+        <p class="lead">${site.name} is a concrete specialist based in ${site.address.city}, serving municipalities, contractors, industry and energy across ${site.region}.</p>
+        <p>We self-perform every phase of the job — excavation, forming, rebar, placement and finishing — so quality never gets handed off. Whether it’s a water tank, a bridge deck or a warehouse floor, you get the same careful planning, clean jobsite and craftsmanship on every pour.</p>
+        ${checklist(['Commercial, industrial & municipal', 'Licensed & insured', 'Self-performing crews', 'Free, detailed estimates'], 'checklist--2col')}
         <div class="actions">
           ${btn('More About Us', url('about/'))}
           <a class="phone-link phone-link--dark" href="${telHref(site.phone)}"><span class="phone-link__icon">${icon('phone', { size: 20 })}</span><span><small>Talk to our team</small><strong>${site.phone}</strong></span></a>
@@ -89,7 +96,7 @@ function services() {
       ${sectionHead({
         eyebrow: 'What We Do',
         title: 'Covering *all* your concrete needs.',
-        text: 'From the first scoop of dirt to the final broom finish, our crews self-perform every phase of concrete construction for residential, commercial and municipal projects.',
+        text: 'From the first scoop of dirt to the final broom finish, our crews self-perform every phase of concrete construction for commercial, industrial, municipal and energy projects.',
         actions: btn('View All Services', url('services/'), { variant: 'outline' }),
       })}
       <div class="service-grid">${ctx.services.map(serviceCard)}</div>
@@ -103,7 +110,7 @@ function featuredProjects(featured) {
       ${sectionHead({
         eyebrow: 'Recent Work',
         title: 'Concrete for *any* application.',
-        text: 'Foundations, walls, flatwork and commercial concrete across Carbon County, Emery County and beyond. Select any project to see the details.',
+        text: 'Water tanks, foundations, bridge decks, slabs and curb across Carbon County, Emery County and beyond. Select any project to see the details.',
         actions: html`<div class="carousel-nav">
           <button type="button" class="icon-btn icon-btn--outline" data-carousel-prev aria-label="Scroll projects left">${icon('chevronLeft')}</button>
           <button type="button" class="icon-btn icon-btn--outline" data-carousel-next aria-label="Scroll projects right">${icon('chevronRight')}</button>
@@ -126,7 +133,7 @@ function featuredProjects(featured) {
 function splitCards() {
   return html`<section class="split-cards" aria-label="Safety and careers">
     <a class="split-card" href="${url('about/#safety')}">
-      ${img('hardhat', { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
+      ${img('night-pour-steam', { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
       <span class="split-card__body">
         <span class="eyebrow eyebrow--light">Safety</span>
         <span class="split-card__title">Safety is our <span class="hl">foundation.</span></span>
@@ -135,7 +142,7 @@ function splitCards() {
       </span>
     </a>
     <a class="split-card" href="${url('careers/')}">
-      ${img('crew', { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
+      ${img('crew-pour', { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
       <span class="split-card__body">
         <span class="eyebrow eyebrow--light">Careers</span>
         <span class="split-card__title">Build a career <span class="hl">that lasts.</span></span>
@@ -177,7 +184,8 @@ function contact() {
 export default function home() {
   const { site, services: list, projects } = ctx;
   const featured = projects.filter((p) => p.featured);
-  const poster = posterSrc(site.hero.slides[0].video);
+  const firstSlide = site.hero.slides[0];
+  const poster = firstSlide.image ? photoSrc(firstSlide.image) : posterSrc(firstSlide.video);
   return {
     path: '',
     bodyClass: 'page--home',

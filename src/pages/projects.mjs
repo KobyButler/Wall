@@ -9,14 +9,14 @@ export default function projects() {
   return {
     path: 'projects/',
     title: 'Projects',
-    description: `Browse foundations, concrete walls, flatwork, commercial concrete and site work completed by ${site.name} across ${site.serviceAreaLabel}.`,
+    description: `Browse water tanks, structural foundations, bridge decks, laser-screeded slabs, curb and more built by ${site.name} across ${site.serviceAreaLabel}.`,
     crumbs,
     body: html`
       ${pageHero({
-        image: 'foundation-site',
+        image: 'tank-forms-pump',
         eyebrow: 'Our Work',
         title: 'Projects built to *stand the test of time.*',
-        text: 'From custom-home foundations to commercial slabs and public plazas — a look at the work our crews deliver.',
+        text: 'From water tanks and bridge decks to warehouse floors and slip-formed curb — a look at the work our crews deliver.',
         crumbs,
       })}
 

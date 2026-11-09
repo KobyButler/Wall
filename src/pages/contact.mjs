@@ -23,7 +23,7 @@ export default function contact() {
     cta: false,
     body: html`
       ${pageHero({
-        image: 'power-trowel',
+        image: 'wall-forms-mountains',
         eyebrow: 'Contact Us',
         title: 'Let’s build something *solid together.*',
         text: 'Tell us about your project and we’ll get back to you with a free, detailed estimate.',

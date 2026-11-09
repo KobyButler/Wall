@@ -1,317 +1,118 @@
 {
-  "architectural-wall": {
-    "w": 1600,
-    "h": 1001,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#748e96"
-  },
-  "backhoe": {
-    "w": 1600,
-    "h": 1069,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#8a9793"
-  },
-  "commercial": {
-    "w": 2200,
-    "h": 1463,
+  "ada-ramp-domes": {
+    "w": 2048,
+    "h": 1536,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2048
     ],
-    "color": "#9c8a73"
+    "color": "#887e6e"
   },
-  "commercial-pour": {
-    "w": 1600,
-    "h": 900,
+  "approach-replace": {
+    "w": 1536,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600
+      1536
     ],
-    "color": "#8f7871"
+    "color": "#6d6f74"
   },
-  "crew": {
-    "w": 2200,
-    "h": 1467,
+  "box-structure": {
+    "w": 1536,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600,
-      2200
+      1536
     ],
-    "color": "#967565"
+    "color": "#59616c"
   },
-  "crew-tools": {
-    "w": 2200,
-    "h": 1467,
+  "box-structure-hillside": {
+    "w": 1536,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600,
-      2200
+      1536
     ],
-    "color": "#6d7269"
+    "color": "#8c817f"
   },
-  "curb-stringline": {
-    "w": 1600,
-    "h": 1067,
+  "bridge-canyon": {
+    "w": 1536,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600
+      1536
     ],
-    "color": "#907f71"
+    "color": "#8f8a85"
   },
-  "decorative": {
-    "w": 2200,
-    "h": 1467,
+  "bridge-deck-barrier": {
+    "w": 1536,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600,
-      2200
+      1536
     ],
-    "color": "#a7a7a7"
+    "color": "#7d7d7d"
   },
-  "driveway-home": {
-    "w": 1600,
-    "h": 1067,
+  "bridge-deck-finish": {
+    "w": 1536,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600
+      1536
     ],
-    "color": "#8c897f"
+    "color": "#8c9aa5"
   },
-  "driveway-new-home": {
-    "w": 1600,
-    "h": 1067,
+  "bridge-deck-rebar": {
+    "w": 1542,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600
+      1542
     ],
-    "color": "#b2b2b6"
+    "color": "#757d81"
   },
-  "edge-finishing": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#79675c"
-  },
-  "excavation": {
-    "w": 2200,
-    "h": 1650,
+  "bridge-highway": {
+    "w": 2048,
+    "h": 1536,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2048
     ],
-    "color": "#768a8f"
+    "color": "#7e8184"
   },
-  "excavator-site": {
-    "w": 1600,
-    "h": 1067,
+  "building-apron-pour": {
+    "w": 1542,
+    "h": 2048,
     "widths": [
       640,
       1024,
-      1600
+      1542
     ],
-    "color": "#9a8777"
+    "color": "#7d7561"
   },
-  "flatwork": {
-    "w": 2200,
-    "h": 1467,
-    "widths": [
-      640,
-      1024,
-      1600,
-      2200
-    ],
-    "color": "#698289"
-  },
-  "footings-forming": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#7d7b74"
-  },
-  "foundation-forms": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#828282"
-  },
-  "foundation-site": {
-    "w": 2200,
-    "h": 1467,
+  "building-walls": {
+    "w": 2048,
+    "h": 1536,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2048
     ],
-    "color": "#82736f"
+    "color": "#a59d93"
   },
-  "foundations": {
-    "w": 2200,
-    "h": 1473,
-    "widths": [
-      640,
-      1024,
-      1600,
-      2200
-    ],
-    "color": "#514638"
-  },
-  "foundations-pour": {
-    "w": 1600,
-    "h": 1280,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#5e594e"
-  },
-  "foundations-rebar-mat": {
-    "w": 1600,
-    "h": 1071,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#4f4c41"
-  },
-  "graded-site": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#c9bba6"
-  },
-  "hardhat": {
-    "w": 2200,
-    "h": 1650,
-    "widths": [
-      640,
-      1024,
-      1600,
-      2200
-    ],
-    "color": "#937550"
-  },
-  "night-crew": {
-    "w": 2200,
-    "h": 1464,
-    "widths": [
-      640,
-      1024,
-      1600,
-      2200
-    ],
-    "color": "#505454"
-  },
-  "planning": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#b4ac9c"
-  },
-  "polished-floor": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#9d9894"
-  },
-  "power-screed": {
-    "w": 2200,
-    "h": 1467,
-    "widths": [
-      640,
-      1024,
-      1600,
-      2200
-    ],
-    "color": "#abaeb2"
-  },
-  "power-trowel": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#8e8c88"
-  },
-  "rebar-columns": {
-    "w": 2200,
-    "h": 1468,
-    "widths": [
-      640,
-      1024,
-      1600,
-      2200
-    ],
-    "color": "#9c9fa6"
-  },
-  "rebar-deck": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#545957"
-  },
-  "retaining-wall": {
-    "w": 1600,
-    "h": 1067,
-    "widths": [
-      640,
-      1024,
-      1600
-    ],
-    "color": "#5c6f6e"
-  },
-  "retaining-wall-aerial": {
+  "channel-slab-walls": {
     "w": 1600,
     "h": 1200,
     "widths": [
@@ -319,9 +120,9 @@
       1024,
       1600
     ],
-    "color": "#545552"
+    "color": "#889099"
   },
-  "retaining-wall-block": {
+  "channel-walls": {
     "w": 1600,
     "h": 1200,
     "widths": [
@@ -329,70 +130,598 @@
       1024,
       1600
     ],
-    "color": "#8f877f"
+    "color": "#557faa"
   },
-  "sunset-scaffold": {
-    "w": 2200,
-    "h": 1467,
+  "channel-walls-bridge": {
+    "w": 2048,
+    "h": 1536,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2048
     ],
-    "color": "#b08218"
+    "color": "#768391"
   },
-  "sunset-worker": {
-    "w": 2200,
-    "h": 1467,
+  "crew-pour": {
+    "w": 1542,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1542
+    ],
+    "color": "#524d47"
+  },
+  "crew-pour-hose": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#5a748f"
+  },
+  "crew-wall-forms": {
+    "w": 2048,
+    "h": 1536,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2048
     ],
-    "color": "#905937"
+    "color": "#6b7682"
   },
-  "wall-forming": {
+  "curb-extrusion": {
+    "w": 768,
+    "h": 1024,
+    "widths": [
+      640,
+      768
+    ],
+    "color": "#90959d"
+  },
+  "curb-finished": {
+    "w": 768,
+    "h": 1024,
+    "widths": [
+      640,
+      768
+    ],
+    "color": "#818a97"
+  },
+  "curb-gutter-crew": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#868b8f"
+  },
+  "curb-gutter-finish": {
+    "w": 768,
+    "h": 1024,
+    "widths": [
+      640,
+      768
+    ],
+    "color": "#898e8f"
+  },
+  "curb-machine": {
+    "w": 768,
+    "h": 1024,
+    "widths": [
+      640,
+      768
+    ],
+    "color": "#7e7e7d"
+  },
+  "curb-roundabout": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#76889d"
+  },
+  "deck-rebar-walls": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#7d838d"
+  },
+  "footing-forms-building": {
     "w": 1600,
-    "h": 1067,
+    "h": 901,
     "widths": [
       640,
       1024,
       1600
     ],
-    "color": "#5a564e"
+    "color": "#897f79"
   },
-  "wall-forms": {
+  "form-tower-rock": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#958e89"
+  },
+  "foundation-forms-redrock": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#656b7a"
+  },
+  "foundation-mountains": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#82817e"
+  },
+  "foundation-snow": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#647381"
+  },
+  "foundation-walls-complete": {
     "w": 1600,
-    "h": 1067,
+    "h": 1200,
     "widths": [
       640,
       1024,
       1600
     ],
-    "color": "#716e6a"
+    "color": "#978d83"
   },
-  "walls": {
-    "w": 2200,
-    "h": 1467,
+  "foundation-walls-redrock": {
+    "w": 2048,
+    "h": 1536,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2048
     ],
-    "color": "#75848a"
+    "color": "#9e9286"
   },
-  "winter-pour": {
-    "w": 2200,
-    "h": 1650,
+  "grade-beam-rebar": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#898f92"
+  },
+  "industrial-rebar-mat": {
+    "w": 1600,
+    "h": 720,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#73757b"
+  },
+  "industrial-slab-long": {
+    "w": 1600,
+    "h": 720,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#84929f"
+  },
+  "laser-screed-machine": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#606a79"
+  },
+  "metal-building-interior": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#8a8a86"
+  },
+  "night-pour-pumps": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#342f31"
+  },
+  "night-pour-rebar": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#5e5b47"
+  },
+  "night-pour-steam": {
+    "w": 1542,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1542
+    ],
+    "color": "#474440"
+  },
+  "night-pump-boom": {
+    "w": 1542,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1542
+    ],
+    "color": "#333533"
+  },
+  "parking-lot-replace": {
+    "w": 2047,
+    "h": 921,
     "widths": [
       640,
       1024,
       1600,
-      2200
+      2047
     ],
-    "color": "#67686b"
+    "color": "#8999a8"
+  },
+  "parking-slab": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#5f7c98"
+  },
+  "polished-floor-gloss": {
+    "w": 1542,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1542
+    ],
+    "color": "#6d6b67"
+  },
+  "power-screed-worker": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#90887a"
+  },
+  "power-trowel-floor": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#8a8a86"
+  },
+  "precast-bays": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#7c8fa4"
+  },
+  "pump-truck-forms": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#8894a5"
+  },
+  "ride-on-trowels": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#88867a"
+  },
+  "slab-pump-pour": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#969896"
+  },
+  "slab-rebar-redrock": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#67798c"
+  },
+  "slab-sawcut-joints": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#8897a7"
+  },
+  "slab-stringline": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#989894"
+  },
+  "steel-building-slab": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#667a99"
+  },
+  "tall-wall-forms": {
+    "w": 1024,
+    "h": 768,
+    "widths": [
+      640,
+      1024
+    ],
+    "color": "#89807b"
+  },
+  "tank-base-rebar": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#877775"
+  },
+  "tank-crew-forms": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#506d8e"
+  },
+  "tank-finished": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#8a909a"
+  },
+  "tank-forms-aerial": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#88836e"
+  },
+  "tank-forms-pump": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#8b7d69"
+  },
+  "tank-formwork": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#736d6c"
+  },
+  "tank-interior": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#546a80"
+  },
+  "tank-interior-crew": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#5b728c"
+  },
+  "tank-interior-roof": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#7c7870"
+  },
+  "tank-ring-redrock": {
+    "w": 1600,
+    "h": 901,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#957c77"
+  },
+  "trench-drain": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#7d8285"
+  },
+  "trowel-warehouse-gloss": {
+    "w": 2048,
+    "h": 1542,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#53514e"
+  },
+  "wall-forms-crane": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#7d7466"
+  },
+  "wall-forms-mountains": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#8f8985"
+  },
+  "walls-forms-crew": {
+    "w": 1600,
+    "h": 1200,
+    "widths": [
+      640,
+      1024,
+      1600
+    ],
+    "color": "#606770"
+  },
+  "walls-redrock": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#7d8088"
+  },
+  "warehouse-slab": {
+    "w": 2048,
+    "h": 1536,
+    "widths": [
+      640,
+      1024,
+      1600,
+      2048
+    ],
+    "color": "#89847b"
+  },
+  "warehouse-slab-fresh": {
+    "w": 1536,
+    "h": 2048,
+    "widths": [
+      640,
+      1024,
+      1536
+    ],
+    "color": "#77786f"
   }
 }

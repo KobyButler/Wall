@@ -24,7 +24,7 @@ export default function careers() {
     })),
     body: html`
       ${pageHero({
-        image: 'crew-tools',
+        image: 'crew-wall-forms',
         eyebrow: 'Careers',
         title: 'Build a career that’s *built to last.*',
         text: 'Steady, year-round work with a team that invests in its people. No experience? We’ll train the right attitude.',
@@ -35,7 +35,7 @@ export default function careers() {
       <section class="section section--paper careers-intro">
         <div class="container careers-intro__grid">
           <div class="careers-intro__media" data-reveal>
-            <figure class="frame frame--brackets">${img('crew', { sizes: '(min-width: 1024px) 44vw, 92vw', alt: 'Three crew members in high-visibility vests on a job site' })}</figure>
+            <figure class="frame frame--brackets">${img('crew-pour', { sizes: '(min-width: 1024px) 44vw, 92vw', alt: 'Wall crew members in high-visibility vests placing concrete' })}</figure>
           </div>
           <div class="careers-intro__copy" data-reveal style="--d:1">
             ${eyebrow('Life at Wall Concrete')}
@@ -107,6 +107,6 @@ export default function careers() {
         </div>
       </section>
     `,
-    cta: { title: 'Questions about *working here?*', text: 'Give our office a call or stop by — we’re happy to tell you more about the team and current openings.', image: 'sunset-scaffold' },
+    cta: { title: 'Questions about *working here?*', text: 'Give our office a call or stop by — we’re happy to tell you more about the team and current openings.', image: 'crew-pour-hose' },
   };
 }

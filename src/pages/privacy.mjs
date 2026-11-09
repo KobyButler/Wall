@@ -14,7 +14,7 @@ export default function privacy() {
     crumbs,
     cta: false,
     body: html`
-      ${pageHero({ image: 'architectural-wall', eyebrow: 'Legal', title: 'Privacy *Policy*', crumbs })}
+      ${pageHero({ image: 'foundation-walls-complete', eyebrow: 'Legal', title: 'Privacy *Policy*', crumbs })}
       <section class="section section--paper">
         <div class="container prose">
           <p class="prose__updated">Last updated: ${updated}</p>
