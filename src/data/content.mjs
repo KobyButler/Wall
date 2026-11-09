@@ -3,25 +3,25 @@
 // PLACEHOLDER items are flagged individually — confirm with the client.
 // ---------------------------------------------------------------------------
 
-// PLACEHOLDER: replace with real client reviews (e.g. from Google). Publishing
-// invented testimonials as real is not allowed, so these MUST be swapped out.
+// Real Google reviews, quoted word for word. Only add reviews customers
+// actually wrote. `rating` (1–5) is optional — stars show only when it's set.
 export const testimonials = {
-  placeholder: true,
+  placeholder: false,
   items: [
     {
-      quote: 'They showed up when they said they would, communicated every step of the way, and the finished work looks incredible. You can tell they care about the details.',
-      name: 'Project Owner',
-      role: 'Commercial project — Price, UT',
+      quote: 'Wall Contractors did an amazing job on my driveway!! The job required some sloping and storm drain for water flow and the owner came to evaluate everything and design the driveway just right to prevent any future water issues!! Their exceptional concrete crews showed up each morning by 7 am ready to work and had the job knocked out very quickly. I felt very fortunate that they were able to fit me into their very busy schedule. Wall Contractors is definitely the best when it comes to concrete work!!',
+      name: 'Ricky Collins',
+      role: 'Concrete driveway · Google review',
     },
     {
-      quote: 'Wall kept our foundation schedule tight right through the middle of winter. Square forms, a clean site and no excuses. They make our job easier.',
-      name: 'Site Superintendent',
-      role: 'General contractor',
+      quote: 'Absolute professionals! Very knowledgeable great craftsmen.',
+      name: 'Keisha',
+      role: 'Hand Candy Tattoo · Google review',
     },
     {
-      quote: 'Their crew placed and finished a huge warehouse slab flat and on schedule. One call, one crew — and the quality was excellent.',
-      name: 'Project Manager',
-      role: 'Industrial facility',
+      quote: 'Best concrete work around',
+      name: 'Rob Elkins',
+      role: 'Google review',
     },
   ],
 };

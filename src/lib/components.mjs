@@ -178,13 +178,14 @@ export function testimonialsSection() {
       <div class="testimonials__intro" data-reveal>
         ${eyebrow('Client Feedback')}
         <h2 class="h2" id="testimonials-title">What our <span class="hl">clients</span> say.</h2>
-        <p>Cities, contractors and facility owners keep calling us back for one reason: we do what we say we’ll do, and the work holds up.</p>
+        <p>Don’t just take our word for it. Here’s what customers say about working with our crews.</p>
+        ${ctx.site.reviewsUrl ? html`<a class="link-arrow testimonials__more" href="${ctx.site.reviewsUrl}" target="_blank" rel="noopener">Read more reviews on Google ${icon('arrowUpRight', { size: 18 })}</a>` : ''}
       </div>
       <div class="t-slider" data-slider aria-roledescription="carousel" aria-label="Client testimonials" data-reveal>
         <span class="t-slider__mark" aria-hidden="true">${icon('quote', { size: 96 })}</span>
         <div class="t-slider__track">
-          ${items.map((t, i) => html`<figure class="${cx('t-slide', i === 0 && 'is-active')}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${items.length}"${raw(i ? ' aria-hidden="true"' : '')}>
-            <div class="t-slide__stars" role="img" aria-label="Rated 5 out of 5">${[0, 1, 2, 3, 4].map(() => icon('star', { size: 20 }))}</div>
+          ${items.map((t, i) => html`<figure class="${cx('t-slide', i === 0 && 'is-active', t.quote.length > 220 && 't-slide--long')}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${items.length}"${raw(i ? ' aria-hidden="true"' : '')}>
+            ${t.rating ? html`<div class="t-slide__stars" role="img" aria-label="Rated ${t.rating} out of 5">${Array.from({ length: t.rating }, () => icon('star', { size: 20 }))}</div>` : ''}
             <blockquote><p>${t.quote}</p></blockquote>
             <figcaption><span class="t-slide__avatar" aria-hidden="true">${t.name[0]}</span><span><strong>${t.name}</strong><small>${t.role}</small></span></figcaption>
           </figure>`)}

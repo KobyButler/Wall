@@ -62,7 +62,7 @@ The client hasn't provided every business detail yet, so placeholders fill the g
 - [ ] **Hours and service counties.** Set in `src/data/site.mjs`.
 - [ ] **Domain.** Set `url` in `src/data/site.mjs`; it's used for SEO tags and the sitemap.
 - [ ] **Stats.** "20+ years", "1,500+ projects" and the rest are examples. Use real numbers.
-- [ ] **Testimonials.** These are written examples. Replace them with real client reviews (e.g. from Google). Do not publish invented reviews.
+- [x] **Testimonials** are real Google reviews, quoted word for word (`src/data/content.mjs`). Stars show only if a `rating` is added. Set `reviewsUrl` in `site.mjs` to link to their Google reviews.
 - [ ] **Project names and locations.** The portfolio uses the client's own photos, with titles written from what each photo shows. Add real project names, owners and locations in `src/data/projects.mjs` (`location` is optional).
 - [ ] **Company story** on the About page (`src/pages/about.mjs`): founding year, history, owners.
 - [ ] **Job openings and benefits** (`src/data/content.mjs`).

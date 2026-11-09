@@ -57,6 +57,10 @@ export default {
     youtube: '',
   },
 
+  // Link to the company's Google reviews. When set, a "Read more reviews" link
+  // appears beside the testimonials. Empty hides it.
+  reviewsUrl: '',
+
   // Online bill-pay link (Western Paving style "Payments" nav item). Empty hides it.
   paymentsUrl: '',
 
