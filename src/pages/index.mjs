@@ -3,7 +3,7 @@ import { icon, logoMark } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
 import {
   serviceAreaInfo, img, btn, eyebrow, sectionHead, serviceCard, projectCard, projectData, lightbox, statsBand, whySection,
-  processSection, testimonialsSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc, photoSrc,
+  processSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc, photoSrc,
 } from '../lib/components.mjs';
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -200,7 +200,6 @@ export default function home() {
       ${whySection()}
       ${featuredProjects(featured)}
       ${processSection()}
-      ${testimonialsSection()}
       ${splitCards()}
       ${contact()}
       ${projectData(featured)}

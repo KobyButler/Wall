@@ -92,41 +92,6 @@ content:
                 - { name: award, label: Award }
 
   # ---------------------------------------------------------------------------
-  - name: reviews
-    label: Reviews
-    type: file
-    path: content/reviews.json
-    format: json
-    fields:
-      - name: reviews
-        label: Customer reviews
-        description: Only post real reviews, copied word for word (for example from Google). They appear in the order listed.
-        type: object
-        list:
-          collapsible:
-            collapsed: true
-            summary: "{name}"
-        fields:
-          - name: quote
-            label: Review text
-            type: text
-            required: true
-          - name: name
-            label: Reviewer's name
-            type: string
-            required: true
-          - name: role
-            label: Detail line
-            description: "Optional, e.g. \"Concrete driveway · Google review\""
-            type: string
-          - name: rating
-            label: Star rating
-            description: Leave blank if the review has no star rating.
-            type: select
-            options:
-              values: ["5", "4", "3", "2", "1"]
-
-  # ---------------------------------------------------------------------------
   - name: projects
     label: Projects
     type: file
@@ -292,10 +257,6 @@ content:
           - { name: instagram, label: Instagram, type: string }
           - { name: linkedin, label: LinkedIn, type: string }
           - { name: youtube, label: YouTube, type: string }
-      - name: reviewsUrl
-        label: Google reviews link
-        description: When set, a "Read more reviews on Google" link appears next to the reviews.
-        type: string
       - name: paymentsUrl
         label: Online payments link
         description: When set, a "Make a Payment" link appears in the top bar and footer.

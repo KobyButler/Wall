@@ -1,6 +1,6 @@
 // ---------------------------------------------------------------------------
 // Shared copy blocks used across pages. Editable business content (jobs,
-// reviews, projects, services, company info) lives in /content/*.json.
+// projects, services, company info) lives in /content/*.json.
 // ---------------------------------------------------------------------------
 
 export const why = [

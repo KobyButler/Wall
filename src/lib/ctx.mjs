@@ -6,7 +6,6 @@ export const ctx = {
   services: [],
   projects: [],
   experience: [],
-  reviews: [],
   careers: { positions: [], benefits: [] },
   about: { storyLead: '', story: [], mission: '', team: [] },
   images: {},

@@ -19,8 +19,6 @@ const PATHS = {
   pause: '<rect x="6.5" y="5" width="3.6" height="14" rx="1" fill="currentColor" stroke="none"/><rect x="13.9" y="5" width="3.6" height="14" rx="1" fill="currentColor" stroke="none"/>',
   close: '<path d="M6 6l12 12M18 6 6 18"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
-  quote: '<path d="M10 6.5C6.8 7.6 4.8 10.2 4.8 13.8V18H10v-5.3H7.6c.1-2.2 1.2-3.7 3.2-4.6zM19.2 6.5c-3.2 1.1-5.2 3.7-5.2 7.3V18h5.2v-5.3h-2.4c.1-2.2 1.2-3.7 3.2-4.6z" fill="currentColor" stroke="none"/>',
-  star: '<path d="m12 3.6 2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.2-4.1 5.8-.8z" fill="currentColor" stroke="none"/>',
   upload: '<path d="M12 15V4M7 9l5-5 5 5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/>',
   briefcase: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/>',
   // values / features

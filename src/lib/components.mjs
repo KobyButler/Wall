@@ -170,36 +170,6 @@ export function processSection({ tone = 'steel' } = {}) {
   </section>`;
 }
 
-export function testimonialsSection() {
-  const items = ctx.reviews;
-  if (!items.length) return '';
-  return html`<section class="section section--paper testimonials" aria-labelledby="testimonials-title">
-    <div class="container testimonials__grid">
-      <div class="testimonials__intro" data-reveal>
-        ${eyebrow('Client Feedback')}
-        <h2 class="h2" id="testimonials-title">What our <span class="hl">clients</span> say.</h2>
-        <p>Don’t just take our word for it. Here’s what customers say about working with our crews.</p>
-        ${ctx.site.reviewsUrl ? html`<a class="link-arrow testimonials__more" href="${ctx.site.reviewsUrl}" target="_blank" rel="noopener">Read more reviews on Google ${icon('arrowUpRight', { size: 18 })}</a>` : ''}
-      </div>
-      <div class="t-slider" data-slider aria-roledescription="carousel" aria-label="Client testimonials" data-reveal>
-        <span class="t-slider__mark" aria-hidden="true">${icon('quote', { size: 96 })}</span>
-        <div class="t-slider__track">
-          ${items.map((t, i) => html`<figure class="${cx('t-slide', i === 0 && 'is-active', t.quote.length > 220 && 't-slide--long')}" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${items.length}"${raw(i ? ' aria-hidden="true"' : '')}>
-            ${t.rating ? html`<div class="t-slide__stars" role="img" aria-label="Rated ${t.rating} out of 5">${Array.from({ length: t.rating }, () => icon('star', { size: 20 }))}</div>` : ''}
-            <blockquote><p>${t.quote}</p></blockquote>
-            <figcaption><span class="t-slide__avatar" aria-hidden="true">${t.name[0]}</span><span><strong>${t.name}</strong><small>${t.role}</small></span></figcaption>
-          </figure>`)}
-        </div>
-        <div class="t-slider__controls">
-          <button type="button" class="icon-btn icon-btn--outline" data-slider-prev aria-label="Previous testimonial">${icon('chevronLeft')}</button>
-          <div class="t-slider__dots">${items.map((_, i) => html`<button type="button" class="${cx('t-slider__dot', i === 0 && 'is-active')}" data-slider-dot="${i}" aria-label="Show testimonial ${i + 1}"${raw(i === 0 ? ' aria-current="true"' : '')}></button>`)}</div>
-          <button type="button" class="icon-btn icon-btn--outline" data-slider-next aria-label="Next testimonial">${icon('chevronRight')}</button>
-        </div>
-      </div>
-    </div>
-  </section>`;
-}
-
 export function ctaBand({
   title = 'Ready to *break ground?*',
   text = 'Tell us about your project and we’ll get back to you with a free, detailed estimate. No pressure, no vague numbers.',

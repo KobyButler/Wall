@@ -20,8 +20,8 @@ async function readJson(dir, file) {
 
 export async function loadContent(root, defaults, warn) {
   const dir = path.join(root, 'content');
-  const [settings, home, services, projects, reviews, careers, about] = await Promise.all(
-    ['settings.json', 'home.json', 'services.json', 'projects.json', 'reviews.json', 'careers.json', 'about.json'].map((f) => readJson(dir, f))
+  const [settings, home, services, projects, careers, about] = await Promise.all(
+    ['settings.json', 'home.json', 'services.json', 'projects.json', 'careers.json', 'about.json'].map((f) => readJson(dir, f))
   );
 
   // --- Company info + home page ---------------------------------------------
@@ -38,7 +38,6 @@ export async function loadContent(root, defaults, warn) {
       .map((s) => ({ value: Number(s.value), suffix: str(s.suffix), label: str(s.label) })),
     social: Object.fromEntries(['facebook', 'instagram', 'linkedin', 'youtube'].map((k) => [k, str(settings.social?.[k])])),
     forms: { estimate: str(settings.forms?.estimate), careers: str(settings.forms?.careers) },
-    reviewsUrl: str(settings.reviewsUrl),
     paymentsUrl: str(settings.paymentsUrl),
     hero: {
       ...defaults.hero,
@@ -109,14 +108,6 @@ export async function loadContent(root, defaults, warn) {
     .filter((e) => str(e.name))
     .map((e) => ({ name: str(e.name), detail: str(e.detail), category: str(e.category) || 'Other Projects', current: e.current === true || e.current === 'true' }));
 
-  // --- Reviews ------------------------------------------------------------------
-  const reviewList = list(reviews.reviews)
-    .filter((r) => str(r.quote) && str(r.name))
-    .map((r) => {
-      const rating = Math.round(Number(r.rating));
-      return { quote: str(r.quote), name: str(r.name), role: str(r.role), rating: rating >= 1 && rating <= 5 ? rating : undefined };
-    });
-
   // --- Careers ------------------------------------------------------------------
   const careerData = {
     positions: list(careers.positions)
@@ -135,5 +126,5 @@ export async function loadContent(root, defaults, warn) {
       .map((m) => ({ name: str(m.name), title: str(m.title), phone: str(m.phone), photo: str(m.photo) })),
   };
 
-  return { site, services: serviceList, projects: projectList, experience: experienceList, reviews: reviewList, careers: careerData, about: aboutData };
+  return { site, services: serviceList, projects: projectList, experience: experienceList, careers: careerData, about: aboutData };
 }

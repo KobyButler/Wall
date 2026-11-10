@@ -1,7 +1,7 @@
 import { html } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx } from '../lib/ctx.mjs';
-import { sectionHead, pageHero, projectCard, projectData, lightbox, testimonialsSection } from '../lib/components.mjs';
+import { sectionHead, pageHero, projectCard, projectData, lightbox } from '../lib/components.mjs';
 
 const groupIcons = { 'Highways & Transportation': 'road', 'National Parks': 'mountain', 'Industrial & Commercial': 'building', 'Water & Utilities': 'tank', Energy: 'energy' };
 
@@ -64,7 +64,6 @@ export default function projects() {
 
       ${trackRecord()}
 
-      ${testimonialsSection()}
       ${projectData(list)}
       ${lightbox()}
     `,

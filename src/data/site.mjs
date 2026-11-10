@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Developer-level site settings.
 //
-// Business details (phone, email, address, hours, stats, reviews, jobs,
+// Business details (phone, email, address, hours, stats, jobs,
 // projects, services…) live in /content/*.json so the client can edit them
 // in Pages CMS — see README "Editing content". Values here are fallbacks used
 // only when a content field is left blank.

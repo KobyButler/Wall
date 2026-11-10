@@ -1,7 +1,7 @@
 import { html } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
-import { img, btn, eyebrow, sectionHead, pageHero, statsBand, checklist, utahMap, testimonialsSection, fmt } from '../lib/components.mjs';
+import { img, btn, eyebrow, sectionHead, pageHero, statsBand, checklist, utahMap, fmt } from '../lib/components.mjs';
 import { values, markets, safety } from '../data/content.mjs';
 
 // "K. Geoffrey Madsen" -> "KM"
@@ -126,7 +126,6 @@ export default function about() {
         </div>
       </section>
 
-      ${testimonialsSection()}
     `,
   };
 }

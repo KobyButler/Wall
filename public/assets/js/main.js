@@ -349,40 +349,6 @@ function initCarousels() {
   });
 }
 
-/* Testimonial slider --------------------------------------------------------- */
-function initSliders() {
-  $$('[data-slider]').forEach((wrap) => {
-    const slides = $$('.t-slide', wrap);
-    const dots = $$('[data-slider-dot]', wrap);
-    if (slides.length < 2) return;
-    let current = 0;
-    let timer = null;
-    const show = (n) => {
-      current = (n + slides.length) % slides.length;
-      slides.forEach((s, i) => {
-        s.classList.toggle('is-active', i === current);
-        i === current ? s.removeAttribute('aria-hidden') : s.setAttribute('aria-hidden', 'true');
-      });
-      dots.forEach((d, i) => {
-        d.classList.toggle('is-active', i === current);
-        i === current ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current');
-      });
-    };
-    const auto = () => {
-      clearInterval(timer);
-      if (!reduceMotion) timer = setInterval(() => show(current + 1), 8000);
-    };
-    $('[data-slider-prev]', wrap)?.addEventListener('click', () => { show(current - 1); auto(); });
-    $('[data-slider-next]', wrap)?.addEventListener('click', () => { show(current + 1); auto(); });
-    dots.forEach((d) => d.addEventListener('click', () => { show(Number(d.dataset.sliderDot)); auto(); }));
-    wrap.addEventListener('mouseenter', () => clearInterval(timer));
-    wrap.addEventListener('mouseleave', auto);
-    wrap.addEventListener('focusin', () => clearInterval(timer));
-    onSwipe(wrap, (dir) => { show(current + dir); auto(); });
-    auto();
-  });
-}
-
 /* Project lightbox ----------------------------------------------------------- */
 function initLightbox() {
   const dialog = $('#lightbox');
@@ -622,7 +588,7 @@ function initMisc() {
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 }
 
-for (const init of [initHeader, initMobileMenu, initHero, initLazyVideos, initReveal, initCounters, initCarousels, initSliders, initLightbox, initFilters, initForms, initMisc]) {
+for (const init of [initHeader, initMobileMenu, initHero, initLazyVideos, initReveal, initCounters, initCarousels, initLightbox, initFilters, initForms, initMisc]) {
   try {
     init();
   } catch (err) {

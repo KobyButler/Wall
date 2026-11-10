@@ -8,7 +8,7 @@ Its design follows the four reference sites the client picked: Wollam Constructi
 | --- | --- |
 | Wollam | Full-screen hero **slideshow** with numbered slide tabs, service cards, bonding/stats call-outs |
 | TSJ | Contact top bar, "Join Our Team" CTAs, swipeable project cards, careers page with benefits, open positions and application form |
-| Gerber | Full-screen **background video**, big stat counters, bold condensed headlines, testimonials |
+| Gerber | Full-screen **background video**, big stat counters, bold condensed headlines |
 | Western Paving | "Covering all your concrete needs" service grid, numbered "Why us" cards, service detail page layout (capabilities, gallery, CTA band), "Work With Us" CTA |
 
 ---
@@ -28,7 +28,7 @@ npm run build   # production build into ./dist
 
 | URL | Source |
 | --- | --- |
-| `/` | `src/pages/index.mjs`: hero slideshow, intro, stats, services, why us, project carousel, process, testimonials, safety/careers, estimate form |
+| `/` | `src/pages/index.mjs`: hero slideshow, intro, stats, services, why us, project carousel, process, safety/careers, estimate form |
 | `/about/` | `src/pages/about.mjs`: story, mission, values, safety, who we serve, service area |
 | `/services/` | `src/pages/services.mjs`: all services overview |
 | `/services/<slug>/` | `src/pages/service-detail.mjs`: one page per service, generated from `content/services.json` |
@@ -49,9 +49,8 @@ The client edits the site at **[app.pagescms.org](https://app.pagescms.org)**, a
 | Section | What they can change |
 | --- | --- |
 | **Careers & Job Openings** | Add, edit, reorder or hide job postings; benefits |
-| **Reviews** | Add real customer reviews and star ratings |
 | **Projects** | Add projects with photos, choose the service, feature them on the home page; the named "Track Record" list, including jobs under construction |
-| **Company Info** | Phone, email, address, mailing address, hours, service areas, license line, headline numbers, social links, Google reviews link, payments link |
+| **Company Info** | Phone, email, address, mailing address, hours, service areas, license line, headline numbers, social links, payments link |
 | **Home Page** | Slideshow headline, text and photos |
 | **About Page** | Company story, mission and team (names, titles, optional photos and direct phones) |
 | **Services** | All service text, photos, capabilities and FAQs, and add new services |
@@ -86,7 +85,6 @@ The client hasn't provided every business detail yet, so placeholders fill the g
 - [ ] **Hours and service counties** (Company Info).
 - [ ] **Domain.** Set `url` in `src/data/site.mjs`; it's used for SEO tags and the sitemap.
 - [x] **Headline numbers** (Company Info) come from the client's company resume (Oct 2026). The 40,000+ yards figure was given separately; the resume lists 36,666 CY for the last 12 months alone, so confirm which number they want.
-- [x] **Reviews** are real 5-star Google reviews, quoted word for word. Add the Google reviews link under Company Info.
 - [ ] **Project names and locations** (Projects). The photo portfolio uses the client's own photos, with titles written from what each photo shows. The Track Record list of named jobs comes from the company resume.
 - [x] **Company story and team** (About Page) come from the client's company resume. Direct phone numbers are left off; add them per person in Pages CMS if the client wants them public.
 - [ ] **Job openings and benefits** (Careers & Job Openings).
@@ -164,7 +162,7 @@ Or run `npm run build` and upload the contents of `dist/` to any web host (cPane
 build.mjs                 Build script + dev server (no npm dependencies)
 .pages.yml                Pages CMS editing forms
 content/
-  *.json                  ← editable content (jobs, reviews, projects, services, company info…)
+  *.json                  ← editable content (jobs, projects, services, company info…)
   media/                  ← photo library (originals)
 src/
   data/                   developer settings + fixed copy blocks
@@ -189,7 +187,7 @@ scripts/
 - **Navigation:** sticky header that turns solid on scroll and hides on scroll down; services mega menu; full-screen mobile menu; "Call / Free Estimate" bar on phones.
 - **Animation and media:** scroll-reveal animations, animated stat counters, a job-site video on the Laser Screed page.
 - **Projects:** draggable project carousel, filterable portfolio (shareable `?service=` URLs), and a project lightbox with keyboard, swipe and deep links (`#project-slug`).
-- **Content:** testimonial slider, animated FAQ accordions, service-area map, Google Map embed.
+- **Content:** animated FAQ accordions, service-area map, Google Map embed.
 - **SEO:** `GeneralContractor`, `Service`, `FAQPage`, `JobPosting` and `BreadcrumbList` structured data; Open Graph / Twitter cards; canonical URLs; sitemap.
 - **Accessibility:** semantic HTML, skip link, keyboard support, visible focus states, ARIA on interactive widgets, reduced-motion support, AA color contrast.
 - **Performance:** responsive WebP images, lazy loading, a preloaded hero poster, no frameworks. CSS and JS are each a single file, cache-busted by content hash.
