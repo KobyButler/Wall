@@ -71,7 +71,7 @@ Photo spots are defined once in `src/data/photo-slots.mjs`. If you add one, add 
 2. Install the Pages CMS GitHub App on the `Wall` repository when prompted.
 3. Open the repository. The editing sections come from `.pages.yml`.
 4. Under **Collaborators**, invite the client by email. They get a link and can start editing without a GitHub account.
-5. Optional: copy the repository's address from the browser and set it as `cmsUrl` in `src/data/site.mjs`. The admin page's editor button then opens the Wall repository directly.
+5. The admin page's editor button opens `cmsUrl` from `src/data/site.mjs`, currently the Site Photos section ([app.pagescms.org/kobybutler/wall/main/file/photos](https://app.pagescms.org/kobybutler/wall/main/file/photos)). Update it if the repository is renamed or moved.
 
 ### For developers: where content lives
 
