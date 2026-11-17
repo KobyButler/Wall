@@ -584,7 +584,8 @@ function initForms() {
 
 /* Photo labels (?photo-labels=on) ------------------------------------------ */
 // Owner tool, turned on from /admin/: tags every photo with the site-editor
-// field that sets it. Stays on while browsing until "Turn off" is pressed.
+// field that sets it; clicking a tag opens that editor section in a new tab.
+// Stays on while browsing until "Turn off" is pressed.
 function initPhotoLabels() {
   const param = new URLSearchParams(location.search).get('photo-labels');
   let on = param === 'on';
@@ -597,17 +598,18 @@ function initPhotoLabels() {
   root.classList.add('photo-labels-on');
   const layer = document.createElement('div');
   layer.className = 'photo-labels';
-  layer.setAttribute('aria-hidden', 'true');
   const tags = $$('[data-photo-spot]').map((el) => {
-    const tag = document.createElement('span');
+    const edit = el.dataset.photoEdit;
+    const tag = document.createElement(edit ? 'a' : 'span');
     tag.className = 'photo-label';
     tag.textContent = el.dataset.photoSpot;
+    if (edit) Object.assign(tag, { href: edit, target: '_blank', rel: 'noopener', title: 'Open this spot in the site editor' });
     layer.append(tag);
     return [el, tag];
   });
   const bar = document.createElement('div');
   bar.className = 'photo-label-bar';
-  bar.innerHTML = '<span>Photo labels are on. Each label names the site-editor field that sets that photo.</span><a href="?photo-labels=off">Turn off</a>';
+  bar.innerHTML = '<span>Photo labels are on. Click a label to open that spot in the site editor.</span><a href="?photo-labels=off">Turn off</a>';
   document.body.append(layer, bar);
 
   // Labels sit in one layer over the page, so overlays and clipping on the

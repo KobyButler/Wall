@@ -3,7 +3,7 @@ import { icon, logoMark } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
 import {
   serviceAreaInfo, img, btn, eyebrow, sectionHead, serviceCard, projectCard, projectData, lightbox, statsBand, whySection,
-  processSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc, photoSrc,
+  processSection, checklist, contactList, utahMap, estimateForm, ticker, posterSrc, photoSrc, photoSpotAttrs,
 } from '../lib/components.mjs';
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -17,7 +17,7 @@ function hero() {
         if (s.image) {
           const p = photoSrc(s.image);
           return html`<div class="${cx('hero__slide', i === 0 && 'is-active')}" data-slide>
-            <img class="hero__poster" src="${p.src}" srcset="${p.srcset}" sizes="100vw" alt="" width="${p.w}" height="${p.h}"${loading} decoding="async" style="background-color:${p.color}" data-photo-spot="Home Page › Top slideshow › ${s.label || `Slide ${i + 1}`}">
+            <img class="hero__poster" src="${p.src}" srcset="${p.srcset}" sizes="100vw" alt="" width="${p.w}" height="${p.h}"${loading} decoding="async" style="background-color:${p.color}"${photoSpotAttrs(`Home Page › Top slideshow › ${s.label || `Slide ${i + 1}`}`)}>
           </div>`;
         }
         const poster = posterSrc(s.video);

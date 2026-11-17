@@ -10,7 +10,7 @@ export default function admin() {
   const crumbs = [{ label: 'Site Admin', path: 'admin/' }];
   const steps = [
     { icon: 'pin', title: 'Find the photo', text: 'Turn on photo labels, then browse the website. Every photo shows a yellow label naming the editor section and field that controls it.' },
-    { icon: 'clipboard', title: 'Open that spot in the editor', text: 'In the site editor, open the section named first on the label (Site Photos, Services, Projects, Home Page or About Page), then the field it names.' },
+    { icon: 'clipboard', title: 'Click its label', text: 'The label opens that section of the site editor in a new tab (Site Photos, Services, Projects, Home Page or About Page). Find the field the label names.' },
     { icon: 'upload', title: 'Pick a different photo', text: 'Choose a photo from the photo library or upload a new one, then press Save. The website updates about two minutes later.' },
     { icon: 'layers', title: 'Add or delete photos', text: 'Use Media in the editor to upload new photos or delete ones you no longer want. Wide (landscape) photos work best for banners and backgrounds.' },
   ];
@@ -31,7 +31,7 @@ export default function admin() {
             <h2 class="h2">Two tools, <span class="hl">one website.</span></h2>
             <p class="lead">The site editor is where every change is made. Photo labels show you which part of the editor controls each photo on the site.</p>
             <div class="admin__actions">
-              ${btn('Open the Site Editor', site.cmsUrl, { iconName: 'arrowUpRight', attrs: 'target="_blank" rel="noopener"' })}
+              ${btn('Open the Site Editor', `${site.cmsUrl.replace(/\/$/, '')}/file/photos`, { iconName: 'arrowUpRight', attrs: 'target="_blank" rel="noopener"' })}
               ${btn('Turn On Photo Labels', url('?photo-labels=on'), { variant: 'outline', iconName: 'arrowRight' })}
             </div>
             <p class="admin__note">${icon('mail', { size: 18 })}<span>Sign in to the editor with the email address your invitation was sent to. Labels stay on while you browse; use “Turn off” at the bottom of the screen when you’re done.</span></p>

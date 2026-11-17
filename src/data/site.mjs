@@ -18,8 +18,9 @@ export default {
   // Set to '/sub-folder/' if the site is hosted somewhere other than the domain root.
   basePath: '/',
 
-  // The site editor the /admin/ page opens (Pages CMS, Site Photos section).
-  cmsUrl: 'https://app.pagescms.org/kobybutler/wall/main/file/photos',
+  // The site editor (Pages CMS) for this repository and branch. The /admin/ page
+  // and the photo labels link to its sections, e.g. <cmsUrl>/file/photos.
+  cmsUrl: 'https://app.pagescms.org/kobybutler/wall/main',
 
   region: 'Utah',
   address: { street: '', city: 'Price', region: 'UT', zip: '' },

@@ -60,8 +60,8 @@ Uploaded photos go into the shared photo library (`content/media`), and any phot
 
 **The admin page (`/admin/`)** is the owner's starting point. It isn't linked from the site and is hidden from search engines. It has two buttons:
 
-- **Open the Site Editor** opens Pages CMS.
-- **Turn On Photo Labels** reloads the site with a yellow label on every photo naming the editor field that sets it, for example `Site Photos › About page › Top banner` or `Services › Water Tanks › Gallery photos`. Labels stay on while browsing until "Turn off" is pressed.
+- **Open the Site Editor** opens Pages CMS at the Site Photos section.
+- **Turn On Photo Labels** reloads the site with a yellow label on every photo naming the editor field that sets it, for example `Site Photos › About page › Top banner` or `Services › Water Tanks › Gallery photos`. Clicking a label opens that editor section in a new tab. Labels stay on while browsing until "Turn off" is pressed.
 
 Photo spots are defined once in `src/data/photo-slots.mjs`. If you add one, add the matching field to the Site Photos section of `.pages.yml` with the same label, plus its value in `content/photos.json`.
 
@@ -71,7 +71,7 @@ Photo spots are defined once in `src/data/photo-slots.mjs`. If you add one, add 
 2. Install the Pages CMS GitHub App on the `Wall` repository when prompted.
 3. Open the repository. The editing sections come from `.pages.yml`.
 4. Under **Collaborators**, invite the client by email. They get a link and can start editing without a GitHub account.
-5. The admin page's editor button opens `cmsUrl` from `src/data/site.mjs`, currently the Site Photos section ([app.pagescms.org/kobybutler/wall/main/file/photos](https://app.pagescms.org/kobybutler/wall/main/file/photos)). Update it if the repository is renamed or moved.
+5. The admin page and photo labels link into the editor using `cmsUrl` in `src/data/site.mjs` ([app.pagescms.org/kobybutler/wall/main](https://app.pagescms.org/kobybutler/wall/main)), adding `/file/<section name from .pages.yml>`. Update it if the repository or branch is renamed.
 
 ### For developers: where content lives
 

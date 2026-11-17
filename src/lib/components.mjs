@@ -18,7 +18,18 @@ export function img(name, opts = {}) {
   const meta = imageMeta(spot.photo);
   const src = (w) => url(`assets/img/photos/${meta.key}-${w}.webp`);
   const fallback = meta.widths.find((w) => w >= 1024) ?? meta.widths.at(-1);
-  return html`<img${raw(cls ? ` class="${esc(cls)}"` : '')} src="${src(fallback)}" srcset="${meta.widths.map((w) => `${src(w)} ${w}w`).join(', ')}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="${alt}"${raw(eager ? '' : ' loading="lazy"')} decoding="async"${raw(priority ? ' fetchpriority="high"' : '')} style="background-color:${meta.color}"${raw(where ? ` data-photo-spot="${esc(where)}"` : '')}>`;
+  return html`<img${raw(cls ? ` class="${esc(cls)}"` : '')} src="${src(fallback)}" srcset="${meta.widths.map((w) => `${src(w)} ${w}w`).join(', ')}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="${alt}"${raw(eager ? '' : ' loading="lazy"')} decoding="async"${raw(priority ? ' fetchpriority="high"' : '')} style="background-color:${meta.color}"${photoSpotAttrs(where)}>`;
+}
+
+// Pages CMS section (the `name` in .pages.yml) for the first part of a label.
+const cmsSections = { 'Site Photos': 'photos', 'Home Page': 'home', 'About Page': 'about', Services: 'services', Projects: 'projects' };
+
+// Label and editor link for the photo-label mode.
+export function photoSpotAttrs(where) {
+  if (!where) return '';
+  const section = cmsSections[where.split(' › ')[0]];
+  const edit = section ? `${ctx.site.cmsUrl.replace(/\/$/, '')}/file/${section}` : '';
+  return raw(` data-photo-spot="${esc(where)}"${edit ? ` data-photo-edit="${esc(edit)}"` : ''}`);
 }
 
 // CMS location labels for photos that live in other sections.

@@ -1125,6 +1125,9 @@ a.contact-card__value:hover { color: var(--accent-ink); }
 .photo-labels { position: absolute; top: 0; left: 0; z-index: 85; width: 100%; overflow: hidden; pointer-events: none; }
 .photo-label { position: absolute; padding: 0.35rem 0.6rem; background: var(--accent); color: var(--ink); font: 700 0.8rem/1.3 var(--font-body); border-radius: var(--radius); box-shadow: 0 6px 18px -6px rgb(0 0 0 / 0.6); }
 .photo-label[hidden] { display: none; }
+a.photo-label { pointer-events: auto; transition: background-color 0.2s, transform 0.2s; }
+a.photo-label::after { content: ' ↗'; }
+a.photo-label:hover, a.photo-label:focus-visible { background: var(--white); transform: translateY(-1px); }
 .photo-labels-on [data-photo-spot] { outline: 3px dashed var(--accent); outline-offset: -3px; }
 .photo-label-bar { position: fixed; left: 50%; bottom: 1rem; z-index: 95; display: flex; align-items: center; gap: 1rem; width: max-content; max-width: calc(100% - 2rem); padding: 0.65rem 0.7rem 0.65rem 1.1rem; transform: translateX(-50%); background: var(--ink); color: var(--white); font-size: 0.9rem; line-height: 1.35; border: 1px solid var(--accent); box-shadow: var(--shadow); }
 .photo-label-bar a { flex: none; padding: 0.5rem 0.9rem; background: var(--accent); color: var(--ink); font-weight: 700; }
