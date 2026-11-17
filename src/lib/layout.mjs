@@ -37,7 +37,7 @@ function megaMenu() {
         <span><strong>${s.name}</strong><small>${s.short}</small></span>
       </a></li>`)}</ul>
       <a class="mega__feature" href="${url('contact/')}">
-        ${img('laser-screed-machine', { sizes: '320px' })}
+        ${img(ctx.photos.shared.servicesMenu, { sizes: '320px' })}
         <span class="mega__feature-body"><small>Free estimates</small><strong>Tell us about your project</strong><span class="link-arrow">Get started ${icon('arrowRight', { size: 18 })}</span></span>
       </a>
     </div>
@@ -63,7 +63,6 @@ function header(page) {
         </nav>
         <div class="site-header__actions">
           <a class="header-phone" href="${telHref(site.phone)}"><span class="header-phone__icon">${icon('phone', { size: 18 })}</span><span><small>Call us</small>${site.phone}</span></a>
-          ${btn('Get an Estimate', url('contact/'), { size: 'sm', iconName: 'arrowUpRight', cls: 'site-header__cta' })}
           <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
             <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
             <span class="sr-only">Open menu</span>
@@ -94,7 +93,6 @@ function mobileMenu(page) {
       </ul>
     </nav>
     <div class="mobile-menu__foot">
-      ${btn('Get a Free Estimate', url('contact/'), { cls: 'btn--block' })}
       <a class="mobile-menu__contact" href="${telHref(site.phone)}">${icon('phone', { size: 18 })}${site.phone}</a>
       <a class="mobile-menu__contact" href="mailto:${site.email}">${icon('mail', { size: 18 })}${site.email}</a>
       ${socialLinks()}
@@ -154,8 +152,7 @@ function footer(page) {
 function mobileBar() {
   const { site } = ctx;
   return html`<div class="mobile-bar" data-mobile-bar>
-    <a class="mobile-bar__btn" href="${telHref(site.phone)}">${icon('phone', { size: 18 })}Call Now</a>
-    <a class="mobile-bar__btn mobile-bar__btn--accent" href="${url('contact/')}">${icon('clipboard', { size: 18 })}Free Estimate</a>
+    <a class="mobile-bar__btn mobile-bar__btn--accent" href="${telHref(site.phone)}">${icon('phone', { size: 18 })}Call Now · ${site.phone}</a>
   </div>`;
 }
 

@@ -18,6 +18,10 @@ export default {
   // Set to '/sub-folder/' if the site is hosted somewhere other than the domain root.
   basePath: '/',
 
+  // The site editor the /admin/ page opens. After Pages CMS is set up, open the
+  // Wall repository there and paste the address from the browser to link straight to it.
+  cmsUrl: 'https://app.pagescms.org/',
+
   region: 'Utah',
   address: { street: '', city: 'Price', region: 'UT', zip: '' },
   hours: [{ days: 'Mon – Fri', time: '7:00 AM – 5:00 PM' }],

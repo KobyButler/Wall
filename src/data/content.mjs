@@ -25,7 +25,7 @@ export const why = [
 export const process = [
   { icon: 'chat', title: 'Consult & site visit', text: 'We walk the site, review plans and talk through your goals, timeline and budget.' },
   { icon: 'clipboard', title: 'Detailed estimate', text: 'You get a clear, itemized proposal — no vague lump sums or surprise change orders.' },
-  { icon: 'truck', title: 'Prep, form & pour', text: 'Excavation, base, forms and rebar are inspected and ready before the trucks roll.' },
+  { icon: 'truck', title: 'Prep, form & pour', text: 'Forms, rebar and embeds are set and inspected before the trucks roll.' },
   { icon: 'checkCircle', title: 'Finish & walkthrough', text: 'We finish, cure and clean up, then walk the project with you to make sure it’s right.' },
 ];
 
@@ -40,7 +40,7 @@ export const markets = [
   { icon: 'road', title: 'Federal & state highways', text: 'Bridge deck and barrier repair, approach slabs and roadway concrete on interstate, US and state routes.' },
   { icon: 'mountain', title: 'National parks', text: 'Road and site concrete in Mesa Verde, Arches, Zion and Dinosaur National Monument.' },
   { icon: 'building', title: 'Industrial & commercial', text: 'Industrial plants, distribution buildings, heavy formwork and large industrial slabs.' },
-  { icon: 'excavator', title: 'Mining & material handling', text: 'Coal mines, material handling facilities and waste disposal sites.' },
+  { icon: 'conveyor', title: 'Mining & material handling', text: 'Coal mines, material handling facilities and waste disposal sites.' },
   { icon: 'energy', title: 'Energy & utilities', text: 'Power plants, large compressor sites and equipment foundations on active facilities.' },
   { icon: 'landmark', title: 'Municipalities & water', text: 'Water tanks, water and sewer treatment plants, curb & gutter and ADA ramps.' },
 ];
@@ -50,7 +50,7 @@ export const safety = [
   'Ongoing crew safety training',
   'Well-maintained, inspected equipment',
   'Clean, organized and secured job sites',
-  'Blue Stakes locates before every dig',
+  'Experience with owner and GC safety programs',
   'PPE required for every person on site',
 ];
 

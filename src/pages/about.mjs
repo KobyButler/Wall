@@ -18,7 +18,7 @@ function team() {
       ${sectionHead({ eyebrow: 'Our Team', title: 'The people *behind the work.*', text: 'A family-run company led by people who have spent their careers in concrete construction.' })}
       <ul class="team-grid">${members.map((m, i) => html`<li class="team-card" data-reveal style="--d:${i}">
         ${m.photo
-          ? html`<figure class="team-card__photo">${img(m.photo, { sizes: '112px', alt: `Portrait of ${m.name}` })}</figure>`
+          ? html`<figure class="team-card__photo">${img(m.photo, { sizes: '112px', alt: `Portrait of ${m.name}`, where: `About Page › Our team › ${m.name}` })}</figure>`
           : html`<span class="team-card__initials" aria-hidden="true">${initials(m.name)}</span>`}
         <h3 class="team-card__name">${m.name}</h3>
         ${m.title ? html`<span class="team-card__title">${m.title}</span>` : ''}
@@ -40,7 +40,7 @@ export default function about() {
     crumbs,
     body: html`
       ${pageHero({
-        image: 'foundation-forms-redrock',
+        image: ctx.photos.about.banner,
         eyebrow: 'About Us',
         title: 'Building on a *solid foundation.*',
         text: 'A family-owned concrete and construction company with more than 50 years in the industry.',
@@ -57,8 +57,8 @@ export default function about() {
             <div class="actions">${btn('Explore Our Services', url('services/'))}${btn('See Our Work', url('projects/'), { variant: 'outline', iconName: 'arrowUpRight' })}</div>
           </div>
           <div class="story__media" data-reveal style="--d:1">
-            <figure class="story__img story__img--a frame frame--brackets">${img('crew-pour', { sizes: '(min-width: 1024px) 34vw, 90vw', alt: 'Wall crew members placing concrete on a slab pour' })}</figure>
-            <figure class="story__img story__img--b">${img('walls-forms-crew', { sizes: '(min-width: 1024px) 24vw, 60vw', alt: 'Crew member working among cast-in-place walls and forms' })}</figure>
+            <figure class="story__img story__img--a frame frame--brackets">${img(ctx.photos.about.story, { sizes: '(min-width: 1024px) 34vw, 90vw' })}</figure>
+            <figure class="story__img story__img--b">${img(ctx.photos.about.storyInset, { sizes: '(min-width: 1024px) 24vw, 60vw' })}</figure>
           </div>
         </div>
       </section>
@@ -88,8 +88,8 @@ export default function about() {
       <section class="section section--paper safety" id="safety">
         <div class="container safety__grid">
           <div class="safety__media" data-reveal>
-            <figure class="frame frame--brackets">${img('night-pour-rebar', { sizes: '(min-width: 1024px) 46vw, 92vw', alt: 'Night pour on a heavily reinforced slab under light towers' })}</figure>
-            <figure class="safety__inset">${img('power-screed-worker', { sizes: '(min-width: 1024px) 18vw, 40vw', alt: 'Crew member in a hard hat leveling a slab with a power screed' })}</figure>
+            <figure class="frame frame--brackets">${img(ctx.photos.about.safety, { sizes: '(min-width: 1024px) 46vw, 92vw' })}</figure>
+            <figure class="safety__inset">${img(ctx.photos.about.safetyInset, { sizes: '(min-width: 1024px) 18vw, 40vw' })}</figure>
           </div>
           <div class="safety__copy" data-reveal style="--d:1">
             ${eyebrow('Committed to Safety')}

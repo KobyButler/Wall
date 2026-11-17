@@ -8,6 +8,7 @@ export const ctx = {
   experience: [],
   careers: { positions: [], benefits: [] },
   about: { storyLead: '', story: [], mission: '', team: [] },
+  photos: {},
   images: {},
   versions: {},
   base: '/',

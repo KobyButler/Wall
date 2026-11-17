@@ -1,0 +1,44 @@
+{
+  "home": {
+    "intro": "/media/foundation-walls-redrock.jpg",
+    "introAlt": "Finished cast-in-place foundation walls on a red-rock hillside",
+    "introInset": "/media/laser-screed-machine.jpg",
+    "introInsetAlt": "Laser screed leveling a fresh concrete slab",
+    "why": "/media/walls-forms-crew.jpg",
+    "safetyPanel": "/media/night-pour-steam.jpg",
+    "careersPanel": "/media/crew-pour.jpg"
+  },
+  "about": {
+    "banner": "/media/foundation-forms-redrock.jpg",
+    "story": "/media/crew-pour.jpg",
+    "storyAlt": "Wall crew members placing concrete on a slab pour",
+    "storyInset": "/media/walls-forms-crew.jpg",
+    "storyInsetAlt": "Crew member working among cast-in-place walls and forms",
+    "safety": "/media/night-pour-rebar.jpg",
+    "safetyAlt": "Night pour on a heavily reinforced slab under light towers",
+    "safetyInset": "/media/power-screed-worker.jpg",
+    "safetyInsetAlt": "Crew member in a hard hat leveling a slab with a power screed"
+  },
+  "services": {
+    "banner": "/media/foundation-mountains.jpg"
+  },
+  "projects": {
+    "banner": "/media/tank-forms-pump.jpg"
+  },
+  "careers": {
+    "banner": "/media/crew-wall-forms.jpg",
+    "intro": "/media/crew-pour.jpg",
+    "introAlt": "Wall crew members in high-visibility vests placing concrete",
+    "bottomBanner": "/media/crew-pour-hose.jpg"
+  },
+  "contact": {
+    "banner": "/media/wall-forms-mountains.jpg"
+  },
+  "shared": {
+    "statsBand": "/media/night-pour-pumps.jpg",
+    "bottomBanner": "/media/deck-rebar-walls.jpg",
+    "servicesMenu": "/media/laser-screed-machine.jpg",
+    "privacyBanner": "/media/foundation-walls-complete.jpg",
+    "notFound": "/media/form-tower-rock.jpg"
+  }
+}

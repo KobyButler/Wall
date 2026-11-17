@@ -57,7 +57,7 @@ const PATHS = {
   mountain: '<path d="M2 20 9 9l2.5 4L15 7l7 13z"/><path d="m13.5 9.6 1.5 1.3 1.4-1.3"/>',
   wall: '<rect x="3" y="4.5" width="18" height="15" rx="1"/><path d="M3 9.5h18M3 14.5h18M9 4.5v5M15 4.5v5M6 9.5v5M12 9.5v5M18 9.5v5M9 14.5v5M15 14.5v5"/>',
   slab: '<path d="M7.5 4h9L21 20H3z"/><path d="M12 4v16M5.3 12h13.4"/>',
-  excavator: '<rect x="2.5" y="16" width="11" height="4" rx="2"/><path d="M4 16v-4h3.2L8.5 9H11v7M11 11.5 15.5 5l4.5 4"/><path d="M20 9v3.8l-3.2 1.6"/>',
+  conveyor: '<rect x="2" y="15" width="20" height="5" rx="2.5"/><circle cx="5.5" cy="17.5" r=".9"/><circle cx="12" cy="17.5" r=".9"/><circle cx="18.5" cy="17.5" r=".9"/><rect x="4.5" y="9" width="6" height="6"/><rect x="13" y="10.5" width="5" height="4.5"/>',
   pattern: '<path d="m12 3.5 3.5 3.5-3.5 3.5L8.5 7zM12 13.5l3.5 3.5-3.5 3.5L8.5 17zM7 8.5l3.5 3.5L7 15.5 3.5 12zM17 8.5l3.5 3.5-3.5 3.5-3.5-3.5z"/>',
   // social (filled)
   facebook: '<path d="M14 8.5V7c0-.8.5-1 1-1h2V2.5h-3c-2.9 0-4 1.8-4 4.4v1.6H7.5V12H10v9.5h4V12h2.7l.4-3.5z" fill="currentColor" stroke="none"/>',

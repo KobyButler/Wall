@@ -48,6 +48,7 @@ The client edits the site at **[app.pagescms.org](https://app.pagescms.org)**, a
 
 | Section | What they can change |
 | --- | --- |
+| **Site Photos** | Every fixed photo spot on the site (page banners, section photos, backgrounds), grouped by page, with photo descriptions |
 | **Careers & Job Openings** | Add, edit, reorder or hide job postings; benefits |
 | **Projects** | Add projects with photos, choose the service, feature them on the home page; the named "Track Record" list, including jobs under construction |
 | **Company Info** | Phone, email, address, mailing address, hours, service areas, license line, headline numbers, social links, payments link |
@@ -55,7 +56,14 @@ The client edits the site at **[app.pagescms.org](https://app.pagescms.org)**, a
 | **About Page** | Company story, mission and team (names, titles, optional photos and direct phones) |
 | **Services** | All service text, photos, capabilities and FAQs, and add new services |
 
-Uploaded photos go into the shared photo library (`content/media`), and any photo there can be picked for any page. Each **Save** commits to `main`, and the GitHub Actions workflow republishes the site in about two minutes.
+Uploaded photos go into the shared photo library (`content/media`), and any photo there can be picked for any page. Photos are uploaded and deleted under **Media**. Each **Save** commits to `main`, and the GitHub Actions workflow republishes the site in about two minutes.
+
+**The admin page (`/admin/`)** is the owner's starting point. It isn't linked from the site and is hidden from search engines. It has two buttons:
+
+- **Open the Site Editor** opens Pages CMS.
+- **Turn On Photo Labels** reloads the site with a yellow label on every photo naming the editor field that sets it, for example `Site Photos › About page › Top banner` or `Services › Water Tanks › Gallery photos`. Labels stay on while browsing until "Turn off" is pressed.
+
+Photo spots are defined once in `src/data/photo-slots.mjs`. If you add one, add the matching field to the Site Photos section of `.pages.yml` with the same label, plus its value in `content/photos.json`.
 
 **One-time setup (repo owner):**
 
@@ -63,6 +71,7 @@ Uploaded photos go into the shared photo library (`content/media`), and any phot
 2. Install the Pages CMS GitHub App on the `Wall` repository when prompted.
 3. Open the repository. The editing sections come from `.pages.yml`.
 4. Under **Collaborators**, invite the client by email. They get a link and can start editing without a GitHub account.
+5. Optional: copy the repository's address from the browser and set it as `cmsUrl` in `src/data/site.mjs`. The admin page's editor button then opens the Wall repository directly.
 
 ### For developers: where content lives
 
@@ -71,7 +80,8 @@ Uploaded photos go into the shared photo library (`content/media`), and any phot
 | `content/*.json` | Everything editable in Pages CMS (see table above). The build reads these, and blank or invalid entries are skipped with a warning rather than breaking the site. |
 | `content/media/` | The photo library: original photos, referenced as `/media/<file>`. |
 | `.pages.yml` | The Pages CMS form definitions. Keep it in sync if you add fields; if you add a service, also add it to the Projects "Service" dropdown. |
-| `src/data/site.mjs` | Developer settings: domain, base path, navigation, slideshow timing, fallbacks. |
+| `src/data/site.mjs` | Developer settings: domain, base path, site editor link, navigation, slideshow timing, fallbacks. |
+| `src/data/photo-slots.mjs` | The fixed photo spots behind Site Photos: labels and the original photo for each, used when a spot is left blank. |
 | `src/data/content.mjs` | Fixed copy blocks: "why us" points, process steps, values, markets, safety list, general FAQs. |
 
 In headings and the mission statement, wrap words in `*asterisks*` to highlight them in the brand accent color.
@@ -81,7 +91,7 @@ In headings and the mission statement, wrap words in `*asterisks*` to highlight 
 The client hasn't provided every business detail yet, so placeholders fill the gaps. `npm run build` lists the ones still present. Most items below can be fixed by the client in Pages CMS.
 
 - [x] **Phone and street address** are the client's real details.
-- [ ] **Email.** `wallcontractors@etv.net` was taken from the client's letterhead. Confirm it's current.
+- [x] **Email** is `wallconcrete@etv.net`, confirmed by the client.
 - [ ] **Hours and service counties** (Company Info).
 - [ ] **Domain.** Set `url` in `src/data/site.mjs`; it's used for SEO tags and the sitemap.
 - [x] **Headline numbers** (Company Info) come from the client's company resume (Oct 2026). The 40,000+ yards figure was given separately; the resume lists 36,666 CY for the last 12 months alone, so confirm which number they want.
@@ -162,10 +172,10 @@ Or run `npm run build` and upload the contents of `dist/` to any web host (cPane
 build.mjs                 Build script + dev server (no npm dependencies)
 .pages.yml                Pages CMS editing forms
 content/
-  *.json                  ← editable content (jobs, projects, services, company info…)
+  *.json                  ← editable content (site photos, jobs, projects, services, company info…)
   media/                  ← photo library (originals)
 src/
-  data/                   developer settings + fixed copy blocks
+  data/                   developer settings, photo spots + fixed copy blocks
   lib/                    templating, layout (header/footer/SEO), components, icons, content loader
   pages/                  one module per page
 public/                   copied as-is into dist/

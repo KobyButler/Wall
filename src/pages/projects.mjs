@@ -39,7 +39,7 @@ export default function projects() {
     crumbs,
     body: html`
       ${pageHero({
-        image: 'tank-forms-pump',
+        image: ctx.photos.projects.banner,
         eyebrow: 'Our Work',
         title: 'Projects built to *stand the test of time.*',
         text: 'From water tanks and bridge decks to warehouse floors and slip-formed curb — a look at the work our crews deliver.',

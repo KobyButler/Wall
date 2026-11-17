@@ -1,7 +1,7 @@
 import { html, cx } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx, url } from '../lib/ctx.mjs';
-import { img, btn, eyebrow, sectionHead, pageHero, checklist, processSection } from '../lib/components.mjs';
+import { img, btn, eyebrow, sectionHead, pageHero, checklist, processSection, serviceSpot } from '../lib/components.mjs';
 import { markets } from '../data/content.mjs';
 
 const pad = (n) => String(n).padStart(2, '0');
@@ -16,9 +16,9 @@ export default function services() {
     crumbs,
     body: html`
       ${pageHero({
-        image: 'foundation-mountains',
+        image: ctx.photos.services.banner,
         eyebrow: 'Our Services',
-        title: 'Full-service concrete, *dirt to finish.*',
+        title: 'Full-service concrete, *start to finish.*',
         text: 'Twelve specialties, one accountable team. We self-perform the work, so you get one schedule, one point of contact and consistent quality.',
         crumbs,
         actions: html`${btn('Get a Free Estimate', url('contact/'))}`,
@@ -37,7 +37,7 @@ export default function services() {
           <div class="service-rows">
             ${ctx.services.map((s, i) => html`<article class="${cx('service-row', i % 2 && 'service-row--flip')}" id="${s.slug}">
               <a class="service-row__media" href="${url(`services/${s.slug}/`)}" tabindex="-1" aria-hidden="true" data-reveal>
-                ${img(s.image, { sizes: '(min-width: 1024px) 50vw, 100vw' })}
+                ${img(s.image, { sizes: '(min-width: 1024px) 50vw, 100vw', where: serviceSpot(s) })}
                 <span class="service-row__num">${pad(i + 1)}</span>
               </a>
               <div class="service-row__body" data-reveal style="--d:1">

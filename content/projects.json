@@ -155,7 +155,7 @@
       "title": "Finished Water Tank",
       "service": "water-tanks",
       "image": "/media/tank-finished.jpg",
-      "text": "A completed cast-in-place concrete water tank ready for backfill.",
+      "text": "A completed cast-in-place concrete water tank.",
       "location": "",
       "sector": "Water infrastructure",
       "scope": [
@@ -367,11 +367,10 @@
       "title": "Metal Building Slab Prep",
       "service": "general-contracting",
       "image": "/media/metal-building-interior.jpg",
-      "text": "Subgrade and reinforcing ready for the floor slab inside a new metal building.",
+      "text": "Reinforcing set and ready for the floor slab inside a new metal building.",
       "location": "",
       "sector": "Buildings",
       "scope": [
-        "Subgrade",
         "Reinforcing",
         "Slab prep"
       ],

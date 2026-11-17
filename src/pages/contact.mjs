@@ -25,7 +25,7 @@ export default function contact() {
     cta: false,
     body: html`
       ${pageHero({
-        image: 'wall-forms-mountains',
+        image: ctx.photos.contact.banner,
         eyebrow: 'Contact Us',
         title: 'Let’s build something *solid together.*',
         text: 'Tell us about your project and we’ll get back to you with a free, detailed estimate.',

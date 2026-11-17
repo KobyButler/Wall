@@ -9,13 +9,21 @@ export const fmt = (text) => raw(esc(text).replace(/\*(.+?)\*/g, '<span class="h
 
 const pad = (n) => String(n).padStart(2, '0');
 
-// Responsive <img> from the optimized photo manifest.
-export function img(name, { alt = '', sizes = '100vw', cls = '', eager = false, priority = false } = {}) {
-  const meta = imageMeta(name);
+// Responsive <img> from the optimized photo manifest. `name` is a photo key, a
+// "/media/…" path, or a Site Photos spot ({ photo, alt, where }). `where` names
+// the CMS field that sets the photo; the site's photo-label mode displays it.
+export function img(name, opts = {}) {
+  const spot = typeof name === 'object' ? name : { photo: name };
+  const { alt = spot.alt || '', sizes = '100vw', cls = '', eager = false, priority = false, where = spot.where || '' } = opts;
+  const meta = imageMeta(spot.photo);
   const src = (w) => url(`assets/img/photos/${meta.key}-${w}.webp`);
   const fallback = meta.widths.find((w) => w >= 1024) ?? meta.widths.at(-1);
-  return html`<img${raw(cls ? ` class="${esc(cls)}"` : '')} src="${src(fallback)}" srcset="${meta.widths.map((w) => `${src(w)} ${w}w`).join(', ')}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="${alt}"${raw(eager ? '' : ' loading="lazy"')} decoding="async"${raw(priority ? ' fetchpriority="high"' : '')} style="background-color:${meta.color}">`;
+  return html`<img${raw(cls ? ` class="${esc(cls)}"` : '')} src="${src(fallback)}" srcset="${meta.widths.map((w) => `${src(w)} ${w}w`).join(', ')}" sizes="${sizes}" width="${meta.w}" height="${meta.h}" alt="${alt}"${raw(eager ? '' : ' loading="lazy"')} decoding="async"${raw(priority ? ' fetchpriority="high"' : '')} style="background-color:${meta.color}"${raw(where ? ` data-photo-spot="${esc(where)}"` : '')}>`;
 }
+
+// CMS location labels for photos that live in other sections.
+export const serviceSpot = (s, field = 'Main photo') => `Services › ${s.name} › ${field}`;
+export const projectSpot = (p) => `Projects › ${p.title} › Photo`;
 
 export function btn(label, href, { variant = 'primary', size = '', iconName = 'arrowRight', cls = '', attrs = '' } = {}) {
   return html`<a class="${cx('btn', `btn--${variant}`, size && `btn--${size}`, cls)}" href="${href}"${raw(attrs ? ' ' + attrs : '')}><span>${label}</span>${iconName ? icon(iconName, { size: 18 }) : ''}</a>`;
@@ -38,9 +46,9 @@ export function breadcrumbs(crumbs = []) {
   )}</ol></nav>`;
 }
 
-export function pageHero({ image, eyebrow: eb, title, text, crumbs = [], actions = '' }) {
+export function pageHero({ image, where, eyebrow: eb, title, text, crumbs = [], actions = '' }) {
   return html`<section class="page-hero">
-    <div class="page-hero__media">${img(image, { eager: true, priority: true })}</div>
+    <div class="page-hero__media">${img(image, { eager: true, priority: true, ...(where && { where }) })}</div>
     <div class="page-hero__shade"></div>
     <div class="container page-hero__content">
       ${breadcrumbs(crumbs)}
@@ -58,7 +66,7 @@ export function checklist(items, cls = '') {
 
 export function serviceCard(s, i) {
   return html`<a class="service-card" href="${url(`services/${s.slug}/`)}" data-reveal style="--d:${i % 3}">
-    <span class="service-card__media">${img(s.image, { sizes: '(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw' })}<span class="service-card__icon">${icon(s.icon, { size: 26 })}</span></span>
+    <span class="service-card__media">${img(s.image, { sizes: '(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw', where: serviceSpot(s) })}<span class="service-card__icon">${icon(s.icon, { size: 26 })}</span></span>
     <span class="service-card__body">
       <span class="service-card__num">${pad(i + 1)}</span>
       <span class="service-card__title">${s.name}</span>
@@ -72,7 +80,7 @@ export function projectCard(p, { sizes = '(min-width: 1024px) 31vw, (min-width: 
   const s = serviceBySlug(p.service);
   return html`<article class="project-card" data-cat="${p.service}"${raw(reveal ? ' data-reveal' : '')}>
     <button type="button" class="project-card__btn" data-project="${p.slug}" aria-haspopup="dialog">
-      <span class="project-card__media">${img(p.image, { sizes })}</span>
+      <span class="project-card__media">${img(p.image, { sizes, where: projectSpot(p) })}</span>
       <span class="project-card__body">
         <span class="tag">${s?.menuName}</span>
         <span class="project-card__title">${p.title}</span>
@@ -127,7 +135,7 @@ export function lightbox() {
   </dialog>`;
 }
 
-export function statsBand({ image = 'night-pour-pumps' } = {}) {
+export function statsBand({ image = ctx.photos.shared.statsBand } = {}) {
   return html`<section class="stats-band" aria-label="Company highlights">
     <div class="stats-band__media" aria-hidden="true">${img(image)}</div>
     <div class="container">
@@ -147,7 +155,7 @@ export function whySection() {
         <h2 class="h2">Built on experience. <span class="hl">Backed by our name.</span></h2>
         <p class="why__lead">Our name is on every slab, wall and foundation we pour. That’s why we plan carefully, communicate clearly and never cut corners on the details that make concrete last.</p>
         ${btn('About Our Company', url('about/'), { variant: 'outline-light' })}
-        <figure class="why__figure frame frame--brackets">${img('walls-forms-crew', { sizes: '(min-width: 1024px) 40vw, 100vw' })}</figure>
+        <figure class="why__figure frame frame--brackets">${img(ctx.photos.home.why, { sizes: '(min-width: 1024px) 40vw, 100vw' })}</figure>
       </div>
       <ol class="why__list">${why.map((w, i) => html`<li class="why-card" data-reveal style="--d:${i}">
         <span class="why-card__num">${pad(i + 1)}</span>
@@ -173,7 +181,7 @@ export function processSection({ tone = 'steel' } = {}) {
 export function ctaBand({
   title = 'Ready to *break ground?*',
   text = 'Tell us about your project and we’ll get back to you with a free, detailed estimate. No pressure, no vague numbers.',
-  image = 'deck-rebar-walls',
+  image = ctx.photos.shared.bottomBanner,
 } = {}) {
   const { phone } = ctx.site;
   return html`<section class="cta-band">

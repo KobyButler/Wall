@@ -16,6 +16,135 @@ settings:
 
 content:
   # ---------------------------------------------------------------------------
+  # Labels must match src/data/photo-slots.mjs (shown by the site's photo labels).
+  - name: photos
+    label: Site Photos
+    type: file
+    path: content/photos.json
+    format: json
+    description: Every fixed photo spot on the website, grouped by page. Slideshow photos are under Home Page; service, project and team photos are in their own sections. Tip — turn on photo labels from the website's /admin/ page to see which spot each photo fills.
+    fields:
+      - name: home
+        label: "Home page"
+        type: object
+        fields:
+          - name: intro
+            label: "“Who We Are” — large photo"
+            type: image
+          - name: introAlt
+            label: "“Who We Are” — large photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+          - name: introInset
+            label: "“Who We Are” — small photo"
+            type: image
+          - name: introInsetAlt
+            label: "“Who We Are” — small photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+          - name: why
+            label: "“Why Wall Concrete” — photo"
+            type: image
+          - name: safetyPanel
+            label: "Safety panel — background"
+            type: image
+          - name: careersPanel
+            label: "Careers panel — background"
+            type: image
+      - name: about
+        label: "About page"
+        type: object
+        fields:
+          - name: banner
+            label: "Top banner"
+            type: image
+          - name: story
+            label: "“Our Story” — large photo"
+            type: image
+          - name: storyAlt
+            label: "“Our Story” — large photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+          - name: storyInset
+            label: "“Our Story” — small photo"
+            type: image
+          - name: storyInsetAlt
+            label: "“Our Story” — small photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+          - name: safety
+            label: "“Committed to Safety” — large photo"
+            type: image
+          - name: safetyAlt
+            label: "“Committed to Safety” — large photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+          - name: safetyInset
+            label: "“Committed to Safety” — small photo"
+            type: image
+          - name: safetyInsetAlt
+            label: "“Committed to Safety” — small photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+      - name: services
+        label: "Services page"
+        type: object
+        fields:
+          - name: banner
+            label: "Top banner"
+            type: image
+      - name: projects
+        label: "Projects page"
+        type: object
+        fields:
+          - name: banner
+            label: "Top banner"
+            type: image
+      - name: careers
+        label: "Careers page"
+        type: object
+        fields:
+          - name: banner
+            label: "Top banner"
+            type: image
+          - name: intro
+            label: "“Life at Wall Concrete” — photo"
+            type: image
+          - name: introAlt
+            label: "“Life at Wall Concrete” — photo (description)"
+            description: A short description of the photo for screen readers and Google. Update it when you change the photo.
+            type: string
+          - name: bottomBanner
+            label: "Bottom banner — background"
+            type: image
+      - name: contact
+        label: "Contact page"
+        type: object
+        fields:
+          - name: banner
+            label: "Top banner"
+            type: image
+      - name: shared
+        label: "Used on several pages"
+        type: object
+        fields:
+          - name: statsBand
+            label: "Big numbers band — background (Home & About)"
+            type: image
+          - name: bottomBanner
+            label: "“Ready to break ground?” banner — background"
+            type: image
+          - name: servicesMenu
+            label: "Services drop-down menu — photo"
+            type: image
+          - name: privacyBanner
+            label: "Privacy Policy — top banner"
+            type: image
+          - name: notFound
+            label: "“Page not found” — background"
+            type: image
+
+  # ---------------------------------------------------------------------------
   - name: careers
     label: Careers & Job Openings
     type: file
@@ -402,7 +531,6 @@ content:
                 - { name: building, label: Building }
                 - { name: wall, label: Block wall }
                 - { name: slab, label: Slab }
-                - { name: excavator, label: Excavator }
           - name: short
             label: Card summary
             description: One sentence shown on service cards.

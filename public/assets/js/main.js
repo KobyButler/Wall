@@ -582,13 +582,74 @@ function initForms() {
   }));
 }
 
+/* Photo labels (?photo-labels=on) ------------------------------------------ */
+// Owner tool, turned on from /admin/: tags every photo with the site-editor
+// field that sets it. Stays on while browsing until "Turn off" is pressed.
+function initPhotoLabels() {
+  const param = new URLSearchParams(location.search).get('photo-labels');
+  let on = param === 'on';
+  try {
+    if (param) sessionStorage.setItem('photo-labels', on ? 'on' : '');
+    on = sessionStorage.getItem('photo-labels') === 'on';
+  } catch { /* storage blocked: labels show on this page only */ }
+  if (!on) return;
+
+  root.classList.add('photo-labels-on');
+  const layer = document.createElement('div');
+  layer.className = 'photo-labels';
+  layer.setAttribute('aria-hidden', 'true');
+  const tags = $$('[data-photo-spot]').map((el) => {
+    const tag = document.createElement('span');
+    tag.className = 'photo-label';
+    tag.textContent = el.dataset.photoSpot;
+    layer.append(tag);
+    return [el, tag];
+  });
+  const bar = document.createElement('div');
+  bar.className = 'photo-label-bar';
+  bar.innerHTML = '<span>Photo labels are on. Each label names the site-editor field that sets that photo.</span><a href="?photo-labels=off">Turn off</a>';
+  document.body.append(layer, bar);
+
+  // Labels sit in one layer over the page, so overlays and clipping on the
+  // photos themselves can't hide them. Hidden photos (inactive slides, closed
+  // menus, not-yet-revealed sections) get no label.
+  const place = () => {
+    layer.style.height = `${document.documentElement.scrollHeight}px`;
+    const headerBottom = ($('[data-masthead]')?.offsetHeight || 0) + 8;
+    for (const [el, tag] of tags) {
+      const r = el.getBoundingClientRect();
+      const shown = r.width > 40 && r.height > 30 && (!el.checkVisibility || el.checkVisibility({ opacityProperty: true, visibilityProperty: true }));
+      tag.hidden = !shown;
+      if (!shown) continue;
+      // Zoomed photos (slideshow) extend past the screen; use the visible part.
+      const left = Math.max(r.left, 0);
+      const right = Math.min(r.right, root.clientWidth);
+      const top = r.top + scrollY;
+      tag.style.top = `${top < headerBottom ? headerBottom : top + 8}px`;
+      tag.style.left = `${left + scrollX + 8}px`;
+      tag.style.maxWidth = `${Math.max(right - left - 16, 180)}px`;
+    }
+  };
+  let queued = false;
+  const queue = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(() => { queued = false; place(); });
+  };
+  addEventListener('resize', queue);
+  addEventListener('load', queue);
+  document.addEventListener('scroll', queue, { passive: true, capture: true });
+  setInterval(queue, 700);
+  queue();
+}
+
 /* Small things --------------------------------------------------------------- */
 function initMisc() {
   $$('[data-to-top]').forEach((b) => b.addEventListener('click', () => scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' })));
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 }
 
-for (const init of [initHeader, initMobileMenu, initHero, initLazyVideos, initReveal, initCounters, initCarousels, initLightbox, initFilters, initForms, initMisc]) {
+for (const init of [initHeader, initMobileMenu, initHero, initLazyVideos, initReveal, initCounters, initCarousels, initLightbox, initFilters, initForms, initPhotoLabels, initMisc]) {
   try {
     init();
   } catch (err) {

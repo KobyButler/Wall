@@ -4,6 +4,7 @@
 // site — bad entries are skipped with a warning instead.
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { photoSlots } from '../data/photo-slots.mjs';
 
 const str = (v) => (typeof v === 'string' ? v.trim() : v == null ? '' : String(v).trim());
 const list = (v) => (Array.isArray(v) ? v : []);
@@ -20,8 +21,8 @@ async function readJson(dir, file) {
 
 export async function loadContent(root, defaults, warn) {
   const dir = path.join(root, 'content');
-  const [settings, home, services, projects, careers, about] = await Promise.all(
-    ['settings.json', 'home.json', 'services.json', 'projects.json', 'careers.json', 'about.json'].map((f) => readJson(dir, f))
+  const [settings, home, services, projects, careers, about, photos] = await Promise.all(
+    ['settings.json', 'home.json', 'services.json', 'projects.json', 'careers.json', 'about.json', 'photos.json'].map((f) => readJson(dir, f))
   );
 
   // --- Company info + home page ---------------------------------------------
@@ -126,5 +127,17 @@ export async function loadContent(root, defaults, warn) {
       .map((m) => ({ name: str(m.name), title: str(m.title), phone: str(m.phone), photo: str(m.photo) })),
   };
 
-  return { site, services: serviceList, projects: projectList, experience: experienceList, careers: careerData, about: aboutData };
+  // --- Site Photos ------------------------------------------------------------------
+  // A blank spot falls back to its original photo. A replaced photo keeps no
+  // description unless one is given, so an old description never mislabels it.
+  const photoData = Object.fromEntries(Object.entries(photoSlots).map(([page, group]) => [page, Object.fromEntries(
+    Object.entries(group.slots).map(([key, slot]) => {
+      const chosen = str(photos[page]?.[key]);
+      const isOriginal = !chosen || chosen === slot.photo;
+      const alt = 'alt' in slot ? str(photos[page]?.[`${key}Alt`]) || (isOriginal ? slot.alt : '') : '';
+      return [key, { photo: chosen || slot.photo, alt, where: `Site Photos › ${group.label} › ${slot.label}` }];
+    })
+  )]));
+
+  return { site, services: serviceList, projects: projectList, experience: experienceList, careers: careerData, about: aboutData, photos: photoData };
 }

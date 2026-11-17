@@ -17,7 +17,7 @@ function hero() {
         if (s.image) {
           const p = photoSrc(s.image);
           return html`<div class="${cx('hero__slide', i === 0 && 'is-active')}" data-slide>
-            <img class="hero__poster" src="${p.src}" srcset="${p.srcset}" sizes="100vw" alt="" width="${p.w}" height="${p.h}"${loading} decoding="async" style="background-color:${p.color}">
+            <img class="hero__poster" src="${p.src}" srcset="${p.srcset}" sizes="100vw" alt="" width="${p.w}" height="${p.h}"${loading} decoding="async" style="background-color:${p.color}" data-photo-spot="Home Page › Top slideshow › ${s.label || `Slide ${i + 1}`}">
           </div>`;
         }
         const poster = posterSrc(s.video);
@@ -70,8 +70,8 @@ function intro() {
   return html`<section class="section section--paper intro" id="intro">
     <div class="container intro__grid">
       <div class="intro__media" data-reveal>
-        <figure class="intro__main frame frame--brackets">${img('foundation-walls-redrock', { sizes: '(min-width: 1024px) 40vw, 92vw', alt: 'Finished cast-in-place foundation walls on a red-rock hillside' })}</figure>
-        <figure class="intro__inset">${img('laser-screed-machine', { sizes: '(min-width: 1024px) 20vw, 45vw', alt: 'Laser screed leveling a fresh concrete slab' })}</figure>
+        <figure class="intro__main frame frame--brackets">${img(ctx.photos.home.intro, { sizes: '(min-width: 1024px) 40vw, 92vw' })}</figure>
+        <figure class="intro__inset">${img(ctx.photos.home.introInset, { sizes: '(min-width: 1024px) 20vw, 45vw' })}</figure>
         <div class="intro__badge"><strong>${first.value.toLocaleString('en-US')}${first.suffix}</strong><span>${first.label}</span></div>
         ${seal()}
       </div>
@@ -96,7 +96,7 @@ function services() {
       ${sectionHead({
         eyebrow: 'What We Do',
         title: 'Covering *all* your concrete needs.',
-        text: 'From the first scoop of dirt to the final broom finish, our crews self-perform every phase of concrete construction for commercial, industrial, municipal and energy projects.',
+        text: 'From heavy formwork and rebar to the final finish, our crews handle every phase of concrete construction for commercial, industrial, municipal, highway and energy projects.',
         actions: btn('View All Services', url('services/'), { variant: 'outline' }),
       })}
       <div class="service-grid">${ctx.services.map(serviceCard)}</div>
@@ -133,7 +133,7 @@ function featuredProjects(featured) {
 function splitCards() {
   return html`<section class="split-cards" aria-label="Safety and careers">
     <a class="split-card" href="${url('about/#safety')}">
-      ${img('night-pour-steam', { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
+      ${img(ctx.photos.home.safetyPanel, { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
       <span class="split-card__body">
         <span class="eyebrow eyebrow--light">Safety</span>
         <span class="split-card__title">Safety is our <span class="hl">foundation.</span></span>
@@ -142,7 +142,7 @@ function splitCards() {
       </span>
     </a>
     <a class="split-card" href="${url('careers/')}">
-      ${img('crew-pour', { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
+      ${img(ctx.photos.home.careersPanel, { sizes: '(min-width: 768px) 50vw, 100vw', cls: 'split-card__img' })}
       <span class="split-card__body">
         <span class="eyebrow eyebrow--light">Careers</span>
         <span class="split-card__title">Build a career <span class="hl">that lasts.</span></span>

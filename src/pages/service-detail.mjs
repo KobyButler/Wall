@@ -3,7 +3,7 @@ import { html, cx } from '../lib/html.mjs';
 import { icon } from '../lib/icons.mjs';
 import { ctx, url, telHref } from '../lib/ctx.mjs';
 import {
-  img, btn, eyebrow, sectionHead, pageHero, projectCard, projectData, lightbox, faqList, faqJsonLd,
+  img, btn, eyebrow, sectionHead, pageHero, projectCard, projectData, lightbox, faqList, faqJsonLd, serviceSpot,
 } from '../lib/components.mjs';
 import { why } from '../data/content.mjs';
 
@@ -35,6 +35,7 @@ function servicePage(s, index) {
     body: html`
       ${pageHero({
         image: s.image,
+        where: serviceSpot(s),
         eyebrow: `Service ${pad(index + 1)}`,
         title: s.name,
         text: s.short,
@@ -55,7 +56,7 @@ function servicePage(s, index) {
               ? html`<figure class="frame frame--brackets detail-intro__video">
                   <video muted loop playsinline preload="none" poster="${url(`assets/img/posters/${s.video}.webp`)}" data-lazy-video data-src="${url(`assets/video/${s.video}.mp4`)}" data-src-sm="${url(`assets/video/${s.video}.mp4`)}" aria-label="Video of our ${s.name.toLowerCase()} crew at work"></video>
                 </figure>`
-              : html`<figure class="frame frame--brackets">${img(s.detailImage, { sizes: '(min-width: 1024px) 44vw, 92vw' })}</figure>`}
+              : html`<figure class="frame frame--brackets">${img(s.detailImage, { sizes: '(min-width: 1024px) 44vw, 92vw', where: serviceSpot(s, 'Intro photo') })}</figure>`}
             <div class="detail-intro__tag"><span class="detail-intro__tag-icon">${icon(s.icon, { size: 28 })}</span><span><strong>${s.tagline}</strong><small>${site.license}</small></span></div>
           </div>
         </div>
@@ -86,7 +87,7 @@ function servicePage(s, index) {
         <div class="container">
           ${sectionHead({ eyebrow: 'Gallery', title: `${s.menuName} *in the field.*`, text: 'A look at the kind of work our crews deliver every day.', actions: btn('View All Projects', url('projects/'), { variant: 'outline' }) })}
           <div class="${cx('gallery', `gallery--${Math.min(s.gallery.length, 5)}`)}">
-            ${s.gallery.slice(0, 5).map((name, i) => html`<figure class="gallery__item" data-reveal style="--d:${i}">${img(name, { sizes: i === 0 ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, 50vw' })}</figure>`)}
+            ${s.gallery.slice(0, 5).map((name, i) => html`<figure class="gallery__item" data-reveal style="--d:${i}">${img(name, { sizes: i === 0 ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, 50vw', where: serviceSpot(s, 'Gallery photos') })}</figure>`)}
           </div>
           ${related.length ? html`
             <h3 class="related-title" data-reveal>Related projects</h3>
