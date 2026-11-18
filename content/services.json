@@ -7,6 +7,7 @@
       "icon": "curb",
       "short": "Slip-formed curb & gutter placed fast, straight and true to grade with our own curb machine.",
       "tagline": "Slip-form curb & gutter.",
+      "image": "/media/curb-gutter-crew.jpg",
       "label": "Speed & accuracy",
       "heading": "Miles of curb, placed straight and true to grade.",
       "intro": [
@@ -18,14 +19,7 @@
         "Streets, parking lots & roundabouts",
         "Hand-formed transitions & radii"
       ],
-      "image": "/media/curb-gutter-crew.jpg",
       "detailImage": "/media/curb-machine.jpg",
-      "gallery": [
-        "/media/curb-extrusion.jpg",
-        "/media/curb-roundabout.jpg",
-        "/media/curb-gutter-finish.jpg",
-        "/media/curb-finished.jpg"
-      ],
       "capabilities": [
         {
           "title": "Curb & gutter",
@@ -52,6 +46,12 @@
           "text": "Clean finish, control joints and curing for a long service life."
         }
       ],
+      "gallery": [
+        "/media/curb-extrusion.jpg",
+        "/media/curb-roundabout.jpg",
+        "/media/curb-gutter-finish.jpg",
+        "/media/curb-finished.jpg"
+      ],
       "faqs": [
         {
           "q": "Why use a curb machine instead of hand-set forms?",
@@ -61,8 +61,7 @@
           "q": "Can you match a city or county curb profile?",
           "a": "Yes. Send us the profile or spec sheet with your plans and we’ll confirm the right mold and setup for your project."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Laser Screed",
@@ -71,6 +70,7 @@
       "icon": "laser",
       "short": "Laser-guided screeding for large, flat slabs: warehouses, shops, parking areas and industrial floors.",
       "tagline": "Flat floors, placed fast.",
+      "image": "/media/warehouse-slab.jpg",
       "label": "Precision",
       "heading": "Big slabs, placed flat and level with laser-guided accuracy.",
       "intro": [
@@ -82,15 +82,7 @@
         "Warehouse & industrial floors",
         "Large, continuous pours"
       ],
-      "image": "/media/warehouse-slab.jpg",
-      "detailImage": "/media/laser-screed-machine.jpg",
-      "gallery": [
-        "/media/laser-screed-machine.jpg",
-        "/media/slab-pump-pour.jpg",
-        "/media/warehouse-slab-fresh.jpg",
-        "/media/slab-stringline.jpg",
-        "/media/slab-sawcut-joints.jpg"
-      ],
+      "detailImage": "/media/7778363415954353627.jpeg",
       "capabilities": [
         {
           "title": "Slabs-on-grade",
@@ -117,6 +109,13 @@
           "text": "Broom, hard-trowel and burnished finishes to match the floor’s use."
         }
       ],
+      "gallery": [
+        "/media/laser-screed-machine.jpg",
+        "/media/slab-pump-pour.jpg",
+        "/media/warehouse-slab-fresh.jpg",
+        "/media/slab-stringline.jpg",
+        "/media/slab-sawcut-joints.jpg"
+      ],
       "faqs": [
         {
           "q": "What is a laser screed?",
@@ -136,6 +135,7 @@
       "icon": "tank",
       "short": "Cast-in-place concrete water storage tanks: footings, floors, walls and roofs.",
       "tagline": "Built to hold — for decades.",
+      "image": "/media/tank-crew-forms.jpg",
       "label": "Water infrastructure",
       "heading": "Concrete water tanks built to hold for generations.",
       "intro": [
@@ -147,15 +147,7 @@
         "Floors, columns & roofs",
         "Water & sewer treatment plants"
       ],
-      "image": "/media/tank-crew-forms.jpg",
       "detailImage": "/media/tank-forms-pump.jpg",
-      "gallery": [
-        "/media/tank-interior-crew.jpg",
-        "/media/tank-finished.jpg",
-        "/media/tank-forms-aerial.jpg",
-        "/media/tank-ring-redrock.jpg",
-        "/media/tank-interior-roof.jpg"
-      ],
       "capabilities": [
         {
           "title": "Tank foundations & floors",
@@ -182,6 +174,13 @@
           "text": "Work sequenced around engineer and agency inspections."
         }
       ],
+      "gallery": [
+        "/media/tank-interior-crew.jpg",
+        "/media/tank-finished.jpg",
+        "/media/tank-forms-aerial.jpg",
+        "/media/tank-ring-redrock.jpg",
+        "/media/tank-interior-roof.jpg"
+      ],
       "faqs": [
         {
           "q": "Do you build tanks for cities and water districts?",
@@ -191,8 +190,7 @@
           "q": "What does a concrete tank project include?",
           "a": "Typically footings, a floor slab, circular walls, interior columns and a roof slab, plus waterstops, penetrations and access hatches. We’ll walk through the full scope with you before we bid."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Structural Foundations",
@@ -201,6 +199,7 @@
       "icon": "foundation",
       "short": "Commercial and industrial structural foundations: footings, grade beams, walls and equipment pads.",
       "tagline": "Commercial & industrial.",
+      "image": "/media/walls-redrock.jpg",
       "label": "Strength",
       "heading": "Commercial & industrial foundations, built to the engineer’s spec.",
       "intro": [
@@ -212,15 +211,7 @@
         "Industrial & equipment foundations",
         "Tall cast-in-place walls"
       ],
-      "image": "/media/walls-redrock.jpg",
       "detailImage": "/media/wall-forms-crane.jpg",
-      "gallery": [
-        "/media/foundation-forms-redrock.jpg",
-        "/media/foundation-snow.jpg",
-        "/media/foundation-walls-complete.jpg",
-        "/media/wall-forms-mountains.jpg",
-        "/media/walls-forms-crew.jpg"
-      ],
       "capabilities": [
         {
           "title": "Spread & continuous footings",
@@ -247,6 +238,13 @@
           "text": "Heat, blankets and winter mix designs to keep foundations moving year-round."
         }
       ],
+      "gallery": [
+        "/media/foundation-forms-redrock.jpg",
+        "/media/foundation-snow.jpg",
+        "/media/foundation-walls-complete.jpg",
+        "/media/wall-forms-mountains.jpg",
+        "/media/walls-forms-crew.jpg"
+      ],
       "faqs": [
         {
           "q": "Do you work as a subcontractor to general contractors?",
@@ -260,8 +258,7 @@
           "q": "What do you need to give me a bid?",
           "a": "Plans, specifications and your target schedule. Send them through our contact form or by email and we’ll get back to you with a detailed proposal."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Bridge Deck Services",
@@ -270,6 +267,7 @@
       "icon": "bridge",
       "short": "Bridge deck and barrier repair, deck placement and finishing, approach slabs and parapets.",
       "tagline": "Transportation-grade concrete.",
+      "image": "/media/bridge-highway.jpg",
       "label": "Transportation",
       "heading": "Bridge decks placed and finished to transportation standards.",
       "intro": [
@@ -281,13 +279,7 @@
         "Deck placement & finishing",
         "Federal & state highway work"
       ],
-      "image": "/media/bridge-highway.jpg",
       "detailImage": "/media/bridge-canyon.jpg",
-      "gallery": [
-        "/media/bridge-deck-rebar.jpg",
-        "/media/bridge-deck-barrier.jpg",
-        "/media/bridge-deck-finish.jpg"
-      ],
       "capabilities": [
         {
           "title": "Deck placement",
@@ -314,6 +306,11 @@
           "text": "Deck and barrier repairs, plus partial and full replacements."
         }
       ],
+      "gallery": [
+        "/media/bridge-deck-rebar.jpg",
+        "/media/bridge-deck-barrier.jpg",
+        "/media/bridge-deck-finish.jpg"
+      ],
       "faqs": [
         {
           "q": "Do you work for prime contractors on bridge projects?",
@@ -323,8 +320,7 @@
           "q": "Why is curing so important on a bridge deck?",
           "a": "Proper curing keeps moisture in the concrete while it gains strength, which reduces cracking and improves durability. For a deck exposed to traffic, de-icing salts and freeze-thaw, that makes a big difference over its service life."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Demo & Replace",
@@ -333,6 +329,7 @@
       "icon": "replace",
       "short": "Removal and replacement of damaged concrete: slabs, sidewalks, curb & gutter, approaches and parking areas.",
       "tagline": "Out with the old.",
+      "image": "/media/parking-lot-replace.jpg",
       "label": "Renewal",
       "heading": "Broken concrete out, new concrete in — with minimal disruption.",
       "intro": [
@@ -344,13 +341,7 @@
         "Parking lots, sidewalks & approaches",
         "Phased to keep sites open"
       ],
-      "image": "/media/parking-lot-replace.jpg",
       "detailImage": "/media/approach-replace.jpg",
-      "gallery": [
-        "/media/parking-slab.jpg",
-        "/media/curb-finished.jpg",
-        "/media/ada-ramp-domes.jpg"
-      ],
       "capabilities": [
         {
           "title": "Saw cutting",
@@ -377,6 +368,11 @@
           "text": "Driveway approaches and accessible ramps rebuilt to current standards."
         }
       ],
+      "gallery": [
+        "/media/parking-slab.jpg",
+        "/media/curb-finished.jpg",
+        "/media/ada-ramp-domes.jpg"
+      ],
       "faqs": [
         {
           "q": "Can you keep my business open during the work?",
@@ -386,8 +382,7 @@
           "q": "Why does the base matter when replacing concrete?",
           "a": "A lot of concrete fails because of what’s under it. Correcting soft or washed-out base before we pour helps the new concrete last much longer than the old."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Precast Capabilities",
@@ -396,6 +391,7 @@
       "icon": "precast",
       "short": "Precast concrete elements set and integrated with cast-in-place work.",
       "tagline": "Precast, put in place.",
+      "image": "/media/channel-walls-bridge.jpg",
       "label": "Versatility",
       "heading": "Precast capabilities that keep complex projects moving.",
       "intro": [
@@ -407,14 +403,7 @@
         "Integrated with cast-in-place",
         "Schedule-saving solutions"
       ],
-      "image": "/media/channel-walls-bridge.jpg",
       "detailImage": "/media/precast-bays.jpg",
-      "gallery": [
-        "/media/channel-walls.jpg",
-        "/media/channel-slab-walls.jpg",
-        "/media/box-structure.jpg",
-        "/media/box-structure-hillside.jpg"
-      ],
       "capabilities": [
         {
           "title": "Precast walls & panels",
@@ -441,6 +430,12 @@
           "text": "Delivery, crane and setting schedules coordinated with the rest of the job."
         }
       ],
+      "gallery": [
+        "/media/channel-walls.jpg",
+        "/media/channel-slab-walls.jpg",
+        "/media/box-structure.jpg",
+        "/media/box-structure-hillside.jpg"
+      ],
       "faqs": [
         {
           "q": "When does precast make sense?",
@@ -450,8 +445,7 @@
           "q": "Can you combine precast with cast-in-place work?",
           "a": "Yes. We regularly pair precast elements with cast-in-place foundations, connections and closure pours."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Valve Can & Manhole Raise & Lower",
@@ -460,6 +454,7 @@
       "icon": "manhole",
       "short": "Raising and lowering valve cans and manholes to grade, with concrete collars, for paving and overlay projects.",
       "tagline": "Utilities, set to grade.",
+      "image": "/media/trench-drain.jpg",
       "label": "Utility adjustments",
       "heading": "Valve cans and manholes adjusted flush to the new grade.",
       "intro": [
@@ -471,13 +466,7 @@
         "Concrete collars",
         "Paving & overlay support"
       ],
-      "image": "/media/trench-drain.jpg",
       "detailImage": "/media/curb-roundabout.jpg",
-      "gallery": [
-        "/media/approach-replace.jpg",
-        "/media/parking-slab.jpg",
-        "/media/curb-gutter-crew.jpg"
-      ],
       "capabilities": [
         {
           "title": "Manhole adjustments",
@@ -504,6 +493,11 @@
           "text": "Scheduling and traffic control coordinated with the paving contractor."
         }
       ],
+      "gallery": [
+        "/media/approach-replace.jpg",
+        "/media/parking-slab.jpg",
+        "/media/curb-gutter-crew.jpg"
+      ],
       "faqs": [
         {
           "q": "Why lower castings before paving?",
@@ -513,8 +507,7 @@
           "q": "Why use a concrete collar?",
           "a": "A concrete collar locks the casting in place and supports it against traffic loads, which helps prevent the settling and rocking that cause failures."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Certified ADA Installer",
@@ -523,6 +516,7 @@
       "icon": "ada",
       "short": "Certified installation of ADA-compliant curb ramps, detectable warning surfaces and accessible routes.",
       "tagline": "Accessible, compliant, certified.",
+      "image": "/media/ada-ramp-domes.jpg",
       "label": "Accessibility",
       "heading": "ADA-compliant concrete, installed by a certified installer.",
       "intro": [
@@ -534,13 +528,7 @@
         "Detectable warning surfaces",
         "Built to pass inspection"
       ],
-      "image": "/media/ada-ramp-domes.jpg",
       "detailImage": "/media/approach-replace.jpg",
-      "gallery": [
-        "/media/curb-roundabout.jpg",
-        "/media/curb-finished.jpg",
-        "/media/parking-lot-replace.jpg"
-      ],
       "capabilities": [
         {
           "title": "Curb ramps",
@@ -567,6 +555,11 @@
           "text": "Ramps for city streets, campuses, parking lots and commercial sites."
         }
       ],
+      "gallery": [
+        "/media/curb-roundabout.jpg",
+        "/media/curb-finished.jpg",
+        "/media/parking-lot-replace.jpg"
+      ],
       "faqs": [
         {
           "q": "What makes a curb ramp ADA compliant?",
@@ -576,8 +569,7 @@
           "q": "Can you fix a ramp that failed inspection?",
           "a": "Yes. We can remove and rebuild non-compliant ramps and landings so they meet current requirements."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Smooth Trowel Finishes",
@@ -586,6 +578,7 @@
       "icon": "trowel",
       "short": "Hard-troweled interior floors for warehouses, shops and industrial buildings.",
       "tagline": "Dense, smooth, hard-wearing.",
+      "image": "/media/trowel-warehouse-gloss.jpg",
       "label": "Craftsmanship",
       "heading": "Smooth, dense floors finished with ride-on power trowels.",
       "intro": [
@@ -597,14 +590,7 @@
         "Warehouse & shop floors",
         "Burnished, hard finishes"
       ],
-      "image": "/media/trowel-warehouse-gloss.jpg",
       "detailImage": "/media/ride-on-trowels.jpg",
-      "gallery": [
-        "/media/power-trowel-floor.jpg",
-        "/media/polished-floor-gloss.jpg",
-        "/media/power-screed-worker.jpg",
-        "/media/warehouse-slab.jpg"
-      ],
       "capabilities": [
         {
           "title": "Ride-on trowel finishing",
@@ -631,6 +617,12 @@
           "text": "Paired with laser screeding for flat floors from placement to finish."
         }
       ],
+      "gallery": [
+        "/media/power-trowel-floor.jpg",
+        "/media/polished-floor-gloss.jpg",
+        "/media/power-screed-worker.jpg",
+        "/media/warehouse-slab.jpg"
+      ],
       "faqs": [
         {
           "q": "Where is a smooth trowel finish used?",
@@ -640,8 +632,7 @@
           "q": "Is a smooth trowel finish slippery?",
           "a": "It can be when wet, which is why it’s used indoors. Sealers or other treatments can be applied when slip resistance is a concern."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "Energy Infrastructure",
@@ -650,6 +641,7 @@
       "icon": "energy",
       "short": "Foundations and concrete for energy and industrial facilities: power, utilities and processing.",
       "tagline": "Powering the region.",
+      "image": "/media/night-pour-pumps.jpg",
       "label": "Industrial",
       "heading": "Concrete for the energy projects that power the region.",
       "intro": [
@@ -661,15 +653,7 @@
         "Mines & material handling",
         "24/7 overhaul schedules"
       ],
-      "image": "/media/night-pour-pumps.jpg",
       "detailImage": "/media/night-pour-steam.jpg",
-      "gallery": [
-        "/media/night-pour-rebar.jpg",
-        "/media/industrial-rebar-mat.jpg",
-        "/media/grade-beam-rebar.jpg",
-        "/media/industrial-slab-long.jpg",
-        "/media/night-pump-boom.jpg"
-      ],
       "capabilities": [
         {
           "title": "Equipment foundations",
@@ -696,6 +680,13 @@
           "text": "Heat, blankets and planning to keep critical work moving in winter."
         }
       ],
+      "gallery": [
+        "/media/night-pour-rebar.jpg",
+        "/media/industrial-rebar-mat.jpg",
+        "/media/grade-beam-rebar.jpg",
+        "/media/industrial-slab-long.jpg",
+        "/media/night-pump-boom.jpg"
+      ],
       "faqs": [
         {
           "q": "Do you work at operating facilities?",
@@ -705,8 +696,7 @@
           "q": "Why do some energy pours happen at night?",
           "a": "Large or critical placements are often scheduled at night to work around facility operations and traffic, or for cooler temperatures that give finishers more time. We plan lighting, staffing and curing to match."
         }
-      ],
-      "video": ""
+      ]
     },
     {
       "name": "General Contracting",
@@ -715,6 +705,7 @@
       "icon": "hardhat",
       "short": "Complete project management, from foundation to finished building, with one accountable contractor.",
       "tagline": "One contractor. Start to finish.",
+      "image": "/media/building-walls.jpg",
       "label": "Project delivery",
       "heading": "General contracting backed by a concrete specialist.",
       "intro": [
@@ -726,14 +717,7 @@
         "Self-performed concrete",
         "Schedule & budget control"
       ],
-      "image": "/media/building-walls.jpg",
       "detailImage": "/media/building-apron-pour.jpg",
-      "gallery": [
-        "/media/metal-building-interior.jpg",
-        "/media/footing-forms-building.jpg",
-        "/media/steel-building-slab.jpg",
-        "/media/pump-truck-forms.jpg"
-      ],
       "capabilities": [
         {
           "title": "Project management",
@@ -760,6 +744,12 @@
           "text": "Regular updates for owners, engineers and inspectors from start to finish."
         }
       ],
+      "gallery": [
+        "/media/metal-building-interior.jpg",
+        "/media/footing-forms-building.jpg",
+        "/media/steel-building-slab.jpg",
+        "/media/pump-truck-forms.jpg"
+      ],
       "faqs": [
         {
           "q": "What kinds of projects do you general contract?",
@@ -769,8 +759,7 @@
           "q": "What’s the advantage of a concrete contractor as GC?",
           "a": "Foundations and slabs set the pace for everything that follows. When the general contractor also self-performs the concrete, those critical early phases stay under one roof and on schedule."
         }
-      ],
-      "video": ""
+      ]
     }
   ]
 }
