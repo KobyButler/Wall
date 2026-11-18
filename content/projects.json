@@ -5,7 +5,6 @@
       "service": "water-tanks",
       "image": "/media/tank-crew-forms.jpg",
       "text": "Our crew working atop the circular wall forms of a cast-in-place concrete water tank.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Circular forming",
@@ -15,11 +14,10 @@
       "featured": true
     },
     {
-      "title": "Structural Walls on Red Rock",
+      "title": "Structural Walls ",
       "service": "structural-foundations",
       "image": "/media/walls-redrock.jpg",
       "text": "Tall cast-in-place structural walls rising from their footings on a rocky hillside site.",
-      "location": "",
       "sector": "Structural",
       "scope": [
         "Tall walls",
@@ -33,7 +31,6 @@
       "service": "laser-screed",
       "image": "/media/laser-screed-machine.jpg",
       "text": "Our laser screed placing and leveling a large slab while the finishing crew follows behind.",
-      "location": "",
       "sector": "Slabs",
       "scope": [
         "Laser screed",
@@ -47,7 +44,6 @@
       "service": "bridge-decks",
       "image": "/media/bridge-highway.jpg",
       "text": "A highway bridge spanning a rocky drainage, built for decades of traffic and freeze-thaw.",
-      "location": "",
       "sector": "Transportation",
       "scope": [
         "Bridge deck",
@@ -60,7 +56,6 @@
       "service": "curb-machine",
       "image": "/media/curb-machine.jpg",
       "text": "Our curb machine extruding a continuous run of curb and gutter, fed straight from the mixer truck.",
-      "location": "",
       "sector": "Site concrete",
       "scope": [
         "Curb machine",
@@ -74,7 +69,6 @@
       "service": "structural-foundations",
       "image": "/media/foundation-snow.jpg",
       "text": "Foundation walls formed and placed through winter, with snow-capped peaks behind the site.",
-      "location": "",
       "sector": "Structural",
       "scope": [
         "Cold weather",
@@ -88,7 +82,6 @@
       "service": "smooth-trowel",
       "image": "/media/trowel-warehouse-gloss.jpg",
       "text": "A dense, smooth trowel finish across the floor of a new warehouse.",
-      "location": "",
       "sector": "Interior floors",
       "scope": [
         "Smooth trowel",
@@ -101,7 +94,6 @@
       "service": "ada-installation",
       "image": "/media/ada-ramp-domes.jpg",
       "text": "An accessible curb ramp with a truncated-dome detectable warning surface set flush with the concrete.",
-      "location": "",
       "sector": "Accessibility",
       "scope": [
         "Curb ramp",
@@ -114,7 +106,6 @@
       "service": "structural-foundations",
       "image": "/media/night-pour-pumps.jpg",
       "text": "A large-volume night placement with pump trucks and light towers keeping the pour moving.",
-      "location": "",
       "sector": "Industrial",
       "scope": [
         "Night pour",
@@ -128,7 +119,6 @@
       "service": "water-tanks",
       "image": "/media/tank-forms-pump.jpg",
       "text": "A pump truck placing concrete into the radius wall forms of a water tank.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Pump placement",
@@ -142,7 +132,6 @@
       "service": "water-tanks",
       "image": "/media/tank-interior-crew.jpg",
       "text": "Inside a newly stripped tank: smooth circular walls, a center column and the floor slab.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Circular walls",
@@ -156,7 +145,6 @@
       "service": "water-tanks",
       "image": "/media/tank-finished.jpg",
       "text": "A completed cast-in-place concrete water tank.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Cast-in-place",
@@ -165,11 +153,10 @@
       "featured": false
     },
     {
-      "title": "Tank Base in Canyon Country",
+      "title": "Tank Base ",
       "service": "water-tanks",
       "image": "/media/tank-ring-redrock.jpg",
       "text": "A circular tank footing and ring wall set into red-rock canyon country.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Footing",
@@ -182,7 +169,6 @@
       "service": "water-tanks",
       "image": "/media/tank-formwork.jpg",
       "text": "Circular wall forms braced and ready, seen from inside the tank.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Radius forms",
@@ -196,7 +182,6 @@
       "service": "water-tanks",
       "image": "/media/tank-base-rebar.jpg",
       "text": "The reinforcing mat for a circular tank floor, placed and ready for concrete.",
-      "location": "",
       "sector": "Water infrastructure",
       "scope": [
         "Floor slab",
@@ -209,7 +194,6 @@
       "service": "structural-foundations",
       "image": "/media/slab-rebar-redrock.jpg",
       "text": "A long structural slab with its edge reinforcing set, built on a rocky hillside.",
-      "location": "",
       "sector": "Structural",
       "scope": [
         "Structural slab",
@@ -222,7 +206,6 @@
       "service": "structural-foundations",
       "image": "/media/tall-wall-forms.jpg",
       "text": "Tall wall forms lining a corridor between structures, ready for placement.",
-      "location": "",
       "sector": "Structural",
       "scope": [
         "Tall walls",
@@ -236,7 +219,6 @@
       "service": "structural-foundations",
       "image": "/media/foundation-forms-redrock.jpg",
       "text": "An extensive network of foundation forms on a challenging red-rock hillside.",
-      "location": "",
       "sector": "Structural",
       "scope": [
         "Footings",
@@ -250,7 +232,6 @@
       "service": "structural-foundations",
       "image": "/media/foundation-walls-complete.jpg",
       "text": "Foundation walls stripped and ready for the next phase of construction.",
-      "location": "",
       "sector": "Structural",
       "scope": [
         "Stripped walls",
@@ -259,11 +240,10 @@
       "featured": false
     },
     {
-      "title": "Concrete Channel Walls",
+      "title": "Concrete spillway Walls",
       "service": "structural-foundations",
       "image": "/media/channel-walls-bridge.jpg",
       "text": "Cast concrete walls and floor slab running beneath a pedestrian bridge.",
-      "location": "",
       "sector": "Infrastructure",
       "scope": [
         "Walls",
@@ -276,7 +256,6 @@
       "service": "bridge-decks",
       "image": "/media/bridge-deck-rebar.jpg",
       "text": "Epoxy-coated reinforcing in place and ready for the bridge deck pour.",
-      "location": "",
       "sector": "Transportation",
       "scope": [
         "Deck prep",
@@ -285,24 +264,10 @@
       "featured": false
     },
     {
-      "title": "Bridge Deck Finishing",
-      "service": "bridge-decks",
-      "image": "/media/bridge-deck-finish.jpg",
-      "text": "Finishing a section of bridge deck during placement.",
-      "location": "",
-      "sector": "Transportation",
-      "scope": [
-        "Deck pour",
-        "Finishing"
-      ],
-      "featured": false
-    },
-    {
       "title": "Roundabout Curb & Islands",
       "service": "curb-machine",
       "image": "/media/curb-roundabout.jpg",
       "text": "Our crew finishing curb and gutter around a roundabout.",
-      "location": "",
       "sector": "Site concrete",
       "scope": [
         "Radius curb",
@@ -315,7 +280,6 @@
       "service": "laser-screed",
       "image": "/media/warehouse-slab.jpg",
       "text": "Finishing a large warehouse floor slab under the new building’s lights.",
-      "location": "",
       "sector": "Slabs",
       "scope": [
         "Large slab",
@@ -328,7 +292,6 @@
       "service": "smooth-trowel",
       "image": "/media/ride-on-trowels.jpg",
       "text": "Ride-on power trowels working an interior slab to a smooth, dense finish.",
-      "location": "",
       "sector": "Interior floors",
       "scope": [
         "Ride-on trowels",
@@ -341,7 +304,6 @@
       "service": "demo-replace",
       "image": "/media/parking-lot-replace.jpg",
       "text": "Replacement concrete paving at an industrial building.",
-      "location": "",
       "sector": "Site concrete",
       "scope": [
         "Removal",
@@ -355,7 +317,6 @@
       "service": "general-contracting",
       "image": "/media/building-walls.jpg",
       "text": "Cast-in-place walls for a commercial building taking shape.",
-      "location": "",
       "sector": "Buildings",
       "scope": [
         "Cast-in-place walls",
@@ -368,7 +329,6 @@
       "service": "general-contracting",
       "image": "/media/metal-building-interior.jpg",
       "text": "Reinforcing set and ready for the floor slab inside a new metal building.",
-      "location": "",
       "sector": "Buildings",
       "scope": [
         "Reinforcing",
@@ -392,7 +352,6 @@
     },
     {
       "name": "Kane Creek Boulevard Reconstruction",
-      "detail": "",
       "category": "Highways & Transportation",
       "current": false
     },
@@ -434,31 +393,22 @@
     },
     {
       "name": "Arches National Park",
-      "detail": "",
       "category": "National Parks",
       "current": false
     },
     {
       "name": "Zion National Park",
-      "detail": "",
       "category": "National Parks",
       "current": false
     },
     {
       "name": "Dinosaur National Monument",
-      "detail": "",
       "category": "National Parks",
       "current": false
     },
     {
       "name": "Amazon Distribution Buildings",
       "detail": "Price, UT & Butte, MT",
-      "category": "Industrial & Commercial",
-      "current": false
-    },
-    {
-      "name": "Bath House at Fossil Rock Mine",
-      "detail": "",
       "category": "Industrial & Commercial",
       "current": false
     },
@@ -476,7 +426,6 @@
     },
     {
       "name": "Intermountain Electronics Price Expansion",
-      "detail": "",
       "category": "Industrial & Commercial",
       "current": true
     },
