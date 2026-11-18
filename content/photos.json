@@ -1,9 +1,9 @@
 {
   "home": {
-    "intro": "/media/foundation-walls-redrock.jpg",
-    "introAlt": "Finished cast-in-place foundation walls on a red-rock hillside",
-    "introInset": "/media/laser-screed-machine.jpg",
-    "introInsetAlt": "Laser screed leveling a fresh concrete slab",
+    "intro": "/media/20211112134227.jpeg",
+    "introAlt": "Millsite dam spillway in ",
+    "introInset": "/media/img1249.jpeg",
+    "introInsetAlt": "Fresh concrete tank slab in Moab ",
     "why": "/media/walls-forms-crew.jpg",
     "safetyPanel": "/media/night-pour-steam.jpg",
     "careersPanel": "/media/crew-pour.jpg"
@@ -27,7 +27,7 @@
   },
   "careers": {
     "banner": "/media/crew-wall-forms.jpg",
-    "intro": "/media/crew-pour.jpg",
+    "intro": "/media/6423091653947546669.jpeg",
     "introAlt": "Wall crew members in high-visibility vests placing concrete",
     "bottomBanner": "/media/crew-pour-hose.jpg"
   },
