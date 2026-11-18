@@ -454,7 +454,7 @@
       "icon": "manhole",
       "short": "Raising and lowering valve cans and manholes to grade, with concrete collars, for paving and overlay projects.",
       "tagline": "Utilities, set to grade.",
-      "image": "/media/trench-drain.jpg",
+      "image": "/media/img0049.jpeg",
       "label": "Utility adjustments",
       "heading": "Valve cans and manholes adjusted flush to the new grade.",
       "intro": [
@@ -466,7 +466,6 @@
         "Concrete collars",
         "Paving & overlay support"
       ],
-      "detailImage": "/media/curb-roundabout.jpg",
       "capabilities": [
         {
           "title": "Manhole adjustments",
