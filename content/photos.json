@@ -1,9 +1,9 @@
 {
   "home": {
     "intro": "/media/20211112134227.jpeg",
-    "introAlt": "Millsite dam spillway in ",
+    "introAlt": "Millsite dam spillway ",
     "introInset": "/media/img1249.jpeg",
-    "introInsetAlt": "Fresh concrete tank slab in Moab ",
+    "introInsetAlt": "Freshly poured concrete tank slab in Moab ",
     "why": "/media/walls-forms-crew.jpg",
     "safetyPanel": "/media/night-pour-steam.jpg",
     "careersPanel": "/media/crew-pour.jpg"
@@ -15,7 +15,7 @@
     "storyInset": "/media/walls-forms-crew.jpg",
     "storyInsetAlt": "Crew member working among cast-in-place walls and forms",
     "safety": "/media/night-pour-rebar.jpg",
-    "safetyAlt": "Night pour on a heavily reinforced slab under light towers",
+    "safetyAlt": "Night pour on a  reinforced slab under light towers",
     "safetyInset": "/media/power-screed-worker.jpg",
     "safetyInsetAlt": "Crew member in a hard hat leveling a slab with a power screed"
   },
